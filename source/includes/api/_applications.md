@@ -345,7 +345,7 @@ const response = await client.application.getPackages();
 | `application_id` | **Yes**  | หมายเลขใบคำสั่งซื้อ |
 
 <aside class="notice">
-ใบคำสั่งซื้อนั้นต้องไม่มี <code>status</code> เป็น <code>INITIAL</code> หรือก็คือต้องมี <code>basic_data</code> ที่ถูกต้อง
+ใบคำสั่งซื้อนั้นต้องไม่มี status เป็น <code>INITIAL</code> หรือก็คือต้องมี basic_data ที่ถูกต้อง
 </aside>
 
 ## /applications/get-package
@@ -527,7 +527,7 @@ const response = await client.application.submit();
 | `application_id` | **Yes**  | หมายเลขใบคำสั่งซื้อ |
 
 <aside class="notice">
-ชนิด <code>complete_process</code> ของ Product นั้นๆ ต้องเป็น <code>SUBMIT</code>
+ชนิด complete_process ของ Product นั้นๆ ต้องเป็น <code>SUBMIT</code>
 </aside>
 
 ## /applications/confirm
@@ -597,11 +597,11 @@ const response = await client.application.confirm();
 | `application_id` | **Yes**  | หมายเลขใบคำสั่งซื้อ |
 
 <aside class="notice">
-ชนิด <code>complete_process</code> ของ Product นั้นๆ ต้องเป็น <code>CONFIRM</code>
+ชนิด complete_process ของ Product นั้นๆ ต้องเป็น <code>CONFIRM</code>
 </aside>
 
 <aside class="success">
-การดาวน์โหลดกรมธรรม์อาจมีการล่าช้าเล็กน้อย โดยดูได้จาก <code>status</code> ของ Policy ที่ถ้าหากเป็น <code>COMPLETED</code> หมายถึงไฟล์นั้นสามารถใช้งานได้แล้ว
+การดาวน์โหลดกรมธรรม์อาจมีการล่าช้าเล็กน้อย โดยดูได้จาก status ของ Policy ที่ถ้าหากเป็น <code>COMPLETED</code> หมายถึงไฟล์นั้นสามารถใช้งานได้แล้ว
 </aside>
 
 ## รายการ Status ของ Application

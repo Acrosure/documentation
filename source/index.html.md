@@ -22,7 +22,6 @@ includes:
   - api/products
   - api/policies
   - api/data
-  - kitten
   - errors
 
 search: true
@@ -39,4 +38,4 @@ search: true
     - Company Name
     - Email
     - Password / Password Confirmation
-3.  สามารถเริ่มทดลองเชื่่อมต่อกับระบบ Sandbox ได้ทันที
+3.  สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
