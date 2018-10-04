@@ -77,7 +77,7 @@ const response = await client.application.create({
 {
   "status": "ok",
   "data": {
-    "id": "sandbox_appl_lYtGaSWFGK2XJWB5",
+    "id": "appl_SAMPLE01",
     "status": "READY",
     ...
   }
@@ -96,7 +96,7 @@ const response = await client.application.create({
 curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
-  -d '{"application_id":"sandbox_appl_lYtGaSWFGK2XJWB5"}' \
+  -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.preseer.com/applications/confirm;
 ```
 
@@ -104,7 +104,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "tokn_sample_secret" });
-client.applicaiton.setID("appl_m1234UJ7D5BddyIH");
+client.applicaiton.setID("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
 
@@ -128,7 +128,7 @@ const response = await client.application.confirm();
 
 ```json
 {
-  "application_id": "appl_m1234UJ7D5BddyIH"
+  "application_id": "appl_SAMPLE01"
 }
 ```
 
@@ -139,11 +139,13 @@ const response = await client.application.confirm();
   "status": "ok",
   "data": [
     {
-      "id": "sandbox_plcy_Y3QovmEUeF38Ul3l",
+      "id": "plcy_SAMPLE01",
+      "application_id": "appl_SAMPLE01",
       ...
     },
     {
-      "id": "sandbox_plcy_17kWDy0tAa55TEBu",
+      "id": "plcy_SAMPLE02",
+      "application_id": "appl_SAMPLE01",
       ...
     }
   ]

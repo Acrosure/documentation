@@ -59,7 +59,7 @@ const response = await client.application.create({
 
 ```json
 {
-  "product_id": "prod_ta_domestic",
+  "product_id": "prod_ta",
   "form_data": {
     "brand_name": "HONDA",
     "model_name": "CITY",
@@ -76,7 +76,7 @@ const response = await client.application.create({
 {
   "status": "ok",
   "data": {
-    "id": "sandbox_appl_lYtGaSWFGK2XJWB5",
+    "id": "appl_SAMPLE01",
     ...
   }
 }
@@ -95,10 +95,13 @@ const response = await client.application.create({
 > จากตัวอย่างนั้น URL ของฟอร์มจะเป็น
 
 ```
-https://form.preseer.com/?token=tokn_sample_public&productId=prod_motor&applicationId=sandbox_appl_lYtGaSWFGK2XJWB5
+https://form.preseer.com/?token=tokn_sample_public&productId=prod_ta&applicationId=appl_SAMPLE01
 ```
 
-URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง `applicationId={generatedApplicationId}` เข้าไป โดยนำ
-application_id จากผลในขั้นตอนที่แล้วมาใช้งาน
+URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง `applicationId=appl_SAMPLE01` เข้าไป โดยนำ `application_id` จากผลในขั้นตอนที่แล้วมาใช้งาน
 
 เมื่อ redirect ผู้ใช้ไปยัง URL ดังกล่าว ผู้ใช้จะพบกับฟอร์มที่กรอกข้อมูลไว้แล้ว และสามารถทำรายการที่เหลือต่อได้ตามปกติ เช่นเดียวกับการใช้ฟอร์มสำเร็จรูป
+
+<aside class="warning">
+ห้ามใช้ Secret Key ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
+</aside>

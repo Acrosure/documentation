@@ -13,7 +13,7 @@
 > ตัวอย่างโค้ด HTML ซึ่งเป็นลิงก์สำหรับการสั่งซื้อ
 
 ```html
-  <a href="https://form.preseer.com/?token=tokn_sample_public&productId=prod_ta_domestic&payload=ta">สั่งซื้อประกันภัย</a>
+  <a href="https://form.preseer.com/?token=tokn_sample_public&productId=prod_ta">สั่งซื้อประกันภัย</a>
 ```
 
 สำหรับส่งผู้ใช้ไปสั่งซื้อประกันด้วยฟอร์มสำเร็จรูป สามารถทำได้ดังนี้
@@ -30,7 +30,7 @@
 > การเรียก callback จะส่ง Application ID มาผ่าน URL ในส่วนคิวรีสตริง โดยมีรูปแบบดังนี้
 
 ```
-https://example.com/dhipaya/callback?applicationId=<generatedApplicationId>
+https://example.com/dhipaya/callback?applicationId=appl_SAMPLE01
 ```
 
 > ให้นักพัฒนาเก็บ `applicationId` ไว้ จากนั้นนำผู้ใช้ไปดำเนินการชำระเงิน ก่อนจะยืนยันการสั่งซื้อในขั้นตอนสุดท้าย
@@ -47,7 +47,7 @@ https://example.com/dhipaya/callback?applicationId=<generatedApplicationId>
 curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
-  -d '{"application_id":"appl_m1234UJ7D5BddyIH"}' \
+  -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.preseer.com/applications/confirm;
 ```
 
@@ -55,7 +55,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "tokn_sample_secret" });
-client.applicaiton.setID("appl_m1234UJ7D5BddyIH");
+client.applicaiton.setID("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
 
@@ -79,7 +79,7 @@ const response = await client.application.confirm();
 
 ```json
 {
-  "application_id": "appl_m1234UJ7D5BddyIH"
+  "application_id": "appl_SAMPLE01"
 }
 ```
 
@@ -90,11 +90,13 @@ const response = await client.application.confirm();
   "status": "ok",
   "data": [
     {
-      "id": "sandbox_plcy_Y3QovmEUeF38Ul3l",
+      "id": "plcy_SAMPLE01",
+      "application_id": "appl_SAMPLE01",
       ...
     },
     {
-      "id": "sandbox_plcy_17kWDy0tAa55TEBu",
+      "id": "plcy_SAMPLE02",
+      "application_id": "appl_SAMPLE01",
       ...
     }
   ]

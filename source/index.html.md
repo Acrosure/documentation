@@ -18,6 +18,10 @@ includes:
   - integrations/form
   - integrations/hybrid
   - integrations/api
+  - api/applications
+  - api/products
+  - api/policies
+  - api/data
   - kitten
   - errors
 
