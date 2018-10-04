@@ -2,12 +2,12 @@
 title: Acrosure API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - javascript
-  - java
-  - python
-  - csharp
-  - swift
+  - shell: cURL
+  - javascript: JavaScript
+  - java: Java
+  - python: Python
+  - csharp: C# .NET
+  - swift: Swift
 
 toc_footers:
   - <a href='https://docs.acrosure.com'>Sign Up for API Key</a>
