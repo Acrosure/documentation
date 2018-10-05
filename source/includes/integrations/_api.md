@@ -14,14 +14,14 @@
 ท่านสามารถดู `product_id` รายละเอียดฟอร์มที่ต้องกรอกได้จากหน้า Product ในแดชบอร์ด
 โดยสามารถดูโครงสร้างข้อมูลของฟอร์มได้จากหัวข้อ Form Schema และดูตัวอย่างข้อมูลทดสอบได้จากหัวข้อ Sample Form Data
 
-## 2. สร้างฟอร์ม
+## 2. สร้างใบคำสั่งซื้อ
 
 ```shell
 curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"spec_name":"S CNG AT","brand_name":"HONDA","model_name":"CITY","vehicle_type":"110","register_year":2017}}' \
-  https://api.preseer.com/applications/create;
+  https://api.acrosure.com/applications/create;
 ```
 
 ```javascript
@@ -87,7 +87,7 @@ const response = await client.application.create({
 สร้างฟอร์มสั่งซื้อในลักษณะเดียวกันกับการสร้างฟอร์มแบบกรอกข้อมูลบางส่วน
 
 <aside class="notice">
-<code>status</code> ที่ได้อาจจะยังไม่เป็น <code>READY</code> หากข้อมูลยังไม่ถูกต้อง ซึ่งอาจต้องใช้การ update เพิ่มเติม
+status ที่ได้อาจจะยังไม่เป็น <code>READY</code> หากข้อมูลยังไม่ถูกต้อง ซึ่งอาจต้องใช้การ update เพิ่มเติม
 </aside>
 
 ## 3. ยืนยันการสั่งซื้อ
@@ -97,7 +97,7 @@ curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
-  https://api.preseer.com/applications/confirm;
+  https://api.acrosure.com/applications/confirm;
 ```
 
 ```javascript

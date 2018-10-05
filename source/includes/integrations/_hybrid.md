@@ -20,7 +20,7 @@ curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"vehicle_type":"110","register_year":2017,"brand_name":"HONDA","model_name":"CITY","spec_name":"S CNG AT"}}' \
-  https://api.preseer.com/applications/create;
+  https://api.acrosure.com/applications/create;
 ```
 
 ```javascript
@@ -95,7 +95,7 @@ const response = await client.application.create({
 > จากตัวอย่างนั้น URL ของฟอร์มจะเป็น
 
 ```
-https://form.preseer.com/?token=tokn_sample_public&productId=prod_ta&applicationId=appl_SAMPLE01
+https://form.acrosure.com/?token=tokn_sample_public&productId=prod_ta&applicationId=appl_SAMPLE01
 ```
 
 URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง `applicationId=appl_SAMPLE01` เข้าไป โดยนำ `application_id` จากผลในขั้นตอนที่แล้วมาใช้งาน

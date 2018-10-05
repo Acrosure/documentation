@@ -13,7 +13,7 @@
 > ตัวอย่างโค้ด HTML ซึ่งเป็นลิงก์สำหรับการสั่งซื้อ
 
 ```html
-  <a href="https://form.preseer.com/?token=tokn_sample_public&productId=prod_ta">สั่งซื้อประกันภัย</a>
+  <a href="https://form.acrosure.com/?token=tokn_sample_public&productId=prod_ta">สั่งซื้อประกันภัย</a>
 ```
 
 สำหรับส่งผู้ใช้ไปสั่งซื้อประกันด้วยฟอร์มสำเร็จรูป สามารถทำได้ดังนี้
@@ -48,7 +48,7 @@ curl -X POST \
   --header "Authorization: Bearer tokn_sample_secret" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
-  https://api.preseer.com/applications/confirm;
+  https://api.acrosure.com/applications/confirm;
 ```
 
 ```javascript
