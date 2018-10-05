@@ -1,10 +1,10 @@
-# Applications API reference
+# Applications API reference {{id:api-applications}}
 
 Application คือใบคำสั่งซื้อกรมธรรม์ ซึ่งทางผู้ใช้งาน Acrosure สามารถจัดการกับข้อมูลภายในแบบฟอร์มการซื้อประกันได้อย่างอิสระ ก่อนที่จะขอออกกรมธรรม์กับทางบริษัทประกันภัย
 
 ใบคำสั่งซื้อของประกันแต่ละประเภทจะมีโครงสร้างข้อมูลในแบบฟอร์มที่แตกต่างกัน คือฟิลด์ `basic_data`, `package_options` และ `additional_data` ซึ่งสามารถดูโครงสร้างข้อมูลแบบฟอร์มเหล่านี้ได้บน [Acrosure Dashboard](https://dashboard.acrosure.com)
 
-## โครงสร้างข้อมูล Application
+## โครงสร้างข้อมูล Application {{id:api-applications-structure}}
 
 > ตัวอย่างข้อมูล
 
@@ -124,7 +124,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
 | `ref1`            | ข้อความสำหรับใช้ในการอ้างอิงอันที่ 1                                                                        |
 | `ref2`            | ข้อความสำหรับใช้ในการอ้างอิงอันที่ 2                                                                        |
 | `ref3`            | ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3                                                                        |
-| `status`          | สถานะของใบคำสั่งซื้อ ดูเพิ่มเติมได้ที่ [Application Status](#status-application)                            |
+| `status`          | สถานะของใบคำสั่งซื้อ ดูเพิ่มเติมได้ที่ [Application Status](#api-applications-status)                       |
 | `paid`            | ค่าที่บ่งบอกสถานะการชำระเงินของใบคำสั่งซื้อ                                                                 |
 | `net_premium`     | ค่าเบี้ยประกันเบื้องต้น                                                                                     |
 | `gross_premium`   | ค่าเบี้ยประกันสุทธิ                                                                                         |
@@ -141,7 +141,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
 | `updated_at`      | เวลาที่อัพเดทใบคำสั่งซื้อล่าสุด                                                                             |
 | `expired_at`      | เวลาที่ใบคำสั่งซื้อนี้จะหมดอายุ                                                                             |
 
-## Status ของ Application
+## Status ของ Application {{id:api-applications-status}}
 
 | Name                     | Meaning                                                                                                                                    |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -158,11 +158,11 @@ Application คือใบคำสั่งซื้อกรมธรรม�
 | `TENTATIVELY_ACCEPTED`   | เกิดปัญหาจากทางบริษัทประกันภัย แต่ Acrosure ถือว่าใบคำสั่งซื้อสมบูรณ์แล้ว  และจะดำเนินการต่อให้                                            |
 | `EXPIRED`                | ใบคำสั่งซื้อหมดอายุ                                                                                                                        |
 
-## /applications/get
+## /applications/get {{id:api-applications-get}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get;
@@ -171,7 +171,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.get();
 ```
@@ -217,11 +217,11 @@ const response = await client.application.get();
 | `application_id` | **Yes**  | รหัสของใบคำสั่งซื้อ |
 
 
-## /applications/list
+## /applications/list {{id:api-applications-list}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/applications/list;
@@ -230,7 +230,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.list({
   product_id: "prod_ta"
 });
@@ -279,20 +279,20 @@ const response = await client.application.list({
 
 ### Request Body
 
-| Name         | Required | Description                                    | Possible Values                                          |
-| ------------ | -------- | ---------------------------------------------- | -------------------------------------------------------- |
-| `product_id` | No       | ชนิดของ Product                                |                                                          |
+| Name         | Required | Description                                    | Possible Values                                               |
+| ------------ | -------- | ---------------------------------------------- | ------------------------------------------------------------- |
+| `product_id` | No       | ชนิดของ Product                                |                                                               |
 | `offset`     | No       | ตำแหน่งในลำดับของใบคำสั่งซื้อที่ต้องการเริ่มดู |
 | `limit`      | No       | จำนวนสูงสุดของข้อมูลในรายการ                   |
-| `order_by`   | No       | วิธีการจัดเรียงรายการ                          | `created_at`, `updated_at`                               |
-| `status`     | No       | สถานะของใบคำสั่งซื้อ                           | ดูเพิ่มเติมที่ [Application Status](#status-application) |
+| `order_by`   | No       | วิธีการจัดเรียงรายการ                          | `created_at`, `updated_at`                                    |
+| `status`     | No       | สถานะของใบคำสั่งซื้อ                           | ดูเพิ่มเติมที่ [Application Status](#api-applications-status) |
 | `query`      | No       | คำสั่ง Query                                   |
 
-## /applications/create
+## /applications/create {{id:api-applications-create}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '' \
   https://api.acrosure.com/applications/create;
@@ -301,7 +301,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.create({
 
 });
@@ -362,11 +362,11 @@ const response = await client.application.create({
 | `ref3`            | No       | ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3          |
 
 
-## /applications/update
+## /applications/update {{id:api-applications-update}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '' \
   https://api.acrosure.com/applications/update;
@@ -375,7 +375,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
 
@@ -403,15 +403,10 @@ const response = await client.application.update({
 ```json
 {
   "status": "ok",
-  "data": [
-    {
-      "id": "appl_SAMPLE01",
-      ...
-    }, {
-      "id": "appl_SAMPLE02",
-      ...
-    }
-  ]
+  "data": {
+    "id": "appl_SAMPLE01",
+    ...
+  }
 }
 ```
 
@@ -435,14 +430,14 @@ const response = await client.application.update({
 | `ref3`            | No       | ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3          |
 
 <aside class="warning">
-ไม่สามารถ update <code>package_code</code> โดยตรงได้ ต้องใช้ <a href="#applications-select-package">/applications/select-package</a> ในการเลือกแพคเกจ
+ไม่สามารถ update <code>package_code</code> โดยตรงได้ ต้องใช้ <a href="#api-applications-select-package">/applications/select-package</a> ในการเลือกแพคเกจ
 </aside>
 
-## /applications/get-packages
+## /applications/get-packages {{id:api-applications-get-packages}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get-packages;
@@ -451,7 +446,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.getPackages();
 ```
@@ -505,11 +500,11 @@ const response = await client.application.getPackages();
 ใบคำสั่งซื้อนั้นต้องไม่มี status เป็น <code>INITIAL</code> หรือก็คือต้องมี basic_data ที่ถูกต้อง
 </aside>
 
-## /applications/get-package
+## /applications/get-package {{id:api-applications-get-package}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get-package;
@@ -518,7 +513,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.getPackage();
 ```
@@ -563,11 +558,11 @@ const response = await client.application.getPackage();
 | ---------------- | -------- | ------------------- |
 | `application_id` | **Yes**  | หมายเลขใบคำสั่งซื้อ |
 
-## /applications/select-package
+## /applications/select-package {{id:api-applications-select-package}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01","package_code":"PACKAGE_SAMPLE_01"}' \
   https://api.acrosure.com/applications/select-package;
@@ -576,7 +571,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.selectPackage({
   package_code: 'PACKAGE_SAMPLE_01'
@@ -624,11 +619,11 @@ const response = await client.application.selectPackage({
 | `application_id` | **Yes**  | หมายเลขใบคำสั่งซื้อ |
 | `package_code`   | **Yes**  | หมายเลขแพคเกจ       |
 
-## /applications/submit
+## /applications/submit {{id:api-applications-submit}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PRIVATE_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/submit;
@@ -637,7 +632,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PRIVATE_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.submit();
 ```
@@ -671,6 +666,10 @@ const response = await client.application.submit();
 }
 ```
 
+<aside class="warning">
+API นี้ต้องการ Private Key
+</aside>
+
 ส่งคำขอไปยังบริษัทประกันภัย เพื่อขอคำยืนยันการสั่งซื้อและให้ทางบริษัทออกกรมธรรม์
 
 ### HTTP Request
@@ -687,11 +686,11 @@ const response = await client.application.submit();
 ชนิด complete_process ของ Product นั้นๆ ต้องเป็น <code>SUBMIT</code>
 </aside>
 
-## /applications/confirm
+## /applications/confirm {{id:api-applications-confirm}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PRIVATE_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -700,7 +699,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PRIVATE_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.confirm();
 ```
@@ -740,6 +739,10 @@ const response = await client.application.confirm();
   ]
 }
 ```
+
+<aside class="warning">
+API นี้ต้องการ Private Key
+</aside>
 
 ยืนยันการสั่งซื้อ โดยจะได้กรมธรรม์ออกมา
 

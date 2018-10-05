@@ -1,12 +1,12 @@
-# Data API reference
+# Data API reference {{id:api-data}}
 
 ใช้ในการจัดการข้อมูลอื่นๆ เช่น ดูค่าที่เป็นไปได้ของแต่ละฟิลด์ในฟอร์ม
 
-## /data/get
+## /data/get {{id:api-data-get}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"handler":"subdistrict","dependencies":["กรุงเทพมหานคร","วังทองหลาง"]}' \
   https://api.acrosure.com/data/get;
@@ -15,7 +15,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.data.get({
   handler: "subdistrict",
   dependencies: ["กรุงเทพมหานคร", "วังทองหลาง"]
@@ -77,7 +77,8 @@ const response = await client.data.get({
 | `handler`      | **Yes**                                          | ชื่อ [Handler](#handlers)                  |
 | `dependencies` | *No* (แต่ Yes สำหรับ Handler ที่มี Dependencies) | ค่าที่ต้องการในการเป็นเงื่อนไขการดึงข้อมูล |
 
-## รายการ Handlers
+
+## รายการ Handlers {{id:api-data-handlers}}
 
 รายชื่อ handlers ต่างๆ
 

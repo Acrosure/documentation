@@ -18,6 +18,7 @@ includes:
   - integrations/form
   - integrations/hybrid
   - integrations/api
+  - integrations/api-advanced
   - api/applications
   - api/products
   - api/policies
@@ -26,15 +27,76 @@ includes:
 search: true
 ---
 
-# เริ่มต้นใช้งาน
+# เริ่มต้นใช้งาน {{id:getting-started}}
+
+> การใช้งาน API Key คือการส่งไปใน Header ของ HTTP Request รูปแบบดังนี้:
+
+```
+Authorization: Bearer <YOUR_PUBLIC_KEY>
+```
+
+> ซึ่งตัวอย่างภายใน Documentation นี้ จะมีการส่ง API Key ไปด้วยทุกครั้ง ดังเช่นตัวอย่างด้านล่างนี้
+
+```shell
+curl -X POST \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Content-Type: application/json" \
+  https://api.acrosure.com/products/list;
+```
+
+```javascript
+import AcrosureClient from "@acrosure/js-sdk";
+
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const response = await client.product.list();
+```
+
+```java
+// Java Code
+```
+
+```python
+# Python Code
+```
+
+```csharp
+// CSharp Code
+```
+
+```swift
+// Swift Code
+```
+
+> ตัวอย่างผลลัพธ์จากคำสั่งด้านบน
+
+```json
+{
+  "status": "ok",
+  "data": [
+    {
+      "id": "prod_ta",
+      ...
+    }, {
+      "id": "prod_motor",
+      ...
+    }
+  ]
+}
+```
+
+> ซึ่งผลลัพธ์ดังกล่าวก็คือรายการประกันภัยที่คุณสามารถทดลองใช้งานได้ 
 
 ท่านสามารถเริ่มสมัครใช้งาน Acrosure เพื่อเริ่มทดลองเชื่อมต่อกับ Acrosure ได้อย่างง่ายๆ ดังนี้
 
-1.  เข้าไปที่เว็บไซต์ [Acrosure Dashboard](https://dashboard.acrosure.com) และคลิก **Register**
-2.  กรอกข้อมูลเพื่อลงทะเบียนใช้งาน โดยจะต้องระบุข้อมูลที่จำเป็นดังต่อไปนี้
-    - First Name
-    - Last Name
-    - Company Name
-    - Email
-    - Password / Password Confirmation
-3.  สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
+1. ลงทะเบียนสร้าง Account Acrosure <a href="https://dashboard.acrosure.com/signup" target="_blank">ได้ที่นี่</a>
+   
+2. Login เข้าสู่ Dashboard <a href="https://dashboard.acrosure.com/login" target="_blank">ได้ที่นี่</a>
+   
+3. Copy API Key มาใช้
+  ![Copy API Key](./images/getting-api-key.png)
+   
+4. สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
+
+<aside class="notice">
+Private Key สามารถเรียกได้ทุก API ที่ Public Key สามารถเรียกได้ แต่ Private Key มีไว้ใช้ใน Server เท่านั้น
+</aside>

@@ -1,4 +1,4 @@
-# เชื่อมต่อแบบ API
+# เชื่อมต่อแบบ API แบบง่าย {{id:integration-api}}
 
 ในบางกรณี นักพัฒนาอาจต้องการกรอกฟอร์มด้วย API ทั้งหมด เช่น กรณีที่นักพัฒนาต้องการสร้างระบบช่วยขายประกันสำหรับตัวแทนจำหน่าย
 โดยไม่ได้ให้ผู้ซื้อเป็นผู้กรอกข้อมูลเองโดยตรง เป็นต้น
@@ -9,16 +9,16 @@
 2. เรียกใช้ API `POST /applications/create` เพื่อกรอกข้อมูลภายในฟอร์ม
 3. เรียกใช้ API `POST /applications/confirm` เพื่อยืนยันการสั่งซื้อ
 
-## 1. ดูรายละเอียดของฟอร์ม
+## 1. ดูรายละเอียดของฟอร์ม {{id:integration-api-1}}
 
 ท่านสามารถดู `product_id` รายละเอียดฟอร์มที่ต้องกรอกได้จากหน้า Product ในแดชบอร์ด
 โดยสามารถดูโครงสร้างข้อมูลของฟอร์มได้จากหัวข้อ Form Schema และดูตัวอย่างข้อมูลทดสอบได้จากหัวข้อ Sample Form Data
 
-## 2. สร้างใบคำสั่งซื้อ
+## 2. สร้างใบคำสั่งซื้อ {{id:integration-api-2}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"spec_name":"S CNG AT","brand_name":"HONDA","model_name":"CITY","vehicle_type":"110","register_year":2017}}' \
   https://api.acrosure.com/applications/create;
@@ -27,7 +27,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.create({
   product_id: "prod_motor",
   basic_data: {
@@ -87,14 +87,14 @@ const response = await client.application.create({
 สร้างฟอร์มสั่งซื้อในลักษณะเดียวกันกับการสร้างฟอร์มแบบกรอกข้อมูลบางส่วน
 
 <aside class="notice">
-status ที่ได้อาจจะยังไม่เป็น <code>READY</code> หากข้อมูลยังไม่ถูกต้อง ซึ่งอาจต้องใช้การ update เพิ่มเติม
+status ที่ได้อาจจะยังไม่เป็น <code>READY</code> หากข้อมูลยังไม่ถูกต้อง ซึ่งอาจต้องใช้ <a href="#api-applications-update">/applications/update</a> เพิ่มเติม
 </aside>
 
-## 3. ยืนยันการสั่งซื้อ
+## 3. ยืนยันการสั่งซื้อ {{id:integration-api-3}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -103,7 +103,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```

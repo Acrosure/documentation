@@ -1,8 +1,8 @@
-# Policies API reference
+# Policies API reference {{id:api-policies}}
 
 Policy คือกรมธรรม์ที่ได้ร้องขอไปทางบริษัทประกันภัย
 
-## โครงสร้างข้อมูล Policy
+## โครงสร้างข้อมูล Policy {{id:api-policies-structure}}
 
 > ตัวอย่างข้อมูล
 
@@ -75,7 +75,7 @@ Policy คือกรมธรรม์ที่ได้ร้องขอไ�
 | `updated_at`          | เวลาที่อัพเดทกรมธรรม์ล่าสุด                                                                                                        |
 | `error_message`       | ข้อความบอก Error (ถ้ามี)                                                                                                           |
 
-## Status ของ Policy
+## Status ของ Policy {{id:api-policies-status}}
 
 | Name                | Meaning                                                    |
 | ------------------- | ---------------------------------------------------------- |
@@ -84,11 +84,11 @@ Policy คือกรมธรรม์ที่ได้ร้องขอไ�
 | `CANCELED`          | กรมธรรม์ถูกยกเลิก                                          |
 
 
-## /policies/get
+## /policies/get {{id:api-policies-get}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/policies/get;
@@ -97,7 +97,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.product.setId("plcy_SAMPLE01");
 const response = await client.policy.get();
 ```
@@ -143,11 +143,11 @@ const response = await client.policy.get();
 | `policy_id` | **Yes**  | รหัสกรมธรรม์ในระบบ |
 
 
-## /policies/list
+## /policies/list {{id:api-policies-list}}
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/policies/list;
@@ -156,7 +156,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.policy.list({
   product_id: "prod_ta"
 });
