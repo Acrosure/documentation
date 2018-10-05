@@ -1,0 +1,14 @@
+{
+  "hosting": [
+    {
+      "public": "build",
+      "target": "master",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    },
+    {
+      "public": "build",
+      "target": "staging",
+      "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
+  ]
+}

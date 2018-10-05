@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "acrosure"
+  },
+  "targets": {
+    "acrosure": {
+      "hosting": {
+        "master": [
+          "acrosure-documentation"
+        ],
+        "staging": [
+          "acrosure-documentation-staging"
+        ]
+      }
+    }
+  }
+}
