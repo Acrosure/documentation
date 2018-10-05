@@ -22,7 +22,6 @@ includes:
   - api/products
   - api/policies
   - api/data
-  - errors
 
 search: true
 ---
