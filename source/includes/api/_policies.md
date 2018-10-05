@@ -88,7 +88,7 @@ Policy คือกรมธรรม์ที่ได้ร้องขอไ�
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/policies/get;
@@ -97,7 +97,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.product.setId("plcy_SAMPLE01");
 const response = await client.policy.get();
 ```
@@ -147,7 +147,7 @@ const response = await client.policy.get();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/policies/list;
@@ -156,7 +156,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.policy.list({
   product_id: "prod_ta"
 });

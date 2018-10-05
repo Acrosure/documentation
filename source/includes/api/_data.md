@@ -6,7 +6,7 @@
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"handler":"subdistrict","dependencies":["กรุงเทพมหานคร","วังทองหลาง"]}' \
   https://api.acrosure.com/data/get;
@@ -15,7 +15,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.data.get({
   handler: "subdistrict",
   dependencies: ["กรุงเทพมหานคร", "วังทองหลาง"]

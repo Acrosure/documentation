@@ -17,7 +17,7 @@
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"vehicle_type":"110","register_year":2017,"brand_name":"HONDA","model_name":"CITY","spec_name":"S CNG AT"}}' \
   https://api.acrosure.com/applications/create;
@@ -26,7 +26,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.create({
   product_id: "prod_motor",
   basic_data: {
@@ -55,21 +55,6 @@ const response = await client.application.create({
 // Swift Code
 ```
 
-> ตัวอย่าง Request Body
-
-```json
-{
-  "product_id": "prod_ta",
-  "form_data": {
-    "brand_name": "HONDA",
-    "model_name": "CITY",
-    "spec_name": "S CNG AT",
-    "vehicle_type": "110",
-    "register_year": 2017
-  }
-}
-```
-
 > ตัวอย่าง Response Body
 
 ```json
@@ -84,7 +69,7 @@ const response = await client.application.create({
 
 เรียก API `POST /applications/create` โดยส่ง product_id ตามที่ปรากฎในแดชบอร์ด และระบุ form_data ที่ต้องการกรอกให้ผู้ใช้ล่วงหน้า
 
-ทั้งนี้การเรียก API ในส่วนนี้สามารถเรียกจากเซิฟเวอร์ หรือเรียกจากไคลเอนต์ด้วย JavaScript ก็ได้เช่นกัน
+ทั้งนี้การเรียก API ในส่วนนี้สามารถเรียกจากเซิร์ฟเวอร์ หรือเรียกจากไคลเอนต์ด้วย JavaScript ก็ได้เช่นกัน
 
 <aside class="notice">
 สังเกตว่าผลการตอบกลับของ API นี้อาจจะมี <code>error_fields</code> ซึ่งเป็นพฤติกรรมปกติ เนื่องจากฟอร์มยังไม่ถูกกรอกอย่างสมบูรณ์
@@ -95,7 +80,7 @@ const response = await client.application.create({
 > จากตัวอย่างนั้น URL ของฟอร์มจะเป็น
 
 ```
-https://form.acrosure.com/?token=tokn_sample_public&productId=prod_ta&applicationId=appl_SAMPLE01
+https://form.acrosure.com/?token=<YOUR_PUBLIC_KEY>&productId=prod_ta&applicationId=appl_SAMPLE01
 ```
 
 URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง `applicationId=appl_SAMPLE01` เข้าไป โดยนำ `application_id` จากผลในขั้นตอนที่แล้วมาใช้งาน
@@ -111,7 +96,7 @@ URL ของฟอร์มที่กรอกแล้วนี้จะเ�
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -120,7 +105,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
@@ -139,14 +124,6 @@ const response = await client.application.confirm();
 
 ```swift
 // Swift Code
-```
-
-> ตัวอย่าง Request Body
-
-```json
-{
-  "application_id": "appl_SAMPLE01"
-}
 ```
 
 > ตัวอย่าง Response Body
@@ -173,13 +150,3 @@ const response = await client.application.confirm();
 
 เมื่อชำระเงินเสร็จสิ้นแล้ว ผู้พัฒนาจำเป็นต้องเรียก API `POST /applications/confirm` เพื่อยืนยันการสั่งซื้อ API
 
-### ตัวอย่างค่าที่ต้องส่ง
-
-| Parameter              | Description                                                                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Authorization (Header) | ส่ง Authorization Header มีค่าเป็น `Bearer <secret_key>` โดยที่ `<secret_key>` โดยท่านสามารถดูได้จากหน้า API Keys ในแดชบอร์ด |
-| Application ID         | ระบุ Application ID ที่จะยืนยันการสั่งซื้อ (ซึ่งได้รับมาจากขั้นตอนที่แล้ว) ผ่านฟิลด์ application_id ใน JSON Request Body     |
-
-<aside class="notice">
-ต้องเปลี่ยน <code>tokn_sample_secret</code> เป็น API Key ของคุณ
-</aside>

@@ -162,7 +162,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get;
@@ -171,7 +171,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.get();
 ```
@@ -221,7 +221,7 @@ const response = await client.application.get();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_ta"}' \
   https://api.acrosure.com/applications/list;
@@ -230,7 +230,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.list({
   product_id: "prod_ta"
 });
@@ -292,7 +292,7 @@ const response = await client.application.list({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '' \
   https://api.acrosure.com/applications/create;
@@ -301,7 +301,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 const response = await client.application.create({
 
 });
@@ -366,7 +366,7 @@ const response = await client.application.create({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '' \
   https://api.acrosure.com/applications/update;
@@ -375,7 +375,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
 
@@ -403,15 +403,10 @@ const response = await client.application.update({
 ```json
 {
   "status": "ok",
-  "data": [
-    {
-      "id": "appl_SAMPLE01",
-      ...
-    }, {
-      "id": "appl_SAMPLE02",
-      ...
-    }
-  ]
+  "data": {
+    "id": "appl_SAMPLE01",
+    ...
+  }
 }
 ```
 
@@ -442,7 +437,7 @@ const response = await client.application.update({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get-packages;
@@ -451,7 +446,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.getPackages();
 ```
@@ -509,7 +504,7 @@ const response = await client.application.getPackages();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get-package;
@@ -518,7 +513,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.getPackage();
 ```
@@ -567,7 +562,7 @@ const response = await client.application.getPackage();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01","package_code":"PACKAGE_SAMPLE_01"}' \
   https://api.acrosure.com/applications/select-package;
@@ -576,7 +571,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.selectPackage({
   package_code: 'PACKAGE_SAMPLE_01'
@@ -628,7 +623,7 @@ const response = await client.application.selectPackage({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PRIVATE_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/submit;
@@ -637,7 +632,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PRIVATE_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.submit();
 ```
@@ -671,6 +666,10 @@ const response = await client.application.submit();
 }
 ```
 
+<aside class="warning">
+API นี้ต้องการ Private Key
+</aside>
+
 ส่งคำขอไปยังบริษัทประกันภัย เพื่อขอคำยืนยันการสั่งซื้อและให้ทางบริษัทออกกรมธรรม์
 
 ### HTTP Request
@@ -691,7 +690,7 @@ const response = await client.application.submit();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer tokn_sample_secret" \
+  --header "Authorization: Bearer <YOUR_PRIVATE_KEY>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -700,7 +699,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "tokn_sample_secret" });
+const client = new AcrosureClient({ token: "<YOUR_PRIVATE_KEY>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.confirm();
 ```
@@ -740,6 +739,10 @@ const response = await client.application.confirm();
   ]
 }
 ```
+
+<aside class="warning">
+API นี้ต้องการ Private Key
+</aside>
 
 ยืนยันการสั่งซื้อ โดยจะได้กรมธรรม์ออกมา
 
