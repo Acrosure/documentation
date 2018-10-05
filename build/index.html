@@ -1,0 +1,2766 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Acrosure API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .cm {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cp {
+  color: #999999;
+  font-weight: bold;
+}
+.highlight .c1 {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+.highlight .c, .highlight .cd {
+  color: #999988;
+  font-style: italic;
+}
+.highlight .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+.highlight .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+.highlight .ge {
+  color: #000000;
+  font-style: italic;
+}
+.highlight .gr {
+  color: #aa0000;
+}
+.highlight .gh {
+  color: #999999;
+}
+.highlight .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+  font-weight: bold;
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .gt {
+  color: #aa0000;
+}
+.highlight .kc {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kd {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kn {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kp {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kr {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .kt {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kv {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .mf {
+  color: #009999;
+}
+.highlight .mh {
+  color: #009999;
+}
+.highlight .il {
+  color: #009999;
+}
+.highlight .mi {
+  color: #009999;
+}
+.highlight .mo {
+  color: #009999;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #009999;
+}
+.highlight .sb {
+  color: #d14;
+}
+.highlight .sc {
+  color: #d14;
+}
+.highlight .sd {
+  color: #d14;
+}
+.highlight .s2 {
+  color: #d14;
+}
+.highlight .se {
+  color: #d14;
+}
+.highlight .sh {
+  color: #d14;
+}
+.highlight .si {
+  color: #d14;
+}
+.highlight .sx {
+  color: #d14;
+}
+.highlight .sr {
+  color: #009926;
+}
+.highlight .s1 {
+  color: #d14;
+}
+.highlight .ss {
+  color: #990073;
+}
+.highlight .s {
+  color: #d14;
+}
+.highlight .na {
+  color: #008080;
+}
+.highlight .bp {
+  color: #999999;
+}
+.highlight .nb {
+  color: #0086B3;
+}
+.highlight .nc {
+  color: #445588;
+  font-weight: bold;
+}
+.highlight .no {
+  color: #008080;
+}
+.highlight .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+.highlight .ni {
+  color: #800080;
+}
+.highlight .ne {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nf {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nl {
+  color: #990000;
+  font-weight: bold;
+}
+.highlight .nn {
+  color: #555555;
+}
+.highlight .nt {
+  color: #000080;
+}
+.highlight .vc {
+  color: #008080;
+}
+.highlight .vg {
+  color: #008080;
+}
+.highlight .vi {
+  color: #008080;
+}
+.highlight .nv {
+  color: #008080;
+}
+.highlight .ow {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .o {
+  color: #000000;
+  font-weight: bold;
+}
+.highlight .w {
+  color: #bbbbbb;
+}
+.highlight {
+  background-color: #f8f8f8;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;javascript&quot;,&quot;java&quot;,&quot;python&quot;,&quot;csharp&quot;,&quot;swift&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">cURL</a>
+              <a href="#" data-language-name="javascript">JavaScript</a>
+              <a href="#" data-language-name="java">Java</a>
+              <a href="#" data-language-name="python">Python</a>
+              <a href="#" data-language-name="csharp">C# .NET</a>
+              <a href="#" data-language-name="swift">Swift</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#7350ba863c" class="toc-h1 toc-link" data-title="เริ่มต้นใช้งาน">เริ่มต้นใช้งาน</a>
+          </li>
+          <li>
+            <a href="#333b278559" class="toc-h1 toc-link" data-title="ภาพรวม">ภาพรวม</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#688e52094b" class="toc-h2 toc-link" data-title="ขั้นตอนการทำงาน">ขั้นตอนการทำงาน</a>
+                  </li>
+                  <li>
+                    <a href="#ee8f86a80a" class="toc-h2 toc-link" data-title="รูปแบบการเชื่อมต่อ">รูปแบบการเชื่อมต่อ</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#form" class="toc-h1 toc-link" data-title="เชื่อมต่อแบบ Form">เชื่อมต่อแบบ Form</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1" class="toc-h2 toc-link" data-title="1. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม">1. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม</a>
+                  </li>
+                  <li>
+                    <a href="#2-callback" class="toc-h2 toc-link" data-title="2. รับ callback">2. รับ callback</a>
+                  </li>
+                  <li>
+                    <a href="#3" class="toc-h2 toc-link" data-title="3. ยืนยันการสั่งซื้อ">3. ยืนยันการสั่งซื้อ</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#hybrid" class="toc-h1 toc-link" data-title="เชื่อมต่อแบบ Hybrid">เชื่อมต่อแบบ Hybrid</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1" class="toc-h2 toc-link" data-title="1. ดูรายละเอียดของฟอร์ม">1. ดูรายละเอียดของฟอร์ม</a>
+                  </li>
+                  <li>
+                    <a href="#2" class="toc-h2 toc-link" data-title="2. สร้างฟอร์ม">2. สร้างฟอร์ม</a>
+                  </li>
+                  <li>
+                    <a href="#3" class="toc-h2 toc-link" data-title="3. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม">3. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#api" class="toc-h1 toc-link" data-title="เชื่อมต่อแบบ API">เชื่อมต่อแบบ API</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#1" class="toc-h2 toc-link" data-title="1. ดูรายละเอียดของฟอร์ม">1. ดูรายละเอียดของฟอร์ม</a>
+                  </li>
+                  <li>
+                    <a href="#2" class="toc-h2 toc-link" data-title="2. สร้างใบคำสั่งซื้อ">2. สร้างใบคำสั่งซื้อ</a>
+                  </li>
+                  <li>
+                    <a href="#3" class="toc-h2 toc-link" data-title="3. ยืนยันการสั่งซื้อ">3. ยืนยันการสั่งซื้อ</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#applications-api-reference" class="toc-h1 toc-link" data-title="Applications API reference">Applications API reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#application" class="toc-h2 toc-link" data-title="โครงสร้างข้อมูล Application">โครงสร้างข้อมูล Application</a>
+                  </li>
+                  <li>
+                    <a href="#status-application" class="toc-h2 toc-link" data-title="Status ของ Application">Status ของ Application</a>
+                  </li>
+                  <li>
+                    <a href="#applications-get" class="toc-h2 toc-link" data-title="/applications/get">/applications/get</a>
+                  </li>
+                  <li>
+                    <a href="#applications-list" class="toc-h2 toc-link" data-title="/applications/list">/applications/list</a>
+                  </li>
+                  <li>
+                    <a href="#applications-create" class="toc-h2 toc-link" data-title="/applications/create">/applications/create</a>
+                  </li>
+                  <li>
+                    <a href="#applications-update" class="toc-h2 toc-link" data-title="/applications/update">/applications/update</a>
+                  </li>
+                  <li>
+                    <a href="#applications-get-packages" class="toc-h2 toc-link" data-title="/applications/get-packages">/applications/get-packages</a>
+                  </li>
+                  <li>
+                    <a href="#applications-get-package" class="toc-h2 toc-link" data-title="/applications/get-package">/applications/get-package</a>
+                  </li>
+                  <li>
+                    <a href="#applications-select-package" class="toc-h2 toc-link" data-title="/applications/select-package">/applications/select-package</a>
+                  </li>
+                  <li>
+                    <a href="#applications-submit" class="toc-h2 toc-link" data-title="/applications/submit">/applications/submit</a>
+                  </li>
+                  <li>
+                    <a href="#applications-confirm" class="toc-h2 toc-link" data-title="/applications/confirm">/applications/confirm</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products-api-reference" class="toc-h1 toc-link" data-title="Products API reference">Products API reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#product" class="toc-h2 toc-link" data-title="โครงสร้างข้อมูล Product">โครงสร้างข้อมูล Product</a>
+                  </li>
+                  <li>
+                    <a href="#products-get" class="toc-h2 toc-link" data-title="/products/get">/products/get</a>
+                  </li>
+                  <li>
+                    <a href="#products-list" class="toc-h2 toc-link" data-title="/products/list">/products/list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#policies-api-reference" class="toc-h1 toc-link" data-title="Policies API reference">Policies API reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#policy" class="toc-h2 toc-link" data-title="โครงสร้างข้อมูล Policy">โครงสร้างข้อมูล Policy</a>
+                  </li>
+                  <li>
+                    <a href="#status-policy" class="toc-h2 toc-link" data-title="Status ของ Policy">Status ของ Policy</a>
+                  </li>
+                  <li>
+                    <a href="#policies-get" class="toc-h2 toc-link" data-title="/policies/get">/policies/get</a>
+                  </li>
+                  <li>
+                    <a href="#policies-list" class="toc-h2 toc-link" data-title="/policies/list">/policies/list</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#data-api-reference" class="toc-h1 toc-link" data-title="Data API reference">Data API reference</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#data-get" class="toc-h2 toc-link" data-title="/data/get">/data/get</a>
+                  </li>
+                  <li>
+                    <a href="#handlers" class="toc-h2 toc-link" data-title="รายการ Handlers">รายการ Handlers</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://docs.acrosure.com'>Sign Up for API Key</a></li>
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='7350ba863c'>เริ่มต้นใช้งาน</h1>
+<p>ท่านสามารถเริ่มสมัครใช้งาน Acrosure เพื่อเริ่มทดลองเชื่อมต่อกับ Acrosure ได้อย่างง่ายๆ ดังนี้</p>
+
+<ol>
+<li> เข้าไปที่เว็บไซต์ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a> และคลิก <strong>Register</strong></li>
+<li> กรอกข้อมูลเพื่อลงทะเบียนใช้งาน โดยจะต้องระบุข้อมูลที่จำเป็นดังต่อไปนี้
+
+<ul>
+<li>First Name</li>
+<li>Last Name</li>
+<li>Company Name</li>
+<li>Email</li>
+<li>Password / Password Confirmation</li>
+</ul></li>
+<li> สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที</li>
+</ol>
+<h1 id='333b278559'>ภาพรวม</h1><h2 id='688e52094b'>ขั้นตอนการทำงาน</h2>
+<p>ในกระบวนการสั่งซื้อประกันภัยผ่าน Acrosure จะประกอบไปด้วยขั้นตอนหลักๆ 3 ขั้นตอนดังนี้</p>
+
+<ol>
+<li> ผู้พัฒนาเลือกใช้ฟอร์มสั่งซื้อสำเร็จรูป หรือเรียก API เพื่อสร้างฟอร์มสำหรับสั่งซื้อเอง
+จากนั้น redirect ผู้ใช้ไปยังฟอร์มเพื่อให้ผู้ใช้กรอกข้อมูล</li>
+<li> เมื่อผู้ใช้กรอกข้อมูลเรียบร้อยแล้ว ผู้ใช้จะถูก redirect กลับมายังเว็บไซต์ของผู้ขาย
+(ตาม URL ที่นักพัฒนาระบุ) เพื่อให้ดำเนินการชำระเงินต่อไป</li>
+<li> เมื่อชำระเงินเรียบร้อยแล้ว ให้เรียก API เพื่อยืนยันการสั่งซื้อจากเซิฟเวอร์ของผู้พัฒนา</li>
+</ol>
+<h2 id='ee8f86a80a'>รูปแบบการเชื่อมต่อ</h2>
+<p>เนื่องจากข้อมูลที่ต้องใช้ในการซื้อกรมธรรม์ประกันภัยมีความซับซ้อน การ implement ระบบเพื่อเชื่อมต่อเข้ากับ Dhipaya Insurance Gateway จึงสามารถทำได้ 3 แบบด้วยกัน ดังนี้</p>
+<h3 id='1-form'>1. <a href="#form">เชื่อมต่อแบบ Form</a></h3>
+<p>การเชื่อมต่อระบบแบบ form นั้นเป็นการเชื่อมต่อที่ง่ายกว่า โดยจะเป็นการ redirect ลูกค้ามาที่หน้า form ในการซื้อประกันภัยของระบบ Dhipaya Insurance Gateway และเมื่อลูกค้ากรอกข้อมูลครบถ้วนแล้ว จะทำการ redirect กลับไปยังหน้าเว็บไซต์ของ partner เพื่อทำการดำเนินการขั้นตอนต่อไป</p>
+<h3 id='2-hybrid'>2. <a href="#hybrid">เชื่อมต่อแบบ Hybrid</a></h3>
+<p>การเชื่อมต่อแบบ Hybrid คือการเชื่อมต่อที่ผสมทั้งแบบ form และแบบ API โดยจะเหมาะสำหรับระบบที่มีข้อมูลลูกค้าอยู่แล้วบางส่วน และต้องการให้ลูกค้ากรอกเพิ่มเติมในส่วนที่ขาด</p>
+<h3 id='3-api'>3. <a href="#api">เชื่อมต่อแบบ API</a></h3>
+<p>การเชื่อมต่อระบบแบบ API นั้นเป็นการเชื่อมต่อที่ซับซ้อนกว่า เพราะการซื้อกรมธรรม์ประกันภัยนั้นมีข้อมูลที่ต้องใช้หลายหลาย และบาง field ข้อมูลก็มีเงื่อนไขแตกต่างกันไป ข้อดีของการเชื่อมต่อแบบนี้คือลูกค้าจะได้รับประสบการณ์ที่ดีกว่าในการซื้อสินค้าหรือบริการ</p>
+<h1 id='form'>เชื่อมต่อแบบ Form</h1>
+<p>ท่านสามารถใช้ฟอร์มสำเร็จรูปสำหรับเริ่มการสั่งซื้อประกันภัยได้ทันที โดยวิธีนี้จะสามารถทำได้ง่ายที่สุด แต่ผู้ซื้อจำเป็นต้องกรอกข้อมูลในการสั่งซื้อทั้งหมดด้วยตนเอง</p>
+
+<p>การเชื่อมต่อในส่วนนี้จะประกอบด้วย 3 ขั้นตอน คือ</p>
+
+<ol>
+<li>ส่งผู้ใช้ไปยังฟอร์มสำเร็จรูป</li>
+<li>รับ callback หลังกรอกข้อมูลเสร็จสิ้น</li>
+<li>เรียก API ยืนยันการสั่งซื้อจากเซิฟเวอร์</li>
+</ol>
+<h2 id='1'>1. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม</h2>
+<blockquote>
+<p>ตัวอย่างโค้ด HTML ซึ่งเป็นลิงก์สำหรับการสั่งซื้อ</p>
+</blockquote>
+<pre class="highlight html tab-html"><code>  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://form.acrosure.com/?token=tokn_sample_public&amp;productId=prod_ta"</span><span class="nt">&gt;</span>สั่งซื้อประกันภัย<span class="nt">&lt;/a&gt;</span>
+</code></pre>
+<p>สำหรับส่งผู้ใช้ไปสั่งซื้อประกันด้วยฟอร์มสำเร็จรูป สามารถทำได้ดังนี้</p>
+
+<ol>
+<li>เข้าไปที่หน้า Products ในแดชบอร์ด จากนั้นเลือก Product ที่ต้องการสั่งซื้อ</li>
+<li>คัดลอก URL สำหรับ redirect ผู้ใช้ไปยังแบบฟอร์มสั่งซื้อประกันภัย ไปใช้ได้ทันที โดยสร้างเป็นลิงก์หรือปุ่มด้วย HTML เพื่อส่งผู้ใช้ไปยังหน้าแบบฟอร์มดังกล่าว</li>
+</ol>
+
+<aside class="warning">
+ห้ามใช้ Secret Key ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
+</aside>
+<h2 id='2-callback'>2. รับ callback</h2>
+<blockquote>
+<p>การเรียก callback จะส่ง Application ID มาผ่าน URL ในส่วนคิวรีสตริง โดยมีรูปแบบดังนี้</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://example.com/dhipaya/callback?applicationId=appl_SAMPLE01
+</code></pre>
+<blockquote>
+<p>ให้นักพัฒนาเก็บ <code>applicationId</code> ไว้ จากนั้นนำผู้ใช้ไปดำเนินการชำระเงิน ก่อนจะยืนยันการสั่งซื้อในขั้นตอนสุดท้าย</p>
+</blockquote>
+
+<p>เมื่อผู้ใช้กรอกข้อมูลการสั่งซื้อเสร็จสิ้น ผู้ใช้จะถูก redirect กลับมาที่เว็บไซต์ของนักพัฒนา เพื่อดำเนินการชำระเงินให้เสร็จสิ้น ก่อนจะยืนยันการสั่งซื้อประกันภัยเป็นขั้นตอนสุดท้าย</p>
+
+<p>อย่างไรก็ตาม หากยังไม่ได้กำหนดหน้า callback ไว้ เบื้องต้นระบบจะ redirect ไปยังหน้าตัวอย่าง เพื่อให้ผู้พัฒนาพัฒนาหน้านี้ต่อไป</p>
+
+<p>ท่านสามารถระบุ URL ของหน้าที่จะใช้เป็น callback ได้ โดยเข้าไปที่เมนู API Keys จากแดชบอร์ด</p>
+<h2 id='3'>3. ยืนยันการสั่งซื้อ</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/confirm;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Request Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เมื่อผู้ใช้กรอกข้อมูลการสั่งซื้อประกันภัยเรียบร้อยแล้ว ผู้ใช้จะถูก redirect กลับมาที่เว็บไซต์ของผู้พัฒนา พร้อมกับ Application ID เพื่อให้ผู้พัฒนาได้ดำเนินการชำระเงินให้เรียบร้อย</p>
+
+<p>เมื่อชำระเงินเสร็จสิ้นแล้ว ผู้พัฒนาจำเป็นต้องเรียก API <code>POST /applications/confirm</code> เพื่อยืนยันการสั่งซื้อ API</p>
+<h3 id='9c214017dd'>ตัวอย่างค่าที่ต้องส่ง</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization (Header)</td>
+<td>ส่ง Authorization Header มีค่าเป็น <code>Bearer &lt;secret_key&gt;</code> โดยที่ <code>&lt;secret_key&gt;</code> โดยท่านสามารถดูได้จากหน้า API Keys ในแดชบอร์ด</td>
+</tr>
+<tr>
+<td>Application ID</td>
+<td>ระบุ Application ID ที่จะยืนยันการสั่งซื้อ (ซึ่งได้รับมาจากขั้นตอนที่แล้ว) ผ่านฟิลด์ application_id ใน JSON Request Body</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+ต้องเปลี่ยน <code>tokn_sample_secret</code> เป็น API Key ของคุณ
+</aside>
+<h1 id='hybrid'>เชื่อมต่อแบบ Hybrid</h1>
+<p>เพื่อให้ผู้ใช้ตัดสินใจสั่งซื้อประกันภัยได้อย่างรวดเร็วยิ่งขึ้น ท่านสามารถสร้างลิงก์สำหรับสั่งซื้อเฉพาะสำหรับผู้ซื้อรายนั้นๆ เพื่อให้ท่านสามารถกรอกข้อมูลบางส่วนที่ทราบอยู่แล้วให้ผู้ใช้ได้ทันที ก่อนที่จะ redirect ผู้ใช้ไปยังหน้าสั่งซื้อต่อไป</p>
+
+<p>ขั้นตอนในการสร้างและกรอกฟอร์มล่วงหน้ามีดังนี้</p>
+
+<ol>
+<li>ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</li>
+<li>เรียก API <code>POST /applications/create</code> เพื่อสร้างฟอร์ม</li>
+<li>สร้าง URL ของฟอร์มและ redirect ผู้ใช้ไปที่ฟอร์มตามปกติ</li>
+</ol>
+<h2 id='1'>1. ดูรายละเอียดของฟอร์ม</h2>
+<p>ท่านสามารถดู product_id รายละเอียดฟอร์มที่ต้องกรอกได้จากหน้า Product ในแดชบอร์ด
+โดยสามารถดูโครงสร้างข้อมูลของฟอร์มได้จากหัวข้อ Form Schema และดูตัวอย่างข้อมูลทดสอบได้จากหัวข้อ Sample Form Data</p>
+<h2 id='2'>2. สร้างฟอร์ม</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_motor","form_data":{"vehicle_type":"110","register_year":2017,"brand_name":"HONDA","model_name":"CITY","spec_name":"S CNG AT"}}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/create;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_motor"</span><span class="p">,</span>
+  <span class="na">basic_data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">brand_name</span><span class="p">:</span> <span class="s2">"HONDA"</span><span class="p">,</span>
+    <span class="na">model_name</span><span class="p">:</span> <span class="s2">"CITY"</span><span class="p">,</span>
+    <span class="na">spec_name</span><span class="p">:</span> <span class="s2">"S CNG AT"</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s2">"110"</span><span class="p">,</span>
+    <span class="na">register_year</span><span class="p">:</span> <span class="mi">2017</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Request Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"form_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HONDA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CITY"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"spec_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S CNG AT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"register_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2017</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียก API <code>POST /applications/create</code> โดยส่ง product_id ตามที่ปรากฎในแดชบอร์ด และระบุ form_data ที่ต้องการกรอกให้ผู้ใช้ล่วงหน้า</p>
+
+<p>ทั้งนี้การเรียก API ในส่วนนี้สามารถเรียกจากเซิฟเวอร์ หรือเรียกจากไคลเอนต์ด้วย JavaScript ก็ได้เช่นกัน</p>
+
+<aside class="notice">
+สังเกตว่าผลการตอบกลับของ API นี้อาจจะมี <code>error_fields</code> ซึ่งเป็นพฤติกรรมปกติ เนื่องจากฟอร์มยังไม่ถูกกรอกอย่างสมบูรณ์
+</aside>
+<h2 id='3'>3. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม</h2>
+<blockquote>
+<p>จากตัวอย่างนั้น URL ของฟอร์มจะเป็น</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://form.acrosure.com/?token=tokn_sample_public&amp;productId=prod_ta&amp;applicationId=appl_SAMPLE01
+</code></pre>
+<p>URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง <code>applicationId=appl_SAMPLE01</code> เข้าไป โดยนำ <code>application_id</code> จากผลในขั้นตอนที่แล้วมาใช้งาน</p>
+
+<p>เมื่อ redirect ผู้ใช้ไปยัง URL ดังกล่าว ผู้ใช้จะพบกับฟอร์มที่กรอกข้อมูลไว้แล้ว และสามารถทำรายการที่เหลือต่อได้ตามปกติ เช่นเดียวกับการใช้ฟอร์มสำเร็จรูป</p>
+
+<aside class="warning">
+ห้ามใช้ Secret Key ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
+</aside>
+<h1 id='api'>เชื่อมต่อแบบ API</h1>
+<p>ในบางกรณี นักพัฒนาอาจต้องการกรอกฟอร์มด้วย API ทั้งหมด เช่น กรณีที่นักพัฒนาต้องการสร้างระบบช่วยขายประกันสำหรับตัวแทนจำหน่าย
+โดยไม่ได้ให้ผู้ซื้อเป็นผู้กรอกข้อมูลเองโดยตรง เป็นต้น</p>
+
+<p>ในกรณีดังกล่าว นักพัฒนาสามารถเรียก API เพื่อดำเนินการทั้งหมดได้ ดังนี้</p>
+
+<ol>
+<li>ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</li>
+<li>เรียกใช้ API <code>POST /applications/create</code> เพื่อกรอกข้อมูลภายในฟอร์ม</li>
+<li>เรียกใช้ API <code>POST /applications/confirm</code> เพื่อยืนยันการสั่งซื้อ</li>
+</ol>
+<h2 id='1'>1. ดูรายละเอียดของฟอร์ม</h2>
+<p>ท่านสามารถดู <code>product_id</code> รายละเอียดฟอร์มที่ต้องกรอกได้จากหน้า Product ในแดชบอร์ด
+โดยสามารถดูโครงสร้างข้อมูลของฟอร์มได้จากหัวข้อ Form Schema และดูตัวอย่างข้อมูลทดสอบได้จากหัวข้อ Sample Form Data</p>
+<h2 id='2'>2. สร้างใบคำสั่งซื้อ</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_motor","form_data":{"spec_name":"S CNG AT","brand_name":"HONDA","model_name":"CITY","vehicle_type":"110","register_year":2017}}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/create;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_motor"</span><span class="p">,</span>
+  <span class="na">basic_data</span><span class="p">:</span> <span class="p">{</span>
+    <span class="na">brand_name</span><span class="p">:</span> <span class="s2">"HONDA"</span><span class="p">,</span>
+    <span class="na">model_name</span><span class="p">:</span> <span class="s2">"CITY"</span><span class="p">,</span>
+    <span class="na">spec_name</span><span class="p">:</span> <span class="s2">"S CNG AT"</span><span class="p">,</span>
+    <span class="na">vehicle_type</span><span class="p">:</span> <span class="s2">"110"</span><span class="p">,</span>
+    <span class="na">register_year</span><span class="p">:</span> <span class="mi">2017</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Request Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_motor"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"basic_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"spec_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"S CNG AT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"HONDA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"model_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CITY"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"vehicle_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"register_year"</span><span class="p">:</span><span class="w"> </span><span class="mi">2017</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"READY"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>สร้างฟอร์มสั่งซื้อในลักษณะเดียวกันกับการสร้างฟอร์มแบบกรอกข้อมูลบางส่วน</p>
+
+<aside class="notice">
+status ที่ได้อาจจะยังไม่เป็น <code>READY</code> หากข้อมูลยังไม่ถูกต้อง ซึ่งอาจต้องใช้การ update เพิ่มเติม
+</aside>
+<h2 id='3'>3. ยืนยันการสั่งซื้อ</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/confirm;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Request Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ยืนยันการสั่งซื้อ เช่นเดียวกับการสั่งซื้อด้วยวิธีการอื่นๆ</p>
+<h1 id='applications-api-reference'>Applications API reference</h1>
+<p>Application คือใบคำสั่งซื้อกรมธรรม์ ซึ่งทางผู้ใช้งาน Acrosure สามารถจัดการกับข้อมูลภายในแบบฟอร์มการซื้อประกันได้อย่างอิสระ ก่อนที่จะขอออกกรมธรรม์กับทางบริษัทประกันภัย</p>
+
+<p>ใบคำสั่งซื้อของประกันแต่ละประเภทจะมีโครงสร้างข้อมูลในแบบฟอร์มที่แตกต่างกัน คือฟิลด์ <code>basic_data</code>, <code>package_options</code> และ <code>additional_data</code> ซึ่งสามารถดูโครงสร้างข้อมูลแบบฟอร์มเหล่านี้ได้บน <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a></p>
+<h2 id='application'>โครงสร้างข้อมูล Application</h2>
+<blockquote>
+<p>ตัวอย่างข้อมูล</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sandbox_appl_VipGM9uFBqoyAMnI"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"form_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"086161236"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1489900087857"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"GERMANY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"JAPAN"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-21T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-14T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0812345678"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"moo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lane"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO 4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"alley"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"village"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VILLAGE"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chatuchak"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangkok"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10900"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"subdistrict"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chomphon"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"minor_district"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1489900087857"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominee"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-10-14T00:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"relationship"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0812345678"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"moo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"lane"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO 4"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"alley"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"village"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VILLAGE"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chatuchak"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangkok"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"address_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10900"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"subdistrict"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chomphon"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"minor_district"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1682086540364"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nominee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR. MANOCH MUNGMARN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-12-31T00:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANEE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"relationship"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brother/Sister"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"customer_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"start_province"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"destination_provinces"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXPIRED"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"paid"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1351</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"amount_with_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">1452</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTNER"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ref1"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ref2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"ref3"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"insurer_package_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ITA0402"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"insurer_package_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"insurer_application_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"package_data"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"display_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP00010000476"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"step"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-14T20:53:59.547879Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-23T15:57:11.5342Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"expired_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-21T20:53:59.530746Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_sample_partner"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team_sample"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"group_policy_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"International Travel Insurance"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"policy_ids"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Partner"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ข้อมูลภายในใบคำสั่งซื้อที่ได้คืนมาจากการเรียก API ต่างๆ โดยบางฟิลด์เป็นฟิลด์ที่ทาง Acrosure คำนวณมาให้ ไม่สามารถแก้ไขได้โดยตรง (เช่น ค่าเบี้ยประกัน หรือข้อความ error)</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>รหัสของใบคำสั่งซื้อที่ใช้อ้างอิงในที่ต่างๆ</td>
+</tr>
+<tr>
+<td><code>display_id</code></td>
+<td>หมายเลขของใบคำสั่งซื้อ อยู่ในรูปแบบที่อ่านง่าย</td>
+</tr>
+<tr>
+<td><code>basic_data</code></td>
+<td>ข้อมูลเบื้องต้นที่ต้องใช้ในการค้นหาแพคเกจ (ดูเพิ่มที่ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a>)</td>
+</tr>
+<tr>
+<td><code>package_options</code></td>
+<td>ข้อมูลเพิ่มเติมที่ใช้ในการค้นหาแพคเกจ (ดูเพิ่มที่ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a>)</td>
+</tr>
+<tr>
+<td><code>additional_data</code></td>
+<td>ข้อมูลรายละเอียดสำหรับการออกกรมธรรม์ (ดูเพิ่มที่ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a>)</td>
+</tr>
+<tr>
+<td><code>package_code</code></td>
+<td>รหัสแพคเกจที่เลือกซื้อ</td>
+</tr>
+<tr>
+<td><code>ref1</code></td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 1</td>
+</tr>
+<tr>
+<td><code>ref2</code></td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 2</td>
+</tr>
+<tr>
+<td><code>ref3</code></td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>สถานะของใบคำสั่งซื้อ ดูเพิ่มเติมได้ที่ <a href="#status-application">Application Status</a></td>
+</tr>
+<tr>
+<td><code>paid</code></td>
+<td>ค่าที่บ่งบอกสถานะการชำระเงินของใบคำสั่งซื้อ</td>
+</tr>
+<tr>
+<td><code>net_premium</code></td>
+<td>ค่าเบี้ยประกันเบื้องต้น</td>
+</tr>
+<tr>
+<td><code>gross_premium</code></td>
+<td>ค่าเบี้ยประกันสุทธิ</td>
+</tr>
+<tr>
+<td><code>vat</code></td>
+<td>ค่า VAT</td>
+</tr>
+<tr>
+<td><code>duty</code></td>
+<td>ค่าภาษีอากร</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td>หมายเลข step ที่ใบคำสั่งซื้อนั้นกำลังดำเนินการอยู่ (ใช้ภายใน <a href="https://form.acrosure.com">Acosure Form</a>)</td>
+</tr>
+<tr>
+<td><code>product_id</code></td>
+<td>รหัสชนิดของ Product</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>รหัสของผู้ใช้ที่สร้างใบคำสั่งซื้อนี้ (ถ้าใช้ API Key ของ Team จะไม่มีฟิลด์นี้)</td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>รหัสของทีมที่สร้างใบคำสั่งซื้อนี้ (ทีมของคุณนั่นเอง! 🎉)</td>
+</tr>
+<tr>
+<td><code>policy_ids</code></td>
+<td>รายการรหัสของกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>error_fields</code></td>
+<td>รายการที่บอกว่าฟิลด์ในแบบฟอร์มฟิลด์ไหนยังไม่ถูกต้อง</td>
+</tr>
+<tr>
+<td><code>error_message</code></td>
+<td>ข้อความที่แจ้งความไม่ถูกต้องต่างๆ เช่น มีฟิลด์ไม่ครบ ยังไม่เลือกแพคเกจ เป็นต้น</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>เวลาที่สร้างใบคำสั่งซื้อนี้</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>เวลาที่อัพเดทใบคำสั่งซื้อล่าสุด</td>
+</tr>
+<tr>
+<td><code>expired_at</code></td>
+<td>เวลาที่ใบคำสั่งซื้อนี้จะหมดอายุ</td>
+</tr>
+</tbody></table>
+<h2 id='status-application'>Status ของ Application</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>INITIAL</code></td>
+<td>ข้อมูลเบื้องต้น (<code>basic_data</code>) ยังไม่ครบ</td>
+</tr>
+<tr>
+<td><code>PACKAGE_REQUIRED</code></td>
+<td>ข้อมูลเบื้องต้นถูกต้องแล้ว แต่ยังไม่มี <code>package_code</code> หรือ มี <code>package_code</code> แล้ว แต่ข้อมูลใบคำสั่งซื้อที่มีไม่สามารถเลือกแพคเกจนั้นได้อีก</td>
+</tr>
+<tr>
+<td><code>DATA_REQUIRED</code></td>
+<td>ข้อมูลเบื้องต้นถูกต้องและเลือกแพคเกจแล้ว แต่ข้อมูลสำหรับการออกกรมธรรม์ยังไม่ถูกต้อง</td>
+</tr>
+<tr>
+<td><code>READY</code></td>
+<td>ข้อมูลครบถ้วน และเลือกแพคเกจแล้ว พร้อมสำหรับการร้องขอกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>CONFIRMING</code></td>
+<td>กำลังยืนยันใบคำสั่งซื้อ</td>
+</tr>
+<tr>
+<td><code>ONLINE_PAYMENT_PENDING</code></td>
+<td>รอการชำระเงินผ่านช่องทางออนไลน์</td>
+</tr>
+<tr>
+<td><code>POLICY_PENDING</code></td>
+<td>กำลังรอกรมธรรม์ดาวน์โหลด</td>
+</tr>
+<tr>
+<td><code>CANCELLED</code></td>
+<td>ใบคำสั่งซื้อถูกยกเลิก</td>
+</tr>
+<tr>
+<td><code>COMPLETED</code></td>
+<td>ใบคำสั่งซื้อเสร็จสมบูรณ์</td>
+</tr>
+<tr>
+<td><code>SUBMITTED</code></td>
+<td>กำลังรอทางบริษัทประกันภัยยืนยันและออกกรมธรรม์ให้</td>
+</tr>
+<tr>
+<td><code>TENTATIVELY_ACCEPTED</code></td>
+<td>เกิดปัญหาจากทางบริษัทประกันภัย แต่ Acrosure ถือว่าใบคำสั่งซื้อสมบูรณ์แล้ว  และจะดำเนินการต่อให้</td>
+</tr>
+<tr>
+<td><code>EXPIRED</code></td>
+<td>ใบคำสั่งซื้อหมดอายุ</td>
+</tr>
+</tbody></table>
+<h2 id='applications-get'>/applications/get</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/get;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูข้อมูลใบคำขอสั่งซื้อ</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/get</code></p>
+<h3 id='request-body'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>รหัสของใบคำสั่งซื้อ</td>
+</tr>
+</tbody></table>
+<h2 id='applications-list'>/applications/list</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_ta"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/list;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_ta"</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูรายการใบคำขอสั่งซื้อ โดยสามารถระบุเงื่อนไขเพิ่มเติมหรือไม่ก็ได้</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/list</code></p>
+<h3 id='request-body-2'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Possible Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>product_id</code></td>
+<td>No</td>
+<td>ชนิดของ Product</td>
+<td></td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>No</td>
+<td>ตำแหน่งในลำดับของใบคำสั่งซื้อที่ต้องการเริ่มดู</td>
+<td></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>No</td>
+<td>จำนวนสูงสุดของข้อมูลในรายการ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>order_by</code></td>
+<td>No</td>
+<td>วิธีการจัดเรียงรายการ</td>
+<td><code>created_at</code>, <code>updated_at</code></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>No</td>
+<td>สถานะของใบคำสั่งซื้อ</td>
+<td>ดูเพิ่มเติมที่ <a href="#status-application">Application Status</a></td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>No</td>
+<td>คำสั่ง Query</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='applications-create'>/applications/create</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">''</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/create;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>สร้างใบคำสั่งซื้อ โดยสามารถสร้างแบบข้อมูลไม่ครบไว้ก่อน แล้วนำไป update ในคราวหลังได้</p>
+
+<p>โดยโครงสร้างข้อมูล <code>basic_data</code>, <code>package_options</code>, <code>additional_data</code> สามารถดูรายละเอียดได้ที่ Dashboard ภายใน Product นั้นๆ</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/create</code></p>
+<h3 id='request-body-3'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>product_id</code></td>
+<td><strong>Yes</strong></td>
+<td>ชนิดของ Product</td>
+</tr>
+<tr>
+<td><code>basic_data</code></td>
+<td>No</td>
+<td>ข้อมูลเบื้องต้นที่ต้องใช้ในการค้นหาแพคเกจ</td>
+</tr>
+<tr>
+<td><code>package_options</code></td>
+<td>No</td>
+<td>ข้อมูลเพิ่มเติมที่ใช้ในการค้นหาแพคเกจ (ถ้ามี)</td>
+</tr>
+<tr>
+<td><code>additional_data</code></td>
+<td>No</td>
+<td>ข้อมูลรายละเอียดสำหรับการออกกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>package_code</code></td>
+<td>No</td>
+<td>รหัสแพคเกจที่ต้องการเลือกซื้อ</td>
+</tr>
+<tr>
+<td><code>ref1</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 1</td>
+</tr>
+<tr>
+<td><code>ref2</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 2</td>
+</tr>
+<tr>
+<td><code>ref3</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3</td>
+</tr>
+</tbody></table>
+<h2 id='applications-update'>/applications/update</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">''</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/update;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span>
+
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>อัพเดทใบคำสั่งซื้อ โดยสามารถอัพเดทแบบข้อมูลไม่ครบเพื่อเป็นการบันทึกไว้ก่อน แล้วนำไป update ในคราวหลังได้</p>
+
+<p>โดยโครงสร้างข้อมูล <code>basic_data</code>, <code>package_options</code>, <code>additional_data</code> สามารถดูรายละเอียดได้ที่ Dashboard ภายใน Product นั้นๆ</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/update</code></p>
+<h3 id='request-body-4'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>basic_data</code></td>
+<td>No</td>
+<td>ข้อมูลเบื้องต้นที่ต้องใช้ในการค้นหาแพคเกจ</td>
+</tr>
+<tr>
+<td><code>package_options</code></td>
+<td>No</td>
+<td>ข้อมูลเพิ่มเติมที่ใช้ในการค้นหาแพคเกจ (ถ้ามี)</td>
+</tr>
+<tr>
+<td><code>additional_data</code></td>
+<td>No</td>
+<td>ข้อมูลรายละเอียดสำหรับการออกกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>ref1</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 1</td>
+</tr>
+<tr>
+<td><code>ref2</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 2</td>
+</tr>
+<tr>
+<td><code>ref3</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">
+ไม่สามารถ update <code>package_code</code> โดยตรงได้ ต้องใช้ <a href="#applications-select-package">/applications/select-package</a> ในการเลือกแพคเกจ
+</aside>
+<h2 id='applications-get-packages'>/applications/get-packages</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/get-packages;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">getPackages</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"package_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PACKAGE_SAMPLE_01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"package_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PACKAGE_SAMPLE_02"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูแพคเกจทั้งหมดที่ใบคำสั่งซื้อนั้นสามารถซื้อได้</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/get-packages</code></p>
+<h3 id='request-body-5'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขใบคำสั่งซื้อ</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+ใบคำสั่งซื้อนั้นต้องไม่มี status เป็น <code>INITIAL</code> หรือก็คือต้องมี basic_data ที่ถูกต้อง
+</aside>
+<h2 id='applications-get-package'>/applications/get-package</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/get-package;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">getPackage</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"package_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PACKAGE_SAMPLE_01"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ดูแพคเกจที่ใบคำสั่งซื้อนั้นเลือกอยู่</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/get-package</code></p>
+<h3 id='request-body-6'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขใบคำสั่งซื้อ</td>
+</tr>
+</tbody></table>
+<h2 id='applications-select-package'>/applications/select-package</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01","package_code":"PACKAGE_SAMPLE_01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/select-package;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">selectPackage</span><span class="p">({</span>
+  <span class="na">package_code</span><span class="p">:</span> <span class="s1">'PACKAGE_SAMPLE_01'</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เลือกแพคเกจสำหรับใบคำสั่งซื้อ</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/select-package</code></p>
+<h3 id='request-body-7'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขใบคำสั่งซื้อ</td>
+</tr>
+<tr>
+<td><code>package_code</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขแพคเกจ</td>
+</tr>
+</tbody></table>
+<h2 id='applications-submit'>/applications/submit</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/submit;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">submit</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUBMITTED"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ส่งคำขอไปยังบริษัทประกันภัย เพื่อขอคำยืนยันการสั่งซื้อและให้ทางบริษัทออกกรมธรรม์</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/submit</code></p>
+<h3 id='request-body-8'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขใบคำสั่งซื้อ</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+ชนิด complete_process ของ Product นั้นๆ ต้องเป็น <code>SUBMIT</code>
+</aside>
+<h2 id='applications-confirm'>/applications/confirm</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/applications/confirm;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ยืนยันการสั่งซื้อ โดยจะได้กรมธรรม์ออกมา</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/applications/confirm</code></p>
+<h3 id='request-body-9'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>application_id</code></td>
+<td><strong>Yes</strong></td>
+<td>หมายเลขใบคำสั่งซื้อ</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+ชนิด complete_process ของ Product นั้นๆ ต้องเป็น <code>CONFIRM</code>
+</aside>
+
+<aside class="success">
+การดาวน์โหลดกรมธรรม์อาจมีการล่าช้าเล็กน้อย โดยดูได้จาก status ของ Policy ที่ถ้าหากเป็น <code>COMPLETED</code> หมายถึงไฟล์นั้นสามารถใช้งานได้แล้ว
+</aside>
+<h1 id='products-api-reference'>Products API reference</h1>
+<p>Product คือประกันภัย โดยประกันภัยแต่ละประเภทจะต้องการข้อมูลสำหรับออกกรมธรรม์ที่แตกต่างกัน ดูเพิ่มเติมได้ที่ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a></p>
+<h2 id='product'>โครงสร้างข้อมูล Product</h2>
+<blockquote>
+<p>ตัวอย่างข้อมูล</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"International Travel Insurance"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_international"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"insurer_product_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_international"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"handler_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ta_international"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"form_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"countries"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARRAY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ประเทศที่ต้องการไป"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy_date"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATETIME"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"วันที่เริ่มคุ้มครอง"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required_for_package"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"expiry_date"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATETIME"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"วันที่หมดความคุ้มครอง"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required_for_package"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"policy_unit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"แบบประกัน (รายวัน/รายปี)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"travel_policy_unit"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เดินทางรายวัน"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เดินทางรายปี"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_title"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"คำนำหน้าชื่อ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"person_title"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_first_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ชื่อ"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"customer_last_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"นามสกุล"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"company_name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ชื่อบริษัท"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card_type"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ประเภทบัตร"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_card_type"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บัตรประชาชน"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"พาสปอร์ต"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_card"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เลขบัตร"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"อีเมล์"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เบอร์โทรศัพท์"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insurer_list"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ARRAY"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ผู้เอาประกันภัย"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"คำนำหน้าชื่อ"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"person_title"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"first_name"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ชื่อ"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"last_name"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"นามสกุล"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"card_type"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ประเภทบัตร"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_card_type"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บัตรประชาชน"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"พาสปอร์ต"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"id_card"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เลขบัตร"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"birthdate"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DATETIME"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"วันเกิด"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"อีเมล์"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เบอร์โทรศัพท์"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nominee"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ผู้รับผลประโยชน์"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"relationship"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ความสัมพันธ์"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nominee_relationship"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"values"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ภรรยา"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ภรรยา"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"สามี"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"สามี"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บิดา"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บิดา"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"มารดา"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"มารดา"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"พี่"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"พี่"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"น้อง"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"น้อง"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บุตรสาว"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บุตรสาว"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บุตรชาย"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"บุตรชาย"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"อื่นๆ"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"อื่นๆ"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address,label:ที่อยู่"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OBJECT"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"address_no"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เลขที่บ้าน"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"moo"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"หมู่"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"village"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"หมู่บ้าน/อาคาร"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alley"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ตรอก"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lane"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ซอย"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"street"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ถนน"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"minor_district"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"กิ่งอำเภอ"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"subdistrict"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"แขวง/ตำบล"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"district"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"เขต/อำเภอ"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"จังหวัด"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"handler"</span><span class="p">:</span><span class="w"> </span><span class="s2">"province"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"postal_code"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEXT"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"รหัสไปรษณีย์"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"sample_form_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"countries"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"GERMANY"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"JAPAN"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"start_province"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"destination_provinces"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-05T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-12-12T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy_unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"customer_last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1489900087857"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0111111111"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANA"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1489900087857"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-10-14T00:00:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0812345678"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nominee"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"relationship"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"address_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"moo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"village"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VILLAGE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"alley"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lane"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO 4"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"minor_district"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"subdistrict"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chomphon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chatuchak"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangkok"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10900"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR."</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANEE"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMARN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"card_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"I"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"id_card"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1682086540364"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"birthdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1988-12-31T00:00:00Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"developer@example.com"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0812345678"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"nominee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MR. MANOCH MUNGMARN"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"relationship"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Brother/Sister"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"address_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"moo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"village"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VILLAGE"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"alley"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"lane"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO 4"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"street"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LAD PRAO"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"minor_district"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"subdistrict"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chomphon"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Chatuchak"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"province"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangkok"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10900"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"handler_option"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TH"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"agent_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CLEVERSE"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Thip"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"request_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Acrosure"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email_types"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"delivery"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"confirmation"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"agent_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"!qaz@wsx"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"complete_process"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CONFIRM"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_form_available"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"config"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ข้อมูลภายใน Product ที่ได้คืนมาจากการเรียก API ต่างๆ</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>รหัสของ Product ที่ใช้อ้างอิงในที่ต่างๆ</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>ชื่อของประกันภัย</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ประเภทของประกันภัย</td>
+</tr>
+<tr>
+<td><code>insurer_product_code</code></td>
+<td>รหัสอ้างอิงของประกันภัยนี้กับบริษัทประกันภัย</td>
+</tr>
+<tr>
+<td><code>conditions</code></td>
+<td>?</td>
+</tr>
+<tr>
+<td><code>form_items</code></td>
+<td>โครงสร้างข้อมูลของฟอร์มสำหรับ Application (ดูเพิ่มที่ <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a>)</td>
+</tr>
+<tr>
+<td><code>sample_form_data</code></td>
+<td>ตัวอย่างฟอร์มที่ถูกต้องของประกันภัยนั้นๆ</td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>ภาษาของประกันภัยนั้น</td>
+</tr>
+<tr>
+<td><code>complete_process</code></td>
+<td>วิธีการยืนยันออกกรมธรรม์ของประกันภัยนั้นๆ <br><li> ถ้าเป็น <code>SUBMIT</code>: ต้องใช้ <a href="#applications-submit">/applications/submit</a> ในการยืนยันคำสั่งซื้อ (หรือจ่ายผ่าน Payment Gateway) และต้องรอทางบริษัทประกันภัยยืนยันอีกครั้ง <br> <li>ถ้าเป็น <code>CONFIRM</code>: ต้องใช้ <a href="#applications-confirm">/applications/confirm</a> ในการยืนยันคำสั่งซื้อ และจะได้รับกรมธรรม์ออนไลน์ทันที</td>
+</tr>
+<tr>
+<td><code>is_form_available</code></td>
+<td>ค่าที่บ่งบอกว่ามีฟอร์มสำเร็จรูปให้ใช้หรือไม่</td>
+</tr>
+</tbody></table>
+<h3 id='form-item'>โครงสร้างของ Form item</h3>
+<p>Form item คือข้อมูลที่อยู่ภายใน <code>form_items</code> ของ Product ซึ่งจะมีรายละเอียดของฟิลด์แบบฟอร์มภายใน Application อยู่</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>key</code></td>
+<td>ชื่อฟิลด์ที่ต้องใช้ส่งไปใน Request Body</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>ประเภทข้อมูลภายในฟิลด์</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>คำอธิบายของฟิลด์</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td>ค่าที่บอกว่าฟิลด์นี้จำเป็นต้องกรอกหรือไม่</td>
+</tr>
+<tr>
+<td><code>handler</code></td>
+<td>ค่าที่สามารถนำไปอ้างอิงใช้ในการเรียก API <a href="#data-get">/data/get</a> เพื่อดูค่าที่เป็นไปได้ของฟิลด์นี้</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>ค่าที่เป็นไปได้ของฟิลด์นี้ (ถ้ามีกำหนด)</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td>ฟิลด์ภายใน (ถ้ามี)</td>
+</tr>
+</tbody></table>
+<h2 id='products-get'>/products/get</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_ta"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/products/get;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s2">"prod_ta"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูข้อมูลประกันภัย และแบบฟอร์มของประกันภัยนั้นๆ</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/products/get</code></p>
+<h3 id='request-body'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>product_id</code></td>
+<td><strong>Yes</strong></td>
+<td>รหัสประกันภัย</td>
+</tr>
+</tbody></table>
+<h2 id='products-list'>/products/list</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">''</span> <span class="se">\</span>
+  https://api.acrosure.com/products/list;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_motor"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูรายการประกันภัย ที่ทีมของคุณสามารถใช้งานได้</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/products/list</code></p>
+<h3 id='request-body-2'>Request Body</h3>
+<p><em>None</em></p>
+<h1 id='policies-api-reference'>Policies API reference</h1>
+<p>Policy คือกรมธรรม์ที่ได้ร้องขอไปทางบริษัทประกันภัย</p>
+<h2 id='policy'>โครงสร้างข้อมูล Policy</h2>
+<blockquote>
+<p>ตัวอย่างข้อมูล</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"effective_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-14T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-28T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_policy_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10001-101-100000001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_policy_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMPLE_INSURER_POLICY_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMPLE_POLICY_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1120.23</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount_with_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">1204</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"insurer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Q100000000000001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MANA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUNGMUN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user@domain.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"telephone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0810000001"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"download_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-14T11:39:34.445916Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-09-14T11:38:33.600693Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"confirmed_at"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"appl_SAMPLE01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team_sample"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_sample_partner"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"form_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PARTNER"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"team_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample Team"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signed_policy_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://storage.googleapis.com/acrosure-policy/sandbox/SAMPLE_SIGNED_URL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"application_display_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AP00010000001"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>ข้อมูลภายใน Policy ที่ได้คืนมาจากการเรียก API ต่างๆ</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>id</code></td>
+<td>รหัสของ Policy ที่ใช้อ้างอิงในที่ต่างๆ</td>
+</tr>
+<tr>
+<td><code>effective_date</code></td>
+<td>วันที่เอาประกัน</td>
+</tr>
+<tr>
+<td><code>expiry_date</code></td>
+<td>วันที่สิ้นสุดการเอาประกัน</td>
+</tr>
+<tr>
+<td><code>insurer_policy_code</code></td>
+<td>รหัสอ้างอิงกับทางบริษัทประกันภัย</td>
+</tr>
+<tr>
+<td><code>insurer_policy_url</code></td>
+<td>URL ไฟล์กรมธรรม์ของบริษัทประกันภัย</td>
+</tr>
+<tr>
+<td><code>policy_url</code></td>
+<td>URL ไฟล์กรมธรรม์ที่ Acrosure เก็บไว้ (ไม่สามารถเรียกดู URL นี้ตรงๆได้ ต้องผ่านการ Sign ก่อน ซึ่งจะอยู่ในฟิลด์ <code>signed_policy_url</code>)</td>
+</tr>
+<tr>
+<td><code>signed_policy_url</code></td>
+<td>URL ไฟล์กรมธรรม์ที่สามารถดูได้</td>
+</tr>
+<tr>
+<td><code>net_premium</code></td>
+<td>ค่าเบี้ยประกันเบื้องต้น</td>
+</tr>
+<tr>
+<td><code>gross_premium</code></td>
+<td>ค่าเบี้ยประกันสุทธิ</td>
+</tr>
+<tr>
+<td><code>vat</code></td>
+<td>ค่า VAT</td>
+</tr>
+<tr>
+<td><code>duty</code></td>
+<td>ค่าภาษีอากร</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>สถานะของไฟล์กรมธรรม์ ดูเพิ่มเติมได้ที่ <a href="#status-policy">Policy Status</a></td>
+</tr>
+<tr>
+<td><code>insurer_id</code></td>
+<td>รหัสอ้างอิงบริษัทประกันภัย</td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>ชื่อจริงของผู้ซื้อ</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>นามสกุลของผู้ซื้อ</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>อีเมล์ของผู้ซื้อ</td>
+</tr>
+<tr>
+<td><code>telephone</code></td>
+<td>เบอร์โทรศัพท์ของผู้ซื้อ</td>
+</tr>
+<tr>
+<td><code>application_id</code></td>
+<td>รหัสใบคำสั่งซื้อ</td>
+</tr>
+<tr>
+<td><code>team_id</code></td>
+<td>รหัสทีม</td>
+</tr>
+<tr>
+<td><code>team_name</code></td>
+<td>ชื่อทีม</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>รหัสผู้ใช้ที่สร้าง</td>
+</tr>
+<tr>
+<td><code>product_id</code></td>
+<td>รหัสประกันภัย</td>
+</tr>
+<tr>
+<td><code>basic_data</code></td>
+<td>ข้อมูลเบื้องต้นที่ต้องใช้ในการค้นหาแพคเกจ</td>
+</tr>
+<tr>
+<td><code>package_options</code></td>
+<td>ข้อมูลเพิ่มเติมที่ใช้ในการค้นหาแพคเกจ</td>
+</tr>
+<tr>
+<td><code>additional_data</code></td>
+<td>ข้อมูลรายละเอียดสำหรับการออกกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>package_code</code></td>
+<td>รหัสแพคเกจที่เลือก</td>
+</tr>
+<tr>
+<td><code>downloaded_at</code></td>
+<td>เวลาที่ดาวน์โหลดไฟล์เสร็จสมบูรณ์</td>
+</tr>
+<tr>
+<td><code>confirmed_at</code></td>
+<td>เวลาที่ยืนยันการซื้อกรมธรรม์</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>เวลาที่สร้างกรมธรรม์นี้</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>เวลาที่อัพเดทกรมธรรม์ล่าสุด</td>
+</tr>
+<tr>
+<td><code>error_message</code></td>
+<td>ข้อความบอก Error (ถ้ามี)</td>
+</tr>
+</tbody></table>
+<h2 id='status-policy'>Status ของ Policy</h2>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>COMPLETED</code></td>
+<td>ดาวน์โหลดไฟล์เรียบร้อยแล้ว</td>
+</tr>
+<tr>
+<td><code>INSURER_COMPLETED</code></td>
+<td>ส่งข้อมูลให้กับบริษัทประกันภัยเรียบร้อยแล้ว กำลังดาวน์โหลด</td>
+</tr>
+<tr>
+<td><code>CANCELED</code></td>
+<td>กรมธรรม์ถูกยกเลิก</td>
+</tr>
+</tbody></table>
+<h2 id='policies-get'>/policies/get</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_ta"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/policies/get;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">setId</span><span class="p">(</span><span class="s2">"plcy_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">policy</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"prod_ta"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูข้อมูลกรมธรรม์</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/policies/get</code></p>
+<h3 id='request-body'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>policy_id</code></td>
+<td><strong>Yes</strong></td>
+<td>รหัสกรมธรรม์ในระบบ</td>
+</tr>
+</tbody></table>
+<h2 id='policies-list'>/policies/list</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"product_id":"prod_ta"}'</span> <span class="se">\</span>
+  https://api.acrosure.com/policies/list;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">policy</span><span class="p">.</span><span class="nx">list</span><span class="p">({</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_ta"</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE01"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"plcy_SAMPLE02"</span><span class="p">,</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูรายการกรมธรรม์ </p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/policies/list</code></p>
+<h3 id='request-body-2'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+<th>Possible Values</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>product_id</code></td>
+<td>No</td>
+<td>ชนิดของ Product</td>
+<td></td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>No</td>
+<td>ชื่อจริงของผู้ซื้อ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>No</td>
+<td>นามสกุลของผู้ซื้อ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>No</td>
+<td>อีเมล์ของผู้ซื้อ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>telephone</code></td>
+<td>No</td>
+<td>เบอร์โทรศัพท์ของผู้ซื้อ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>No</td>
+<td>ตำแหน่งในลำดับของกรมธรรม์ที่ต้องการเริ่มดู</td>
+<td></td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>No</td>
+<td>จำนวนสูงสุดของข้อมูลในรายการ</td>
+<td></td>
+</tr>
+<tr>
+<td><code>order_by</code></td>
+<td>No</td>
+<td>วิธีการจัดเรียงรายการ</td>
+<td><code>created_at</code>, <code>updated_at</code></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>No</td>
+<td>สถานะของกรมธรรม์</td>
+<td>ดูเพิ่มเติมที่ <a href="#status-policy">Policy Status</a></td>
+</tr>
+<tr>
+<td><code>basic_data</code></td>
+<td>No</td>
+<td>ข้อมูลเบื้องต้นของใบคำสั่งซื้อ</td>
+<td>เป็น String</td>
+</tr>
+<tr>
+<td><code>package_options</code></td>
+<td>No</td>
+<td>ข้อมูลเพิ่มเติมในการค้นหาแพคเกจของใบคำสั่งซื้อ</td>
+<td>เป็น String</td>
+</tr>
+<tr>
+<td><code>additional_data</code></td>
+<td>No</td>
+<td>ข้อมูลสำหรับการออกกรมธรรม์ของใบคำสั่งซื้อ</td>
+<td>เป็น String</td>
+</tr>
+<tr>
+<td><code>ref1</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 1</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ref2</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 2</td>
+<td></td>
+</tr>
+<tr>
+<td><code>ref3</code></td>
+<td>No</td>
+<td>ข้อความสำหรับใช้ในการอ้างอิงอันที่ 3</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insurer_policy_code</code></td>
+<td>No</td>
+<td>รหัสอ้างอิงกับทางบริษัทประกันภัย</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_created_date</code></td>
+<td>No</td>
+<td>วันเริ่มต้น ของช่วงวันที่สร้างกรมธรรม์</td>
+<td></td>
+</tr>
+<tr>
+<td><code>end_created_date</code></td>
+<td>No</td>
+<td>วันสิ้นสุด ของช่วงวันที่สร้างกรมธรรม์</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_effective_date</code></td>
+<td>No</td>
+<td>วันเริ่มต้น ของช่วงวันที่เริ่มคุ้มครอง</td>
+<td></td>
+</tr>
+<tr>
+<td><code>end_effective_date</code></td>
+<td>No</td>
+<td>วันสิ้นสุด ของช่วงวันที่เริ่มคุ้มครอง</td>
+<td></td>
+</tr>
+<tr>
+<td><code>start_expiry_date</code></td>
+<td>No</td>
+<td>วันเริ่มต้น ของช่วงวันที่สิ้นสุดความคุ้มครอง</td>
+<td></td>
+</tr>
+<tr>
+<td><code>end_expiry_date</code></td>
+<td>No</td>
+<td>วันสิ้นสุด ของช่วงวันที่สิ้นสุดความคุ้มครอง</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>No</td>
+<td>คำสั่ง Query</td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id='data-api-reference'>Data API reference</h1>
+<p>ใช้ในการจัดการข้อมูลอื่นๆ เช่น ดูค่าที่เป็นไปได้ของแต่ละฟิลด์ในฟอร์ม</p>
+<h2 id='data-get'>/data/get</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  --header <span class="s2">"Authorization: Bearer tokn_sample_secret"</span> <span class="se">\</span>
+  --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  -d <span class="s1">'{"handler":"subdistrict","dependencies":["กรุงเทพมหานคร","วังทองหลาง"]}'</span> <span class="se">\</span>
+  https://api.acrosure.com/data/get;
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"tokn_sample_secret"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">get</span><span class="p">({</span>
+  <span class="na">handler</span><span class="p">:</span> <span class="s2">"subdistrict"</span><span class="p">,</span>
+  <span class="na">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="s2">"กรุงเทพมหานคร"</span><span class="p">,</span> <span class="s2">"วังทองหลาง"</span><span class="p">]</span>
+<span class="p">});</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="c1">// Java Code</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="c"># Python Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Swift Code</span>
+</code></pre>
+<blockquote>
+<p>ตัวอย่าง Response Body</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"data"</span><span class="p">:[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"คลองเจ้าคุณสิงห์"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">"คลองเจ้าคุณสิงห์"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"พลับพลา"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">"พลับพลา"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"วังทองหลาง"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">"วังทองหลาง"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="s2">"สะพานสอง"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"label"</span><span class="p">:</span><span class="s2">"สะพานสอง"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>เรียกดูค่าที่เป็นไปได้ของฟิลด์ที่ใช้ Handler นั้นๆ</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST https://api.acrosure.com/data/get</code></p>
+<h3 id='request-body'>Request Body</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>handler</code></td>
+<td><strong>Yes</strong></td>
+<td>ชื่อ <a href="#handlers">Handler</a></td>
+</tr>
+<tr>
+<td><code>dependencies</code></td>
+<td><em>No</em> (แต่ Yes สำหรับ Handler ที่มี Dependencies)</td>
+<td>ค่าที่ต้องการในการเป็นเงื่อนไขการดึงข้อมูล</td>
+</tr>
+</tbody></table>
+<h2 id='handlers'>รายการ Handlers</h2>
+<p>รายชื่อ handlers ต่างๆ</p>
+
+<aside class="success">
+Dependencies ตอนเรียกนั้นต้องส่งตามลำดับให้ถูกต้อง
+</aside>
+
+<aside class="notice">
+ถ้ามี dependencies ที่ใช้ต่อกัน เช่น จังหวัด อำเภอ ตำบล ต้องใช้ภาษาเดียวกัน
+
+</aside>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Dependencies</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>province</code></td>
+<td><em>None</em></td>
+<td>จังหวัด (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>district</code></td>
+<td><li>จังหวัด</li></td>
+<td>เขต/อำเภอ (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>subdistrict</code></td>
+<td><li>จังหวัด</li><li>เขต/อำเภอ</li></td>
+<td>แขวง/ตำบล (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>postal_code</code></td>
+<td><li>จังหวัด</li><li>เขต/อำเภอ</li><li>แขวง/ตำบล</li></td>
+<td>รหัสไปรษณีย์ (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>province_en</code></td>
+<td><em>None</em></td>
+<td>จังหวัด (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>district_en</code></td>
+<td><li>จังหวัด</li></td>
+<td>เขต/อำเภอ (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>subdistrict_en</code></td>
+<td><li>จังหวัด</li><li>เขต/อำเภอ</li></td>
+<td>แขวง/ตำบล (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>postal_code_en</code></td>
+<td><li>จังหวัด</li><li>เขต/อำเภอ</li><li>แขวง/ตำบล</li></td>
+<td>รหัสไปรษณีย์ (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td><em>None</em></td>
+<td>ประเทศ​ (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>country_en</code></td>
+<td><em>None</em></td>
+<td>ประเทศ​ (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>id_card_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทของบัตร</td>
+</tr>
+<tr>
+<td><code>person_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทบุคคล</td>
+</tr>
+<tr>
+<td><code>organization_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทบริษัท</td>
+</tr>
+<tr>
+<td><code>customer_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทลูกค้า</td>
+</tr>
+<tr>
+<td><code>person_title</code></td>
+<td><em>None</em></td>
+<td>คำนำหน้าชื่อ (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>person_title_en</code></td>
+<td><em>None</em></td>
+<td>คำนำหน้าชื่อ (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>nominee_relationship</code></td>
+<td><em>None</em></td>
+<td>ความสัมพันธ์ของผู้รับผลประโยชน์​ (ภาษาไทย)</td>
+</tr>
+<tr>
+<td><code>nominee_relationship_en</code></td>
+<td><em>None</em></td>
+<td>ความสัมพันธ์ของผู้รับผลประโยชน์​ (ภาษาอังกฤษ)</td>
+</tr>
+<tr>
+<td><code>travel_policy_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทของประกันเดินทาง</td>
+</tr>
+<tr>
+<td><code>travel_policy_unit</code></td>
+<td><em>None</em></td>
+<td>ประเภทการเดินทาง</td>
+</tr>
+<tr>
+<td><code>building_material</code></td>
+<td><em>None</em></td>
+<td>วัสดุอาคาร</td>
+</tr>
+<tr>
+<td><code>building_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทอาคาร</td>
+</tr>
+<tr>
+<td><code>building_roof_structure</code></td>
+<td><em>None</em></td>
+<td>โครงสร้างหลังคาของอาคาร</td>
+</tr>
+<tr>
+<td><code>building_roof_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทหลังคาของอาคาร</td>
+</tr>
+<tr>
+<td><code>building_second_floor_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทชั้นสองของอาคาร</td>
+</tr>
+<tr>
+<td><code>voluntary_motor_insurance_class</code></td>
+<td><em>None</em></td>
+<td>ชั้นประกันรถยนต์</td>
+</tr>
+<tr>
+<td><code>voluntary_motor_insurance_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทรถยนต์</td>
+</tr>
+<tr>
+<td><code>motor_brand</code></td>
+<td><li>ประเภทรถยนต์</li><li>ปีค.ศ.​ <i>(ตัวเลข)</i></li></td>
+<td>ยี่ห้อรถยนต์</td>
+</tr>
+<tr>
+<td><code>motor_model</code></td>
+<td><li>ประเภทรถยนต์</li><li>ปีค.ศ.​ <i>(ตัวเลข)</i></li><li>ยี่ห้อรถยนต์</li></td>
+<td>รุ่นรถยนต์</td>
+</tr>
+<tr>
+<td><code>model_spec</code></td>
+<td><li>ประเภทรถยนต์</li><li>ปีค.ศ.​ <i>(ตัวเลข)</i></li><li>ยี่ห้อรถยนต์</li><li>รุ่นรถยนต์</li></td>
+<td>รุ่นย่อยรถยนต์</td>
+</tr>
+<tr>
+<td><code>repair_provider_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทการซ่อมรถยนต์</td>
+</tr>
+<tr>
+<td><code>motor_gear_type</code></td>
+<td><em>None</em></td>
+<td>ประเภทเกียร์รถยนต์</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">cURL</a>
+                <a href="#" data-language-name="javascript">JavaScript</a>
+                <a href="#" data-language-name="java">Java</a>
+                <a href="#" data-language-name="python">Python</a>
+                <a href="#" data-language-name="csharp">C# .NET</a>
+                <a href="#" data-language-name="swift">Swift</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
