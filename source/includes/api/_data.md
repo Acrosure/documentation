@@ -1,8 +1,8 @@
-# Data API reference
+# Data API reference {{id:api-data}}
 
 ใช้ในการจัดการข้อมูลอื่นๆ เช่น ดูค่าที่เป็นไปได้ของแต่ละฟิลด์ในฟอร์ม
 
-## /data/get
+## /data/get {{id:api-data-get}}
 
 ```shell
 curl -X POST \
@@ -77,7 +77,8 @@ const response = await client.data.get({
 | `handler`      | **Yes**                                          | ชื่อ [Handler](#handlers)                  |
 | `dependencies` | *No* (แต่ Yes สำหรับ Handler ที่มี Dependencies) | ค่าที่ต้องการในการเป็นเงื่อนไขการดึงข้อมูล |
 
-## รายการ Handlers
+
+## รายการ Handlers {{id:api-data-handlers}}
 
 รายชื่อ handlers ต่างๆ
 

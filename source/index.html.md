@@ -27,7 +27,7 @@ includes:
 search: true
 ---
 
-# เริ่มต้นใช้งาน
+# เริ่มต้นใช้งาน {{id:getting-started}}
 
 > การใช้งาน API Key คือการส่งไปใน Header ของ HTTP Request รูปแบบดังนี้:
 

@@ -1,4 +1,4 @@
-# เชื่อมต่อแบบ API แบบหลายขั้นตอน
+# เชื่อมต่อแบบ API แบบหลายขั้นตอน {{id:integration-api-advanced}}
 
 บางครั้ง การเชื่อมต่อแบบ API อาจไม่ได้จบด้วยการใช้ `/applications/create` เพียงครั้งเดียว แต่อาจผ่านการใส่ข้อมูลทีละส่วนจนกว่าจะสมบูรณ์
 
@@ -11,12 +11,12 @@
 5. เรียกใช้ API `POST /applications/update` เพื่อใส่ข้อมูลที่เหลือให้สมบูรณ์
 6. เรียกใช้ API `POST /applications/confirm` เพื่อยืนยันการสั่งซื้อ
 
-## 1. ดูรายละเอียดของฟอร์ม
+## 1. ดูรายละเอียดของฟอร์ม {{id:integration-api-advanced-1}}
 
 ท่านสามารถดู `product_id` รายละเอียดฟอร์มที่ต้องกรอกได้จากหน้า Product ในแดชบอร์ด
 โดยสามารถดูโครงสร้างข้อมูลของฟอร์มได้จากหัวข้อ Form Schema และดูตัวอย่างข้อมูลทดสอบได้จากหัวข้อ Sample Form Data
 
-## 2. สร้างใบคำสั่งซื้อ
+## 2. สร้างใบคำสั่งซื้อ {{id:integration-api-advanced-2}}
 
 ```shell
 curl -X POST \
@@ -73,7 +73,7 @@ const response = await client.application.create({
 
 สร้างฟอร์มสั่งซื้อพร้อมกรอกข้อมูลบางส่วน `/applications/create`
 
-## 3. ดูแพคเกจที่สามารถซื้อได้
+## 3. ดูแพคเกจที่สามารถซื้อได้ {{id:integration-api-advanced-3}}
 
 ```shell
 curl -X POST \
@@ -127,7 +127,7 @@ const response = await client.application.getPackages();
 
 ดูรายการแพคเกจที่สามารถซื้อได้ `/applications/get-packages`
 
-## 4. เลือกแพคเกจ
+## 4. เลือกแพคเกจ {{id:integration-api-advanced-4}}
 
 ```shell
 curl -X POST \
@@ -177,8 +177,7 @@ const response = await client.application.selectPackage({
 
 เลือกแพคเกจสำหรับใบคำสั่งซื้อผ่าน `/applications/select-package`
 
-## 5. อัพเดทแบบฟอร์มให้สมบูรณ์
-
+## 5. อัพเดทแบบฟอร์มให้สมบูรณ์ {{id:integration-api-advanced-5}}
 
 ```shell
 curl -X POST \
@@ -232,7 +231,7 @@ const response = await client.application.update({
 สามารถ update หลายครั้งได้ ไม่จำเป็นต้อง update ครั้งเดียวจนข้อมูลสมบูรณ์
 </aside>
 
-## 6. ยืนยันการสั่งซื้อ
+## 6. ยืนยันการสั่งซื้อ {{id:integration-api-advanced-6}}
 
 ```shell
 curl -X POST \
