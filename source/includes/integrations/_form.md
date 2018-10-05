@@ -55,7 +55,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "tokn_sample_secret" });
-client.applicaiton.setId("appl_SAMPLE01");
+client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
 
