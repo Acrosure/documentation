@@ -13,9 +13,7 @@ class UniqueHeadCounter < Middleman::Renderers::MiddlemanRedcarpetHTML
     matched = id_regexp.match(text)
     if matched
       id = matched[:id]
-      puts matched.inspect
       if id && id.strip.length > 0
-        puts id
         stripped_text = text.gsub(id_regexp, "")
         return "<h#{header_level} id='#{id}'>#{stripped_text}</h#{header_level}>"
       end
