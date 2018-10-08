@@ -17,7 +17,7 @@
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"vehicle_type":"110","register_year":2017,"brand_name":"HONDA","model_name":"CITY","spec_name":"S CNG AT"}}' \
   https://api.acrosure.com/applications/create;
@@ -26,7 +26,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
   product_id: "prod_motor",
   basic_data: {
@@ -80,7 +80,7 @@ const response = await client.application.create({
 > จากตัวอย่างนั้น URL ของฟอร์มจะเป็น
 
 ```
-https://form.acrosure.com/?token=<YOUR_PUBLIC_KEY>&productId=prod_ta&applicationId=appl_SAMPLE01
+https://form.acrosure.com/?token=<YOUR_PUBLIC_TOKEN>&productId=prod_ta&applicationId=appl_SAMPLE01
 ```
 
 URL ของฟอร์มที่กรอกแล้วนี้จะเหมือนกับ URL ของฟอร์มแบบสำเร็จรูป เพียงแต่เติมคิวรีสตริง `applicationId=appl_SAMPLE01` เข้าไป โดยนำ `application_id` จากผลในขั้นตอนที่แล้วมาใช้งาน
@@ -88,7 +88,7 @@ URL ของฟอร์มที่กรอกแล้วนี้จะเ�
 เมื่อ redirect ผู้ใช้ไปยัง URL ดังกล่าว ผู้ใช้จะพบกับฟอร์มที่กรอกข้อมูลไว้แล้ว และสามารถทำรายการที่เหลือต่อได้ตามปกติ เช่นเดียวกับการใช้ฟอร์มสำเร็จรูป
 
 <aside class="warning">
-ห้ามใช้ Secret Key ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
+ห้ามใช้ Secret Token ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
 </aside>
 
 
@@ -96,7 +96,7 @@ URL ของฟอร์มที่กรอกแล้วนี้จะเ�
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -105,7 +105,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```

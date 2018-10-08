@@ -13,7 +13,7 @@
 > ตัวอย่างโค้ด HTML ซึ่งเป็นลิงก์สำหรับการสั่งซื้อ
 
 ```html
-  <a href="https://form.acrosure.com/?token=<YOUR_PUBLIC_KEY>&productId=prod_ta">สั่งซื้อประกันภัย</a>
+  <a href="https://form.acrosure.com/?token=<YOUR_PUBLIC_TOKEN>&productId=prod_ta">สั่งซื้อประกันภัย</a>
 ```
 
 สำหรับส่งผู้ใช้ไปสั่งซื้อประกันด้วยฟอร์มสำเร็จรูป สามารถทำได้ดังนี้
@@ -22,7 +22,7 @@
 2. คัดลอก URL สำหรับ redirect ผู้ใช้ไปยังแบบฟอร์มสั่งซื้อประกันภัย ไปใช้ได้ทันที โดยสร้างเป็นลิงก์หรือปุ่มด้วย HTML เพื่อส่งผู้ใช้ไปยังหน้าแบบฟอร์มดังกล่าว
 
 <aside class="warning">
-ห้ามใช้ Secret Key ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
+ห้ามใช้ Secret Token ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
 </aside>
 
 ## 2. รับ callback {{id:integration-form-2}}
@@ -45,7 +45,7 @@ https://example.com/dhipaya/callback?applicationId=appl_SAMPLE01
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -54,7 +54,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```

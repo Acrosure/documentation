@@ -6,7 +6,7 @@
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"handler":"subdistrict","dependencies":["กรุงเทพมหานคร","วังทองหลาง"]}' \
   https://api.acrosure.com/data/get;
@@ -15,7 +15,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.data.get({
   handler: "subdistrict",
   dependencies: ["กรุงเทพมหานคร", "วังทองหลาง"]

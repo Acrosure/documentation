@@ -10,7 +10,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - swift: Swift
 
 toc_footers:
-  - <a href='https://dashboard.acrosure.com/signup'>Sign Up for API Key</a>
+  - <a href='https://dashboard.acrosure.com/signup'>Sign Up for API Token</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -29,17 +29,17 @@ search: true
 
 # เริ่มต้นใช้งาน {{id:getting-started}}
 
-> การใช้งาน API Key คือการส่งไปใน Header ของ HTTP Request รูปแบบดังนี้:
+> การใช้งาน API Token คือการส่งไปใน Header ของ HTTP Request รูปแบบดังนี้:
 
 ```
-Authorization: Bearer <YOUR_PUBLIC_KEY>
+Authorization: Bearer <YOUR_PUBLIC_TOKEN>
 ```
 
-> ซึ่งตัวอย่างภายใน Documentation นี้ จะมีการส่ง API Key ไปด้วยทุกครั้ง ดังเช่นตัวอย่างด้านล่างนี้
+> ซึ่งตัวอย่างภายใน Documentation นี้ จะมีการส่ง API Token ไปด้วยทุกครั้ง ดังเช่นตัวอย่างด้านล่างนี้
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   https://api.acrosure.com/products/list;
 ```
@@ -47,7 +47,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.product.list();
 ```
 
@@ -92,11 +92,11 @@ const response = await client.product.list();
    
 2. Login เข้าสู่ Dashboard <a href="https://dashboard.acrosure.com/login" target="_blank">ได้ที่นี่</a>
    
-3. Copy API Key มาใช้
-  ![Copy API Key](./images/getting-api-key.png)
+3. Copy API Token มาใช้
+  ![Copy API Token](./images/getting-api-key.png)
    
 4. สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
 
 <aside class="notice">
-Private Key สามารถเรียกได้ทุก API ที่ Public Key สามารถเรียกได้ แต่ Private Key มีไว้ใช้ใน Server เท่านั้น
+Secret Token สามารถเรียกได้ทุก API ที่ Public Token สามารถเรียกได้ แต่ Secret Token มีไว้ใช้ใน Server เท่านั้น
 </aside>

@@ -20,7 +20,7 @@
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"product_id":"prod_motor","form_data":{"spec_name":"S CNG AT","brand_name":"HONDA","model_name":"CITY","vehicle_type":"110","register_year":2017}}' \
   https://api.acrosure.com/applications/create;
@@ -29,7 +29,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
   product_id: "prod_motor",
   basic_data: {
@@ -77,7 +77,7 @@ const response = await client.application.create({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/get-packages;
@@ -86,7 +86,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.getPackages();
 ```
@@ -131,7 +131,7 @@ const response = await client.application.getPackages();
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01","package_code":"PACKAGE_SAMPLE_01"}' \
   https://api.acrosure.com/applications/select-package;
@@ -140,7 +140,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.selectPackage({
   package_code: 'PACKAGE_SAMPLE_01'
@@ -181,7 +181,7 @@ const response = await client.application.selectPackage({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '' \
   https://api.acrosure.com/applications/update;
@@ -190,7 +190,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
 
@@ -235,7 +235,7 @@ const response = await client.application.update({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_KEY>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -244,7 +244,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_KEY>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
