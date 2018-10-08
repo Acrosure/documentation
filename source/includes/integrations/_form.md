@@ -1,12 +1,14 @@
 # เชื่อมต่อแบบ Form {{id:integration-form}}
 
+> ![Form Integration Flow](./images/doc-form-flow.png)
+
 ท่านสามารถใช้ฟอร์มสำเร็จรูปสำหรับเริ่มการสั่งซื้อประกันภัยได้ทันที โดยวิธีนี้จะสามารถทำได้ง่ายที่สุด แต่ผู้ซื้อจำเป็นต้องกรอกข้อมูลในการสั่งซื้อทั้งหมดด้วยตนเอง
 
 การเชื่อมต่อในส่วนนี้จะประกอบด้วย 3 ขั้นตอน คือ
 
 1. ส่งผู้ใช้ไปยังฟอร์มสำเร็จรูป
 2. รับ callback หลังกรอกข้อมูลเสร็จสิ้น
-3. เรียก API ยืนยันการสั่งซื้อจากเซิร์ฟเวอร์
+3. เรียก API `POST /applications/confirm` ยืนยันการสั่งซื้อจากเซิร์ฟเวอร์
 
 ## 1. ส่งผู้ใช้ไปยังหน้าเว็บฟอร์ม {{id:integration-form-1}}
 
@@ -45,7 +47,7 @@ https://example.com/dhipaya/callback?applicationId=appl_SAMPLE01
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
+  --header "Authorization: Bearer <YOUR_SECRET_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -54,7 +56,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```

@@ -1,5 +1,7 @@
 # เชื่อมต่อแบบ Hybrid {{id:integration-hybrid}}
 
+> ![Hybrid Integration Flow](./images/doc-hybrid-flow.png)
+
 เพื่อให้ผู้ใช้ตัดสินใจสั่งซื้อประกันภัยได้อย่างรวดเร็วยิ่งขึ้น ท่านสามารถสร้างลิงก์สำหรับสั่งซื้อเฉพาะสำหรับผู้ซื้อรายนั้นๆ เพื่อให้ท่านสามารถกรอกข้อมูลบางส่วนที่ทราบอยู่แล้วให้ผู้ใช้ได้ทันที ก่อนที่จะ redirect ผู้ใช้ไปยังหน้าสั่งซื้อต่อไป
 
 ขั้นตอนในการสร้างและกรอกฟอร์มล่วงหน้ามีดังนี้
@@ -7,6 +9,7 @@
 1. ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด
 2. เรียก API `POST /applications/create` เพื่อสร้างฟอร์ม
 3. สร้าง URL ของฟอร์มและ redirect ผู้ใช้ไปที่ฟอร์มตามปกติ
+4. เรียก API `POST /applications/confirm` ยืนยันการสั่งซื้อจากเซิร์ฟเวอร์
 
 ## 1. ดูรายละเอียดของฟอร์ม {{id:integration-hybrid-1}}
 
@@ -19,7 +22,7 @@
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
-  -d '{"product_id":"prod_motor","form_data":{"vehicle_type":"110","register_year":2017,"brand_name":"HONDA","model_name":"CITY","spec_name":"S CNG AT"}}' \
+  -d '{"product_id":"prod_ta","basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"}}' \
   https://api.acrosure.com/applications/create;
 ```
 
@@ -28,14 +31,16 @@ import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
-  product_id: "prod_motor",
+  product_id: "prod_ta",
   basic_data: {
-    brand_name: "HONDA",
-    model_name: "CITY",
-    spec_name: "S CNG AT",
-    vehicle_type: "110",
-    register_year: 2017
-  }
+    countries: [
+        "GERMANY",
+        "JAPAN"
+    ],
+    policy_date: "2018-12-08",
+    expiry_date: "2018-12-15",
+    policy_unit: "D"
+  },
 });
 ```
 
@@ -96,7 +101,7 @@ URL ของฟอร์มที่กรอกแล้วนี้จะเ�
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
+  --header "Authorization: Bearer <YOUR_SECRET_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -105,7 +110,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```

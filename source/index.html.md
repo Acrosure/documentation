@@ -98,5 +98,5 @@ const response = await client.product.list();
 4. สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
 
 <aside class="notice">
-Secret Token สามารถเรียกได้ทุก API ที่ Public Token สามารถเรียกได้ แต่ Secret Token มีไว้ใช้ใน Server เท่านั้น
+Secret Token สามารถใช้งานได้ทุก API ที่ Public Token สามารถเรียกได้ แต่ Secret Token มีไว้ใช้ใน Server เท่านั้น
 </aside>

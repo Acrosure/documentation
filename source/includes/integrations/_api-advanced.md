@@ -1,6 +1,8 @@
 # เชื่อมต่อแบบ API แบบหลายขั้นตอน {{id:integration-api-advanced}}
 
-บางครั้ง การเชื่อมต่อแบบ API อาจไม่ได้จบด้วยการใช้ `/applications/create` เพียงครั้งเดียว แต่อาจผ่านการใส่ข้อมูลทีละส่วนจนกว่าจะสมบูรณ์
+> ![API Advanced Integration Flow](./images/doc-api-advanced-flow.png)
+
+บางครั้ง การเชื่อมต่อแบบ API อาจไม่ได้จบด้วยการใช้ `POST /applications/create` เพียงครั้งเดียว แต่อาจผ่านการใส่ข้อมูลทีละส่วนจนกว่าจะสมบูรณ์
 
 ในกรณีดังกล่าว มีตัวอย่างในการทำงานดังนี้ ดังนี้
 
@@ -22,7 +24,7 @@
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
-  -d '{"product_id":"prod_motor","form_data":{"spec_name":"S CNG AT","brand_name":"HONDA","model_name":"CITY","vehicle_type":"110","register_year":2017}}' \
+  -d '{"product_id":"prod_ta","basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"}}' \
   https://api.acrosure.com/applications/create;
 ```
 
@@ -31,14 +33,16 @@ import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
-  product_id: "prod_motor",
+  product_id: "prod_ta",
   basic_data: {
-    brand_name: "HONDA",
-    model_name: "CITY",
-    spec_name: "S CNG AT",
-    vehicle_type: "110",
-    register_year: 2017
-  }
+    countries: [
+        "GERMANY",
+        "JAPAN"
+    ],
+    policy_date: "2018-12-08",
+    expiry_date: "2018-12-15",
+    policy_unit: "D"
+  },
 });
 ```
 
@@ -71,7 +75,7 @@ const response = await client.application.create({
 }
 ```
 
-สร้างฟอร์มสั่งซื้อพร้อมกรอกข้อมูลบางส่วน `/applications/create`
+สร้างฟอร์มสั่งซื้อพร้อมกรอกข้อมูลบางส่วน `POST /applications/create`
 
 ## 3. ดูแพคเกจที่สามารถซื้อได้ {{id:integration-api-advanced-3}}
 
@@ -125,7 +129,7 @@ const response = await client.application.getPackages();
 }
 ```
 
-ดูรายการแพคเกจที่สามารถซื้อได้ `/applications/get-packages`
+ดูรายการแพคเกจที่สามารถซื้อได้ `POST /applications/get-packages`
 
 ## 4. เลือกแพคเกจ {{id:integration-api-advanced-4}}
 
@@ -175,15 +179,13 @@ const response = await client.application.selectPackage({
 }
 ```
 
-เลือกแพคเกจสำหรับใบคำสั่งซื้อผ่าน `/applications/select-package`
-
-## 5. อัพเดทแบบฟอร์มให้สมบูรณ์ {{id:integration-api-advanced-5}}
+เลือกแพคเกจสำหรับใบคำสั่งซื้อผ่าน `POST /applications/select-package`
 
 ```shell
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
-  -d '' \
+  -d '{"application_id":"appl_SAMPLE01",,"basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"},"package_options":null,"additional_data":{"customer_title":"MR.","customer_first_name":"MANA","customer_last_name":"MUNGMARN","company_name":"-","card_type":"I","id_card":"1489900087857","email":"developer@example.com","phone":"","insurer_list":[{"title":"MR.","first_name":"MANA","last_name":"MUNGMARN","card_type":"I","id_card":"1489900087857","birthdate":"1988-10-14","email":"developer@example.com","phone":"0812345678","nominee":"","relationship":"","address":{"address_no":"1","moo":"2","village":"VILLAGE","alley":"","lane":"LAD PRAO 4","street":"LAD PRAO","minor_district":"","subdistrict":"Chomphon","district":"Chatuchak","province":"Bangkok","postal_code":"10900"}},{"title":"MR.","first_name":"MANEE","last_name":"MUNGMARN","card_type":"I","id_card":"1682086540364","birthdate":"1988-12-31","email":"developer@example.com","phone":"0812345678","nominee":"MR. MANOCH MUNGMARN","relationship":"Brother/Sister","address":{"address_no":"1","moo":"2","village":"VILLAGE","alley":"","lane":"LAD PRAO 4","street":"LAD PRAO","minor_district":"","subdistrict":"Chomphon","district":"Chatuchak","province":"Bangkok","postal_code":"10900"}}]}}' \
   https://api.acrosure.com/applications/update;
 ```
 
@@ -193,7 +195,19 @@ import AcrosureClient from "@acrosure/js-sdk";
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
-
+  basic_data: {
+    countries: [
+      "GERMANY",
+      "JAPAN"
+    ],
+    policy_date: "2018-12-08",
+    expiry_date: "2018-12-15",
+    policy_unit: "D"
+  },
+  package_options: null,
+  additional_data: {
+    ...
+  }
 });
 ```
 
@@ -225,7 +239,7 @@ const response = await client.application.update({
 }
 ```
 
-อัพเดทใบคำสั่งซื้อจนข้อมูลสมบูรณ์
+อัพเดทใบคำสั่งซื้อจนข้อมูลสมบูรณ์ `POST /applications/update`
 
 <aside class="notice">
 สามารถ update หลายครั้งได้ ไม่จำเป็นต้อง update ครั้งเดียวจนข้อมูลสมบูรณ์
@@ -235,7 +249,7 @@ const response = await client.application.update({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
+  --header "Authorization: Bearer <YOUR_SECRET_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/confirm;
@@ -244,7 +258,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
 client.application.setId("appl_SAMPLE01");
 const response = await client.application.confirm();
 ```
@@ -285,4 +299,4 @@ const response = await client.application.confirm();
 }
 ```
 
-ยืนยันการสั่งซื้อ เช่นเดียวกับการสั่งซื้อด้วยวิธีการอื่นๆ
+ยืนยันการสั่งซื้อ เช่นเดียวกับการสั่งซื้อด้วยวิธีการอื่นๆ `POST /applications/confirm` 
