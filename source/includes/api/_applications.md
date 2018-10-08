@@ -10,7 +10,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
 
 ```json
 {
-  "id": "sandbox_appl_VipGM9uFBqoyAMnI",
+  "id": "appl_SAMPLE01",
   "form_data": {
     "email": "developer@example.com",
     "phone": "086161236",
@@ -42,7 +42,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
           "subdistrict": "Chomphon",
           "minor_district": ""
         },
-        "id_card": "1489900087857",
+        "id_card": "1111111111119",
         "nominee": "",
         "birthdate": "1988-10-14T00:00:00Z",
         "card_type": "I",
@@ -67,7 +67,7 @@ Application คือใบคำสั่งซื้อกรมธรรม�
           "subdistrict": "Chomphon",
           "minor_district": ""
         },
-        "id_card": "1682086540364",
+        "id_card": "1111111111119",
         "nominee": "MR. MANOCH MUNGMARN",
         "birthdate": "1988-12-31T00:00:00Z",
         "card_type": "I",
@@ -95,14 +95,14 @@ Application คือใบคำสั่งซื้อกรมธรรม�
   "insurer_application_no": "",
   "package_data": null,
   "language": "EN",
-  "display_id": "AP00010000476",
+  "display_id": "AP00010000001",
   "step": 0,
   "created_at": "2018-09-14T20:53:59.547879Z",
   "updated_at": "2018-09-23T15:57:11.5342Z",
   "expired_at": "2018-09-21T20:53:59.530746Z",
   "product_id": "prod_ta",
-  "user_id": "user_sample_partner",
-  "team_id": "team_sample",
+  "user_id": "user_SAMPLE",
+  "team_id": "team_SAMPLE",
   "group_policy_id": "",
   "product_code": "",
   "product_name": "International Travel Insurance",
@@ -294,7 +294,7 @@ const response = await client.application.list({
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
-  -d '' \
+  -d '{"product_id":"prod_ta","basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"}}' \
   https://api.acrosure.com/applications/create;
 ```
 
@@ -303,7 +303,16 @@ import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
-
+  product_id: "prod_ta",
+  basic_data: {
+    countries: [
+        "GERMANY",
+        "JAPAN"
+    ],
+    policy_date: "2018-12-08",
+    expiry_date: "2018-12-15",
+    policy_unit: "D"
+  },
 });
 ```
 
@@ -368,7 +377,7 @@ const response = await client.application.create({
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
-  -d '' \
+  -d '{"application_id":"appl_SAMPLE01",,"basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"},"package_options":null,"additional_data":{"customer_title":"MR.","customer_first_name":"MANA","customer_last_name":"MUNGMARN","company_name":"-","card_type":"I","id_card":"1489900087857","email":"developer@example.com","phone":"","insurer_list":[{"title":"MR.","first_name":"MANA","last_name":"MUNGMARN","card_type":"I","id_card":"1489900087857","birthdate":"1988-10-14","email":"developer@example.com","phone":"0812345678","nominee":"","relationship":"","address":{"address_no":"1","moo":"2","village":"VILLAGE","alley":"","lane":"LAD PRAO 4","street":"LAD PRAO","minor_district":"","subdistrict":"Chomphon","district":"Chatuchak","province":"Bangkok","postal_code":"10900"}},{"title":"MR.","first_name":"MANEE","last_name":"MUNGMARN","card_type":"I","id_card":"1682086540364","birthdate":"1988-12-31","email":"developer@example.com","phone":"0812345678","nominee":"MR. MANOCH MUNGMARN","relationship":"Brother/Sister","address":{"address_no":"1","moo":"2","village":"VILLAGE","alley":"","lane":"LAD PRAO 4","street":"LAD PRAO","minor_district":"","subdistrict":"Chomphon","district":"Chatuchak","province":"Bangkok","postal_code":"10900"}}]}}' \
   https://api.acrosure.com/applications/update;
 ```
 
@@ -378,7 +387,19 @@ import AcrosureClient from "@acrosure/js-sdk";
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
-
+  basic_data: {
+    countries: [
+      "GERMANY",
+      "JAPAN"
+    ],
+    policy_date: "2018-12-08",
+    expiry_date: "2018-12-15",
+    policy_unit: "D"
+  },
+  package_options: null,
+  additional_data: {
+    ...
+  }
 });
 ```
 
@@ -601,6 +622,7 @@ const response = await client.application.selectPackage({
   "status": "ok",
   "data": {
     "id": "appl_SAMPLE01",
+    "package_code": "PACKAGE_SAMPLE_01"
     ...
   }
 }
