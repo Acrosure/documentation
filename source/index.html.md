@@ -23,6 +23,7 @@ includes:
   - api/products
   - api/policies
   - api/data
+  - api/team
 
 search: true
 ---
