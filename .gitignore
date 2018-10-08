@@ -21,3 +21,4 @@ tmp
 _yardoc
 doc/
 .idea/
+yarn-error.log
