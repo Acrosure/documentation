@@ -98,8 +98,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.product.setId("plcy_SAMPLE01");
-const response = await client.policy.get();
+const response = await client.policy.get('plcy_SAMPLE01');
 ```
 
 ```java

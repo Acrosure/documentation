@@ -33,14 +33,11 @@ const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
   product_id: "prod_ta",
   basic_data: {
-    countries: [
-        "GERMANY",
-        "JAPAN"
-    ],
+    countries: ["GERMANY", "JAPAN"],
     policy_date: "2018-12-08",
     expiry_date: "2018-12-15",
     policy_unit: "D"
-  },
+  }
 });
 ```
 
@@ -96,7 +93,6 @@ URL ของฟอร์มที่กรอกแล้วนี้จะเ�
 ห้ามใช้ Secret Token ใน URL ของฟอร์มสำเร็จรูปเด็ดขาด 
 </aside>
 
-
 ## 4. ยืนยันการสั่งซื้อ {{id:integration-hybrid-4}}
 
 ```shell
@@ -111,8 +107,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-client.application.setId("appl_SAMPLE01");
-const response = await client.application.confirm();
+const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```java
@@ -154,4 +149,3 @@ const response = await client.application.confirm();
 เมื่อผู้ใช้กรอกข้อมูลการสั่งซื้อประกันภัยเรียบร้อยแล้ว ผู้ใช้จะถูก redirect กลับมาที่เว็บไซต์ของผู้พัฒนา พร้อมกับ Application ID เพื่อให้ผู้พัฒนาได้ดำเนินการชำระเงินให้เรียบร้อย
 
 เมื่อชำระเงินเสร็จสิ้นแล้ว ผู้พัฒนาจำเป็นต้องเรียก API `POST /applications/confirm` เพื่อยืนยันการสั่งซื้อ API
-

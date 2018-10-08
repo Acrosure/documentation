@@ -35,14 +35,11 @@ const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.create({
   product_id: "prod_ta",
   basic_data: {
-    countries: [
-        "GERMANY",
-        "JAPAN"
-    ],
+    countries: ["GERMANY", "JAPAN"],
     policy_date: "2018-12-08",
     expiry_date: "2018-12-15",
     policy_unit: "D"
-  },
+  }
 });
 ```
 
@@ -91,8 +88,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId("appl_SAMPLE01");
-const response = await client.application.getPackages();
+const response = await client.application.getPackages("appl_SAMPLE01");
 ```
 
 ```java
@@ -110,7 +106,6 @@ const response = await client.application.getPackages();
 ```swift
 // Swift Code
 ```
-
 
 > ตัวอย่าง Response Body
 
@@ -145,9 +140,9 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
 const response = await client.application.selectPackage({
-  package_code: 'PACKAGE_SAMPLE_01'
+  application_id: "appl_SAMPLE01",
+  package_code: "PACKAGE_SAMPLE_01"
 });
 ```
 
@@ -195,8 +190,8 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
+  application_id: "appl_SAMPLE01",
   basic_data: {
     countries: [
       "GERMANY",
@@ -261,8 +256,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-client.application.setId("appl_SAMPLE01");
-const response = await client.application.confirm();
+const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```java
@@ -301,4 +295,4 @@ const response = await client.application.confirm();
 }
 ```
 
-ยืนยันการสั่งซื้อ เช่นเดียวกับการสั่งซื้อด้วยวิธีการอื่นๆ `POST /applications/confirm` 
+ยืนยันการสั่งซื้อ เช่นเดียวกับการสั่งซื้อด้วยวิธีการอื่นๆ `POST /applications/confirm`

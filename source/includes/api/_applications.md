@@ -172,8 +172,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId("appl_SAMPLE01");
-const response = await client.application.get();
+const response = await client.application.get("appl_SAMPLE01");
 ```
 
 ```java
@@ -385,8 +384,8 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
 const response = await client.application.update({
+  application_id: 'appl_SAMPLE01',
   basic_data: {
     countries: [
       "GERMANY",
@@ -468,8 +467,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
-const response = await client.application.getPackages();
+const response = await client.application.getPackages('appl_SAMPLE01');
 ```
 
 ```java
@@ -535,8 +533,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
-const response = await client.application.getPackage();
+const response = await client.application.getPackage('appl_SAMPLE01');
 ```
 
 ```java
@@ -593,8 +590,8 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
 const response = await client.application.selectPackage({
+  application_id: 'appl_SAMPLE01',
   package_code: 'PACKAGE_SAMPLE_01'
 });
 ```
@@ -655,8 +652,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
-const response = await client.application.submit();
+const response = await client.application.submit('appl_SAMPLE01');
 ```
 
 ```java
@@ -722,8 +718,7 @@ curl -X POST \
 import AcrosureClient from "@acrosure/js-sdk";
 
 const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-client.application.setId('appl_SAMPLE01')
-const response = await client.application.confirm();
+const response = await client.application.confirm('appl_SAMPLE01');
 ```
 
 ```java
