@@ -181,6 +181,8 @@ const response = await client.application.selectPackage({
 
 เลือกแพคเกจสำหรับใบคำสั่งซื้อผ่าน `POST /applications/select-package`
 
+## 5. ใส่ข้อมูลในแบบฟอร์มให้สมบูรณ์ {{id:integration-api-advanced-5}}
+
 ```shell
 curl -X POST \
   --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
