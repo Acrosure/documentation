@@ -35,7 +35,11 @@ const response = await client.data.get({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.data.get(handler: "subdistrict", dependencies:["กรุงเทพมหานคร","วังทองหลาง"]) { resp in
+  result = resp
+  expectation.fulfill()
+}
 ```
 
 > ตัวอย่าง Response Body

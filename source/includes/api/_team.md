@@ -67,7 +67,10 @@ const response = await client.teams.getInfo();
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.team.getInfo { resp in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body

@@ -92,7 +92,10 @@ const response = await client.product.get('prod_ta');
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.product.get(id: "prod_ta") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -150,7 +153,10 @@ const response = await client.product.list();
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.product.list() { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body

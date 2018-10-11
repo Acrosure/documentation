@@ -73,7 +73,7 @@ const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```swift
-// Swift Code
+// Not supported for Client-side
 ```
 
 > ตัวอย่าง Response Body

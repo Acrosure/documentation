@@ -188,7 +188,10 @@ const response = await client.application.get("appl_SAMPLE01");
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.get(id: "appl_SAMPLE01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -248,7 +251,10 @@ const response = await client.application.list({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.list() { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -328,7 +334,18 @@ const response = await client.application.create({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.create(
+  productId: "prod_ta",
+  basicData: [
+    "countries": ["GERMANY", "JAPAN"],
+    "policy_date": "2018-12-08",
+    "expiry_date": "2018-12-15",
+    "policy_unit": "D",
+  ]
+) { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -415,7 +432,20 @@ const response = await client.application.update({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.create(
+  productId: "prod_ta",
+  basicData: [
+    "countries": ["GERMANY", "JAPAN"],
+    "policy_date": "2018-12-08",
+    "expiry_date": "2018-12-15",
+    "policy_unit": "D",
+    pack
+  ],
+  additionalData, ...
+) { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -483,7 +513,10 @@ const response = await client.application.getPackages('appl_SAMPLE01');
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.getPackages(id: "appl_SAMPLE01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -549,7 +582,10 @@ const response = await client.application.getPackage('appl_SAMPLE01');
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.getPackage(id: "appl_SAMPLE01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -609,7 +645,10 @@ const response = await client.application.selectPackage({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.selectPackage(id: "appl_SAMPLE01", packageCode: "PACKAGE_SAMPLE_01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -668,7 +707,10 @@ const response = await client.application.submit('appl_SAMPLE01');
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.submit(id: "appl_SAMPLE01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -730,7 +772,7 @@ const response = await client.application.confirm('appl_SAMPLE01');
 ```
 
 ```swift
-// Swift Code
+// Not supported for Client-side
 ```
 
 > ตัวอย่าง Response Body

@@ -114,7 +114,10 @@ const response = await client.policy.get('plcy_SAMPLE01');
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.policy.get(id: "plcy_SAMPLE01") { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -174,7 +177,10 @@ const response = await client.policy.list({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.policy.list(query: ["product_id": "prod_ta"]) { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body

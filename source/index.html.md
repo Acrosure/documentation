@@ -8,6 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - python: Python
   - csharp: C# .NET
   - swift: Swift
+  - php: PHP
 
 toc_footers:
   - <a href='https://dashboard.acrosure.com/signup'>Sign Up for API Token</a>
@@ -66,7 +67,10 @@ const response = await client.product.list();
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.product.list() { response in
+  // ...
+}
 ```
 
 > ตัวอย่างผลลัพธ์จากคำสั่งด้านบน
@@ -86,17 +90,16 @@ const response = await client.product.list();
 }
 ```
 
-> ซึ่งผลลัพธ์ดังกล่าวก็คือรายการประกันภัยที่คุณสามารถทดลองใช้งานได้ 
+> ซึ่งผลลัพธ์ดังกล่าวก็คือรายการประกันภัยที่คุณสามารถทดลองใช้งานได้
 
 ท่านสามารถเริ่มสมัครใช้งาน Acrosure เพื่อเริ่มทดลองเชื่อมต่อกับ Acrosure ได้อย่างง่ายๆ ดังนี้
 
 1. ลงทะเบียนสร้าง Account Acrosure <a href="https://dashboard.acrosure.com/signup" target="_blank">ได้ที่นี่</a>
-   
+
 2. Login เข้าสู่ Dashboard <a href="https://dashboard.acrosure.com/login" target="_blank">ได้ที่นี่</a>
-   
+
 3. Copy API Token มาใช้
-  ![Copy API Token](./images/getting-api-key.png)
-   
+   ![Copy API Token](./images/getting-api-key.png)
 4. สามารถเริ่มทดลองเชื่อมต่อกับระบบ Sandbox ได้ทันที
 
 <aside class="notice">

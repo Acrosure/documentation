@@ -54,7 +54,15 @@ const response = await client.application.create({
 ```
 
 ```swift
-// Swift Code
+let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
+client.application.create(productId: "prod_ta", basicData: [
+    "countries": ["GERMANY", "JAPAN"],
+    "policy_date": "2018-12-08",
+    "expiry_date": "2018-12-15",
+    "policy_unit": "D"
+]) { response in
+  // ...
+}
 ```
 
 > ตัวอย่าง Response Body
@@ -123,7 +131,7 @@ const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```swift
-// Swift Code
+// Not supported for Client-side
 ```
 
 > ตัวอย่าง Response Body
