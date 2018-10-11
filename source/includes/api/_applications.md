@@ -642,7 +642,7 @@ const response = await client.application.selectPackage({
 
 ```shell
 curl -X POST \
-  --header "Authorization: Bearer <YOUR_SECRET_TOKEN>" \
+  --header "Authorization: Bearer <YOUR_PUBLIC_TOKEN>" \
   --header "Content-Type: application/json" \
   -d '{"application_id":"appl_SAMPLE01"}' \
   https://api.acrosure.com/applications/submit;
@@ -651,7 +651,7 @@ curl -X POST \
 ```javascript
 import AcrosureClient from "@acrosure/js-sdk";
 
-const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
+const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
 const response = await client.application.submit('appl_SAMPLE01');
 ```
 
@@ -683,10 +683,6 @@ const response = await client.application.submit('appl_SAMPLE01');
   }
 }
 ```
-
-<aside class="warning">
-API นี้ต้องการ Secret Token
-</aside>
 
 ส่งคำขอไปยังบริษัทประกันภัย เพื่อขอคำยืนยันการสั่งซื้อและให้ทางบริษัทออกกรมธรรม์
 
