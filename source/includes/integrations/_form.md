@@ -90,7 +90,10 @@ confirmed_application = acrosure_client.application.confirm(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_SECRET_TOKEN>")
+JObject confirmedApplication = await AcrosureClient.Application.Confirm(
+  "appl_SAMPLE01"
+);
 ```
 
 ```swift

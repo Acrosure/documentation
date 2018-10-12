@@ -470,7 +470,8 @@
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">products</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">products</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Product</span><span class="p">.</span><span class="nf">List</span><span class="p">();</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="nf">list</span><span class="p">()</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -619,7 +620,10 @@ Secret Token สามารถใช้งานได้ทุก API ที�
 <span class="n">confirmed_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">confirmedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Confirm</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
 $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
@@ -726,8 +730,16 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">createdApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">productId</span><span class="p">:</span> <span class="err">'</span><span class="n">prod_ta</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span><span class="nv">productId</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">,</span> <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
     <span class="s">"countries"</span><span class="p">:</span> <span class="p">[</span><span class="s">"GERMANY"</span><span class="p">,</span> <span class="s">"JAPAN"</span><span class="p">],</span>
     <span class="s">"policy_date"</span><span class="p">:</span> <span class="s">"2018-12-08"</span><span class="p">,</span>
@@ -742,7 +754,7 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   "basic_data" =&gt; json_decode('{}'),
   "package_options" =&gt; json_decode('{}'),
   "additional_data" =&gt; json_decode('{}'),
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code" =&gt; "PACKAGE_SAMPLE_01",
   "attachments": =&gt; []
 ]);
 </code></pre>
@@ -809,7 +821,10 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
 <span class="n">confirmed_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">confirmedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Confirm</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
 $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
@@ -920,8 +935,16 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">createdApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">productId</span><span class="p">:</span> <span class="err">'</span><span class="n">prod_ta</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span>
   <span class="nv">productId</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">,</span>
   <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
@@ -940,7 +963,7 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   "basic_data" =&gt; json_decode('{}'),
   "package_options" =&gt; json_decode('{}'),
   "additional_data" =&gt; json_decode('{}'),
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code" =&gt; "PACKAGE_SAMPLE_01",
   "attachments": =&gt; []
 ]);
 </code></pre>
@@ -993,7 +1016,10 @@ status ที่ได้อาจจะยังไม่เป็น <code>REA
 <span class="n">confirmed_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">confirmedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Confirm</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
 $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
@@ -1100,8 +1126,16 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">createdApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">productId</span><span class="p">:</span> <span class="err">'</span><span class="n">prod_ta</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span>
   <span class="nv">productId</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">,</span>
   <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
@@ -1119,7 +1153,7 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   "basic_data" =&gt; json_decode('{}'),
   "package_options" =&gt; json_decode('{}'),
   "additional_data" =&gt; json_decode('{}'),
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code" =&gt; "PACKAGE_SAMPLE_01",
   "attachments": =&gt; []
 ]);
 </code></pre>
@@ -1169,7 +1203,10 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
 <span class="n">packages</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">get_packages</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">packages</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">GetPackages</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">)</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">getPackages</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -1231,7 +1268,11 @@ $packages = $acrosureClient-&gt;getApplicationManager()-&gt;getPackages("appl_SA
   <span class="n">application_id</span> <span class="o">=</span> <span class="s">'appl_SAMPLE01'</span><span class="p">,</span>
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">updatedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">selectPackage</span><span class="p">({</span>
+  <span class="n">application_id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="s">"PACKAGE_SAMPLE_01"</span>
+<span class="p">});</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">selectPackage</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span> <span class="nv">packageCode</span><span class="p">:</span> <span class="s">"PACKAGE_SAMPLE_01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -1239,7 +1280,7 @@ $packages = $acrosureClient-&gt;getApplicationManager()-&gt;getPackages("appl_SA
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_PUBLIC_TOKEN</span><span class="nt">&gt;</span>" ]);
 $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;selectPackage([
   "application_id" =&gt; "appl_SAMPLE01",
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>"
+  "package_code" =&gt; "PACKAGE_SAMPLE_01"
 ]);
 </code></pre>
 <blockquote>
@@ -1320,8 +1361,16 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;selectPack
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">updatedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Update</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">application_id</span><span class="p">:</span> <span class="err">'</span><span class="n">appl_SAMPLE01</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span>
   <span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span>
   <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
@@ -1340,7 +1389,7 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;update([
   "basic_data": json_decode('{}'),
   "package_options": json_decode('{}'),
   "additional_data": json_decode('{}'),
-  "package_code": "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code": "PACKAGE_SAMPLE_01",
   "attachments": []
 ]);
 </code></pre>
@@ -1392,7 +1441,10 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;update([
 <span class="n">confirmed_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">confirmedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Confirm</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
 $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
@@ -1721,7 +1773,8 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'appl_SAMPLE01'</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">application</span> <span class="p">=</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">"appl_SAMPLE01"</span><span class="p">)</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -1789,7 +1842,8 @@ $application = $acrosureClient-&gt;getApplicationManager()-&gt;get("appl_SAMPLE0
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">applications</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">applications</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">List</span><span class="p">();</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">list</span><span class="p">()</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -1927,8 +1981,16 @@ $applications = $acrosureClient-&gt;getApplicationManager()-&gt;getList(query);
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">createdApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">productId</span><span class="p">:</span> <span class="err">'</span><span class="n">prod_ta</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">create</span><span class="p">(</span>
   <span class="nv">productId</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">,</span>
   <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
@@ -1946,7 +2008,7 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   "basic_data" =&gt; json_decode('{}'),
   "package_options" =&gt; json_decode('{}'),
   "additional_data" =&gt; json_decode('{}'),
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code" =&gt; "PACKAGE_SAMPLE_01",
   "attachments": =&gt; []
 ]);
 </code></pre>
@@ -2081,8 +2143,16 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span><span class="p">,</span>
   <span class="n">attachments</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">updatedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Update</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">application_id</span><span class="p">:</span> <span class="err">'</span><span class="n">appl_SAMPLE01</span><span class="err">'</span><span class="p">,</span> <span class="c1">// required</span>
+  <span class="n">basic_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_options</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">additional_data</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="err">'</span><span class="n">PACKAGE_SAMPLE_01</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">attachments</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span><span class="s">")
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">update</span><span class="p">(</span>
   <span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span>
   <span class="nv">basicData</span><span class="p">:</span> <span class="p">[</span>
@@ -2101,7 +2171,7 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;update([
   "basic_data": json_decode('{}'),
   "package_options": json_decode('{}'),
   "additional_data": json_decode('{}'),
-  "package_code": "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>",
+  "package_code": "PACKAGE_SAMPLE_01",
   "attachments": []
 ]);
 </code></pre>
@@ -2197,7 +2267,10 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;update([
 <span class="n">packages</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">get_packages</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">packages</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">GetPackages</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">)</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">getPackages</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -2275,7 +2348,10 @@ $packages = $acrosureClient-&gt;getApplicationManager()-&gt;getPackages("appl_SA
 <span class="n">current_package</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">get_package</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">currentPackage</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">GetPackage</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">getPackage</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -2350,7 +2426,11 @@ $currentPackage = $acrosureClient-&gt;getApplicationManager()-&gt;getPackage(
   <span class="n">application_id</span> <span class="o">=</span> <span class="s">'appl_SAMPLE01'</span><span class="p">,</span>
   <span class="n">package_code</span> <span class="o">=</span> <span class="s">'PACKAGE_SAMPLE_01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">updatedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">selectPackage</span><span class="p">({</span>
+  <span class="n">application_id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span>
+  <span class="n">package_code</span><span class="p">:</span> <span class="s">"PACKAGE_SAMPLE_01"</span>
+<span class="p">});</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">selectPackage</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">,</span> <span class="nv">packageCode</span><span class="p">:</span> <span class="s">"PACKAGE_SAMPLE_01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -2358,7 +2438,7 @@ $currentPackage = $acrosureClient-&gt;getApplicationManager()-&gt;getPackage(
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_PUBLIC_TOKEN</span><span class="nt">&gt;</span>" ]);
 $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;selectPackage([
   "application_id" =&gt; "appl_SAMPLE01",
-  "package_code" =&gt; "<span class="nt">&lt;package</span><span class="na">_code</span><span class="nt">&gt;</span>"
+  "package_code" =&gt; "PACKAGE_SAMPLE_01"
 ]);
 </code></pre>
 <blockquote>
@@ -2426,7 +2506,10 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;selectPack
 <span class="n">submitted_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">submittedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Submit</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">submit</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"appl_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -2501,7 +2584,10 @@ $submittedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;submit(
 <span class="n">confirmed_application</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="n">confirm</span><span class="p">(</span>
   <span class="s">'appl_SAMPLE01'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">confirmedApplication</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Application</span><span class="p">.</span><span class="nf">Confirm</span><span class="p">(</span>
+  <span class="s">"appl_SAMPLE01"</span>
+<span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
 </code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
 $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
@@ -2699,7 +2785,8 @@ API นี้ต้องการ Secret Token
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">product</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'prod_ta'</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">product</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Product</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">"prod_ta"</span><span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -2763,7 +2850,8 @@ $product = $acrosureClient-&gt;getProductManager()-&gt;get("prod_ta");
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">products</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">products</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Product</span><span class="p">.</span><span class="nf">List</span><span class="p">();</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">product</span><span class="o">.</span><span class="nf">list</span><span class="p">()</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -3010,7 +3098,8 @@ $products = $acrosureClient-&gt;getProductManager()-&gt;getList(query);
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">policy</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'plcy_SAMPLE01'</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">policy</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">policy</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="s">"plcy_SAMPLE01"</span><span class="p">);</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="s">"plcy_SAMPLE01"</span><span class="p">)</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -3078,7 +3167,8 @@ $policy = $acrosureClient-&gt;getPolicyManager()-&gt;get("plcy_SAMPLE01");
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">policies</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="nb">list</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">policies</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">policy</span><span class="p">.</span><span class="nf">List</span><span class="p">();</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">policy</span><span class="o">.</span><span class="nf">list</span><span class="p">(</span><span class="nv">query</span><span class="p">:</span> <span class="p">[</span><span class="s">"product_id"</span><span class="p">:</span> <span class="s">"prod_ta"</span><span class="p">])</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
@@ -3294,8 +3384,12 @@ $policies = $acrosureClient-&gt;getPolicyManager()-&gt;getList(query);
 <span class="n">values</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
   <span class="n">handler</span> <span class="o">=</span> <span class="s">'&lt;some_handler&gt;'</span>
 <span class="p">)</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
-</code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">values</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="nf">Get</span><span class="p">(</span><span class="err">@</span><span class="s">"{
+</span>  <span class="n">handler</span><span class="p">:</span> <span class="err">'</span><span class="p">&lt;</span><span class="n">some_handler</span><span class="p">&gt;</span><span class="err">'</span><span class="p">,</span>
+  <span class="n">dependencies</span><span class="p">:</span> <span class="p">[</span><span class="err">'</span><span class="p">&lt;</span><span class="n">dependency_1</span><span class="p">&gt;</span><span class="err">'</span><span class="p">,</span> <span class="err">'</span><span class="p">&lt;</span><span class="n">dependency_2</span><span class="p">&gt;</span><span class="err">'</span><span class="p">]</span>
+<span class="p">}</span><span class="s">");
+</span></code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="nf">get</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="s">"subdistrict"</span><span class="p">,</span> <span class="nv">dependencies</span><span class="p">:[</span><span class="s">"กรุงเทพมหานคร"</span><span class="p">,</span><span class="s">"วังทองหลาง"</span><span class="p">])</span> <span class="p">{</span> <span class="n">resp</span> <span class="k">in</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
@@ -3613,7 +3707,8 @@ Dependencies ตอนเรียกนั้นต้องส่งตาม�
 <span class="o">}</span>
 </code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span><span class="p">)</span>
 <span class="n">team_info</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">get_info</span><span class="p">()</span>
-</code></pre><pre class="highlight csharp tab-csharp"><code><span class="c1">// CSharp Code</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
+<span class="n">JObject</span> <span class="n">teamInfo</span> <span class="p">=</span> <span class="k">await</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="n">Team</span><span class="p">.</span><span class="nf">getInfo</span><span class="p">();</span>
 </code></pre><pre class="highlight swift tab-swift"><code><span class="k">let</span> <span class="nv">client</span> <span class="o">=</span> <span class="kt">AcrosureClient</span><span class="p">(</span><span class="nv">token</span><span class="p">:</span> <span class="s">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span><span class="p">)</span>
 <span class="n">client</span><span class="o">.</span><span class="n">team</span><span class="o">.</span><span class="n">getInfo</span> <span class="p">{</span> <span class="n">resp</span> <span class="k">in</span>
   <span class="c1">// ...</span>

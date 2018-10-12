@@ -127,7 +127,8 @@ policy = acrosure_client.policy.get('plcy_SAMPLE01')
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject policy = await AcrosureClient.policy.Get("plcy_SAMPLE01");
 ```
 
 ```swift
@@ -214,7 +215,8 @@ policies = acrosure_client.policy.list(query)
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject policies = await AcrosureClient.policy.List();
 ```
 
 ```swift

@@ -93,7 +93,15 @@ created_application = acrosure_client.application.create(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject createdApplication = await AcrosureClient.Application.Create(@"{
+  productId: 'prod_ta', // required
+  basic_data: {},
+  package_options: {},
+  additional_data: {},
+  package_code: 'PACKAGE_SAMPLE_01',
+  attachments: []
+}")
 ```
 
 ```swift
@@ -118,7 +126,7 @@ $createdApplication = $acrosureClient->getApplicationManager()->create([
   "basic_data" => json_decode('{}'),
   "package_options" => json_decode('{}'),
   "additional_data" => json_decode('{}'),
-  "package_code" => "<package_code>",
+  "package_code" => "PACKAGE_SAMPLE_01",
   "attachments": => []
 ]);
 ```
@@ -186,7 +194,10 @@ packages = acrosure_client.application.get_packages(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject packages = await AcrosureClient.Application.GetPackages(
+  "appl_SAMPLE01"
+)
 ```
 
 ```swift
@@ -272,7 +283,11 @@ updated_application = acrosure_client.application.select_package(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject updatedApplication = await AcrosureClient.Application.selectPackage({
+  application_id: "appl_SAMPLE01",
+  package_code: "PACKAGE_SAMPLE_01"
+});
 ```
 
 ```swift
@@ -286,7 +301,7 @@ client.application.selectPackage(id: "appl_SAMPLE01", packageCode: "PACKAGE_SAMP
 $acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
 $updatedApplication = $acrosureClient->getApplicationManager()->selectPackage([
   "application_id" => "appl_SAMPLE01",
-  "package_code" => "<package_code>"
+  "package_code" => "PACKAGE_SAMPLE_01"
 ]);
 ```
 
@@ -385,7 +400,15 @@ updatedApplication = acrosure_client.application.update(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject updatedApplication = await AcrosureClient.Application.Update(@"{
+  application_id: 'appl_SAMPLE01', // required
+  basic_data: {},
+  package_options: {},
+  additional_data: {},
+  package_code: 'PACKAGE_SAMPLE_01',
+  attachments: []
+}")
 ```
 
 ```swift
@@ -411,7 +434,7 @@ $updatedApplication = $acrosureClient->getApplicationManager()->update([
   "basic_data": json_decode('{}'),
   "package_options": json_decode('{}'),
   "additional_data": json_decode('{}'),
-  "package_code": "<package_code>",
+  "package_code": "PACKAGE_SAMPLE_01",
   "attachments": []
 ]);
 ```
@@ -481,7 +504,10 @@ confirmed_application = acrosure_client.application.confirm(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_SECRET_TOKEN>")
+JObject confirmedApplication = await AcrosureClient.Application.Confirm(
+  "appl_SAMPLE01"
+);
 ```
 
 ```swift

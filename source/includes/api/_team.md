@@ -80,7 +80,8 @@ team_info = acrosure_client.team.get_info()
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject teamInfo = await AcrosureClient.Team.getInfo();
 ```
 
 ```swift

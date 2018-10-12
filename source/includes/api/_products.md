@@ -105,7 +105,8 @@ product = acrosure_client.product.get('prod_ta')
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject product = await AcrosureClient.Product.Get("prod_ta");
 ```
 
 ```swift
@@ -188,7 +189,8 @@ products = acrosure_client.product.list(query)
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject products = await AcrosureClient.Product.List();
 ```
 
 ```swift

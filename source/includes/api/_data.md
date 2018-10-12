@@ -56,7 +56,11 @@ values = acrosure_client.data.get(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject values = await AcrosureClient.Data.Get(@"{
+  handler: '<some_handler>',
+  dependencies: ['<dependency_1>', '<dependency_2>']
+}");
 ```
 
 ```swift

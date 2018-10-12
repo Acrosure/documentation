@@ -91,7 +91,15 @@ created_application = acrosure_client.application.create(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject createdApplication = await AcrosureClient.Application.Create(@"{
+  productId: 'prod_ta', // required
+  basic_data: {},
+  package_options: {},
+  additional_data: {},
+  package_code: 'PACKAGE_SAMPLE_01',
+  attachments: []
+}")
 ```
 
 ```swift
@@ -113,7 +121,7 @@ $createdApplication = $acrosureClient->getApplicationManager()->create([
   "basic_data" => json_decode('{}'),
   "package_options" => json_decode('{}'),
   "additional_data" => json_decode('{}'),
-  "package_code" => "<package_code>",
+  "package_code" => "PACKAGE_SAMPLE_01",
   "attachments": => []
 ]);
 ```
@@ -201,7 +209,10 @@ confirmed_application = acrosure_client.application.confirm(
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_SECRET_TOKEN>")
+JObject confirmedApplication = await AcrosureClient.Application.Confirm(
+  "appl_SAMPLE01"
+);
 ```
 
 ```swift

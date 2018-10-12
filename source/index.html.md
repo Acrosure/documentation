@@ -73,7 +73,8 @@ products = acrosure_client.product.list(query)
 ```
 
 ```csharp
-// CSharp Code
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_PUBLIC_TOKEN>")
+JObject products = await AcrosureClient.Product.List();
 ```
 
 ```swift
