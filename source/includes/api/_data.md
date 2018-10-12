@@ -23,7 +23,29 @@ const response = await client.data.get({
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.form.DataGetform;
+import com.acrosure.resource.Data;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    DataGetForm<String> form = new DataGetForm<>();
+    form.setHandler("subdistrict");
+    String[] dependencies = {"กรุงเทพมหานคร", "วังทองหลาง"};
+    form.setDependencies(dependencies);
+
+    try {
+        Data[] data = client.data().get(form);
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (AcrosureException e) {
+        System.out.println(e.getMessage() + ", " + e.getStatusCode());
+        e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python

@@ -80,7 +80,23 @@ const response = await client.product.get('prod_ta');
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Product;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Product product = client.product().get("prod_ta");
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -141,7 +157,23 @@ const response = await client.product.list();
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Product;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Product[] products = client.product().list();
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python

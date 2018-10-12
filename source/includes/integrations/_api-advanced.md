@@ -44,7 +44,40 @@ const response = await client.application.create({
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.acrosure.form.ApplicationCreateForm;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>")
+    ObjectMapper mapper = new ObjectMapper();
+    ObjectNode basicData = mapper.createObjectNode();
+
+    ArrayNode countries = basicData.putArray("countries");
+    countries.add("GERMANY");
+    countries.add("JAPAN");
+
+    basicData.put("policy_date", "2018-12-08");
+    basicData.put("expiry_date", "2018-12-15");
+    basicData.put("policy_unit", "D");
+
+    ApplicationCreateForm createForm = new ApplicationCreateForm();
+    createForm.setBasicData(basicData);
+
+    try {
+      Application application = client.application().create(createForm);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -103,7 +136,26 @@ const response = await client.application.getPackages("appl_SAMPLE01");
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.acrosure.resource.Package;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Application application = client.application().get("appl_SAMPLE01");
+      Package[] packages = client.application().getPackages(application);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -161,7 +213,26 @@ const response = await client.application.selectPackage({
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.acrosure.resource.Package;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Application application = client.application().get("appl_SAMPLE01");
+      Package[] packages = client.application().getPackages(application);
+      client.application().selectPackage(application, packages[0]);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -226,7 +297,39 @@ const response = await client.application.update({
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.acrosure.form.ApplicationCreateForm;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>")
+    ObjectMapper mapper = new ObjectMapper();
+    ObjectNode basicData = mapper.createObjectNode();
+
+    ArrayNode countries = basicData.putArray("countries");
+    countries.add("GERMANY");
+    countries.add("JAPAN");
+
+    basicData.put("policy_date", "2018-12-08");
+    basicData.put("expiry_date", "2018-12-15");
+    basicData.put("policy_unit", "D");
+
+    try {
+      Application application = client.application().get("appl_SAMPLE01");
+      application.setBasicData(basicData);
+      client.application().update(application);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -289,7 +392,25 @@ const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.acrosure.resource.Policy;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_SECRET_TOKEN>");
+
+    try {
+      Application application = client.application().get("appl_SAMPLE01");
+      Policy[] policies = client.application().confirm(application);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
