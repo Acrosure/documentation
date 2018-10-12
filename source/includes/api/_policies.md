@@ -123,7 +123,7 @@ public class Main {
 
 ```python
 acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
-policy = acrosure_client.policy.get('<policy_id>')
+policy = acrosure_client.policy.get('plcy_SAMPLE01')
 ```
 
 ```csharp
@@ -138,7 +138,8 @@ client.policy.get(id: "plcy_SAMPLE01") { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$policy = $acrosureClient->getPolicyManager()->get("plcy_SAMPLE01");
 ```
 
 > ตัวอย่าง Response Body
@@ -224,7 +225,8 @@ client.policy.list(query: ["product_id": "prod_ta"]) { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$policies = $acrosureClient->getPolicyManager()->getList(query);
 ```
 
 > ตัวอย่าง Response Body

@@ -116,7 +116,8 @@ client.product.get(id: "prod_ta") { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$product = $acrosureClient->getProductManager()->get("prod_ta");
 ```
 
 > ตัวอย่าง Response Body
@@ -198,7 +199,8 @@ client.product.list() { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$products = $acrosureClient->getProductManager()->getList(query);
 ```
 
 > ตัวอย่าง Response Body

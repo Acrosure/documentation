@@ -91,7 +91,8 @@ client.team.getInfo { resp in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$teamInfo = $acrosureClient->getTeamManager()->getInfo();
 ```
 
 > ตัวอย่าง Response Body

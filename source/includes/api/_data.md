@@ -67,7 +67,10 @@ client.data.get(handler: "subdistrict", dependencies:["กรุงเทพม�
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$values = $acrosureClient->getDataManager()->get([
+  "handler" => "<some_handler>"
+]);
 ```
 
 > ตัวอย่าง Response Body

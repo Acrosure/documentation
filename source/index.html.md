@@ -83,7 +83,8 @@ client.product.list() { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$products = $acrosureClient->getProductManager()->getList(query);
 ```
 
 > ตัวอย่างผลลัพธ์จากคำสั่งด้านบน

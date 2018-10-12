@@ -112,7 +112,15 @@ client.application.create(
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$createdApplication = $acrosureClient->getApplicationManager()->create([
+  "product_id" => "prod_ta", // required
+  "basic_data" => json_decode('{}'),
+  "package_options" => json_decode('{}'),
+  "additional_data" => json_decode('{}'),
+  "package_code" => "<package_code>",
+  "attachments": => []
+]);
 ```
 
 > ตัวอย่าง Response Body
@@ -189,7 +197,8 @@ client.application.getPackages(id: "appl_SAMPLE01") { response in
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$packages = $acrosureClient->getApplicationManager()->getPackages("appl_SAMPLE01");
 ```
 
 > ตัวอย่าง Response Body
@@ -274,7 +283,11 @@ client.application.selectPackage(id: "appl_SAMPLE01", packageCode: "PACKAGE_SAMP
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$updatedApplication = $acrosureClient->getApplicationManager()->selectPackage([
+  "application_id" => "appl_SAMPLE01",
+  "package_code" => "<package_code>"
+]);
 ```
 
 > ตัวอย่าง Response Body
@@ -392,7 +405,15 @@ client.application.update(
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$updatedApplication = $acrosureClient->getApplicationManager()->update([
+  "application_id" => "appl_SAMPLE01", // required
+  "basic_data": json_decode('{}'),
+  "package_options": json_decode('{}'),
+  "additional_data": json_decode('{}'),
+  "package_code": "<package_code>",
+  "attachments": []
+]);
 ```
 
 > ตัวอย่าง Response Body
@@ -453,7 +474,7 @@ public class Main {
 ```
 
 ```python
-acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+acrosure_client = AcrosureClient(token = '<YOUR_SECRET_TOKEN>')
 confirmed_application = acrosure_client.application.confirm(
   'appl_SAMPLE01'
 )
@@ -468,7 +489,10 @@ confirmed_application = acrosure_client.application.confirm(
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_SECRET_TOKEN>" ]);
+$confirmedApplication = $acrosureClient->getApplicationManager()->confirm(
+  "appl_SAMPLE01"
+);
 ```
 
 > ตัวอย่าง Response Body

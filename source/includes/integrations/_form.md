@@ -83,7 +83,7 @@ public class Main {
 ```
 
 ```python
-acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+acrosure_client = AcrosureClient(token = '<YOUR_SECRET_TOKEN>')
 confirmed_application = acrosure_client.application.confirm(
   'appl_SAMPLE01'
 )
@@ -98,7 +98,10 @@ confirmed_application = acrosure_client.application.confirm(
 ```
 
 ```php
-// PHP Code
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_SECRET_TOKEN>" ]);
+$confirmedApplication = $acrosureClient->getApplicationManager()->confirm(
+  "appl_SAMPLE01"
+);
 ```
 
 > ตัวอย่าง Response Body
