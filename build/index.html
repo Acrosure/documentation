@@ -1848,6 +1848,8 @@ $application = $acrosureClient-&gt;getApplicationManager()-&gt;get("appl_SAMPLE0
 <span class="n">client</span><span class="o">.</span><span class="n">application</span><span class="o">.</span><span class="nf">list</span><span class="p">()</span> <span class="p">{</span> <span class="n">response</span> <span class="k">in</span>
   <span class="c1">// ...</span>
 <span class="p">}</span>
+</code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_PUBLIC_TOKEN</span><span class="nt">&gt;</span>" ]);
+$applications = $acrosureClient-&gt;getApplicationManager()-&gt;getList(query);
 </code></pre>
 <blockquote>
 <p>ตัวอย่าง Response Body</p>
@@ -1866,9 +1868,7 @@ $application = $acrosureClient-&gt;getApplicationManager()-&gt;get("appl_SAMPLE0
     </span><span class="p">}</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_PUBLIC_TOKEN</span><span class="nt">&gt;</span>" ]);
-$applications = $acrosureClient-&gt;getApplicationManager()-&gt;getList(query);
-</code></pre>
+</span></code></pre>
 <p>เรียกดูรายการใบคำขอสั่งซื้อ โดยสามารถระบุเงื่อนไขเพิ่มเติมหรือไม่ก็ได้</p>
 <h3 id='http-request-1'>HTTP Request</h3>
 <p><code>POST https://api.acrosure.com/applications/list</code></p>
@@ -3783,7 +3783,37 @@ $teamInfo = $acrosureClient-&gt;getTeamManager()-&gt;getInfo();
     </span><span class="s2">"duty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1074.28</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h3 id='request-body-15'>Request Body</h3>
+</span></code></pre>
+<blockquote>
+<p>วิธีการตรวจสอบ Signature ว่ามาจาก Acrosure จริงหรือไม่ สามารถทำได้ดังนี้</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code><span class="nb">echo</span> -n <span class="s1">'&lt;raw_data&gt;'</span> | openssl dgst -sha256 -hmac <span class="s2">"&lt;YOUR_SECRET_TOKEN&gt;"</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_SECRET_TOKEN&gt;"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">isSignatureValid</span> <span class="o">=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">verifySignature</span><span class="p">(</span>
+  <span class="s1">'&lt;signature&gt;'</span><span class="p">,</span>
+  <span class="s1">'&lt;raw_data&gt;'</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight java tab-java"><code><span class="n">Acrosure</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Acrosure</span><span class="o">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="o">);</span>
+<span class="n">Bool</span> <span class="n">isSignatureValid</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">verifySignature</span><span class="o">(</span><span class="s">"&lt;signature&gt;"</span><span class="o">,</span> <span class="s">"&lt;raw_data&gt;"</span><span class="o">));</span>
+</code></pre><pre class="highlight python tab-python"><code><span class="n">acrosure_client</span> <span class="o">=</span> <span class="n">AcrosureClient</span><span class="p">(</span><span class="n">token</span> <span class="o">=</span> <span class="s">'&lt;YOUR_SECRET_TOKEN&gt;'</span><span class="p">)</span>
+<span class="n">is_signature_valid</span> <span class="o">=</span> <span class="n">acrosure_client</span><span class="o">.</span><span class="n">verify_webhook</span><span class="p">(</span>
+  <span class="n">signature</span> <span class="o">=</span> <span class="s">'&lt;signature&gt;'</span><span class="p">,</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="s">'&lt;raw_data&gt;'</span>
+<span class="p">)</span>
+</code></pre><pre class="highlight csharp tab-csharp"><code><span class="n">AcrosureClient</span> <span class="n">AcrosureClient</span>  <span class="p">=</span> <span class="k">new</span> <span class="nf">AcrosureClient</span><span class="p">(</span><span class="s">"&lt;YOUR_SECRET_TOKEN&gt;"</span><span class="p">)</span>
+<span class="kt">bool</span> <span class="n">isSignatureValid</span> <span class="p">=</span> <span class="n">AcrosureClient</span><span class="p">.</span><span class="nf">verifySignature</span><span class="p">(</span>
+  <span class="s">"&lt;signature&gt;"</span><span class="p">,</span>
+  <span class="s">@"{'data':'&lt;raw_data&gt;'}"</span>
+<span class="p">);</span>
+</code></pre><pre class="highlight swift tab-swift"><code><span class="c1">// Not supported for Client-side</span>
+</code></pre><pre class="highlight php tab-php"><code>$acrosureClient = new AcrosureClient([ "token" =&gt; "<span class="nt">&lt;YOUR</span><span class="na">_SECRET_TOKEN</span><span class="nt">&gt;</span>" ]);
+$isSignatureValid = $acrosureClient-&gt;verifySignature(
+  "<span class="nt">&lt;signature&gt;</span>",
+  "<span class="nt">&lt;raw</span><span class="na">_data</span><span class="nt">&gt;</span>"
+);
+</code></pre><h3 id='request-body-15'>Request Body</h3>
 <table><thead>
 <tr>
 <th>Name</th>

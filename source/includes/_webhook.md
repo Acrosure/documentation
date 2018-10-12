@@ -27,6 +27,55 @@
 }
 ```
 
+> วิธีการตรวจสอบ Signature ว่ามาจาก Acrosure จริงหรือไม่ สามารถทำได้ดังนี้
+
+```shell
+echo -n '<raw_data>' | openssl dgst -sha256 -hmac "<YOUR_SECRET_TOKEN>"
+```
+
+```javascript
+import AcrosureClient from "@acrosure/js-sdk";
+
+const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
+const isSignatureValid = client.verifySignature(
+  '<signature>',
+  '<raw_data>'
+)
+```
+
+```java
+Acrosure client = new Acrosure("<YOUR_SECRET_TOKEN>");
+Bool isSignatureValid = client.verifySignature("<signature>", "<raw_data>"));
+```
+
+```python
+acrosure_client = AcrosureClient(token = '<YOUR_SECRET_TOKEN>')
+is_signature_valid = acrosure_client.verify_webhook(
+  signature = '<signature>',
+  data = '<raw_data>'
+)
+```
+
+```csharp
+AcrosureClient AcrosureClient  = new AcrosureClient("<YOUR_SECRET_TOKEN>")
+bool isSignatureValid = AcrosureClient.verifySignature(
+  "<signature>",
+  @"{'data':'<raw_data>'}"
+);
+```
+
+```swift
+// Not supported for Client-side
+```
+
+```php
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_SECRET_TOKEN>" ]);
+$isSignatureValid = $acrosureClient->verifySignature(
+  "<signature>",
+  "<raw_data>"
+);
+```
+
 ### Request Body
 | Name          | Meaning                                                    |
 | ------------- | ---------------------------------------------------------- |
