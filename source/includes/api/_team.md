@@ -55,7 +55,23 @@ const response = await client.teams.getInfo();
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Team;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+        Team team = client.team().getInfo();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (AcrosureException e) {
+        System.out.println(e.getMessage() + ", " + e.getStatusCode());
+        e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
