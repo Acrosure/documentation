@@ -146,7 +146,7 @@ const response = await client.application.confirm("appl_SAMPLE01");
 ```java
 import com.acrosure.Acrosure;
 import com.acrosure.resource.Application;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.acrosure.resource.Policy;
 
 public class Main {
   public static void main(String[] args) {
