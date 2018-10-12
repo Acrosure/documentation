@@ -102,7 +102,23 @@ const response = await client.policy.get('plcy_SAMPLE01');
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Policy;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Policy policy = client.policy().get("plcy_SAMPLE01");
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
@@ -165,7 +181,25 @@ const response = await client.policy.list({
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.PolicyList;
+import com.acrosure.form.PolicyQuery;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      PolicyQuery query = new PolicyQuery();
+      PolicyList policyList = client.policy().list(query);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
