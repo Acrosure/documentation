@@ -67,7 +67,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+products = acrosure_client.product.list(query)
 ```
 
 ```csharp

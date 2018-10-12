@@ -49,7 +49,10 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+values = acrosure_client.data.get(
+  handler = '<some_handler>'
+)
 ```
 
 ```csharp

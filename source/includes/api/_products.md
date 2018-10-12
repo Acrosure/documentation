@@ -100,7 +100,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+product = acrosure_client.product.get('prod_ta')
 ```
 
 ```csharp
@@ -181,7 +182,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+products = acrosure_client.product.list(query)
 ```
 
 ```csharp

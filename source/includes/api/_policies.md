@@ -122,7 +122,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+policy = acrosure_client.policy.get('<policy_id>')
 ```
 
 ```csharp
@@ -207,7 +208,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+policies = acrosure_client.policy.list(query)
 ```
 
 ```csharp

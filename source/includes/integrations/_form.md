@@ -83,7 +83,10 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+confirmed_application = acrosure_client.application.confirm(
+  'appl_SAMPLE01'
+)
 ```
 
 ```csharp

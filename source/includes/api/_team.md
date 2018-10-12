@@ -75,7 +75,8 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+team_info = acrosure_client.team.get_info()
 ```
 
 ```csharp

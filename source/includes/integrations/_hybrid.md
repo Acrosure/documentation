@@ -79,7 +79,15 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+created_application = acrosure_client.application.create(
+  productId = 'prod_ta', # required
+  basic_data = {},
+  package_options = {},
+  additional_data = {},
+  package_code = 'PACKAGE_SAMPLE_01',
+  attachments = []
+)
 ```
 
 ```csharp
@@ -178,7 +186,10 @@ public class Main {
 ```
 
 ```python
-# Python Code
+acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
+confirmed_application = acrosure_client.application.confirm(
+  'appl_SAMPLE01'
+)
 ```
 
 ```csharp
