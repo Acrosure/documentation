@@ -300,6 +300,11 @@ client.application.list() { response in
 }
 ```
 
+```php
+$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
+$applications = $acrosureClient->getApplicationManager()->getList(query);
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -317,11 +322,6 @@ client.application.list() { response in
     }
   ]
 }
-```
-
-```php
-$acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
-$applications = $acrosureClient->getApplicationManager()->getList(query);
 ```
 
 เรียกดูรายการใบคำขอสั่งซื้อ โดยสามารถระบุเงื่อนไขเพิ่มเติมหรือไม่ก็ได้
