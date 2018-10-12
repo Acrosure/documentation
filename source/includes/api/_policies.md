@@ -136,6 +136,10 @@ client.policy.get(id: "plcy_SAMPLE01") { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -215,6 +219,10 @@ let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
 client.policy.list(query: ["product_id": "prod_ta"]) { response in
   // ...
 }
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body

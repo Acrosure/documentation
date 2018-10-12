@@ -59,9 +59,12 @@ public class Main {
 ```swift
 let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
 client.data.get(handler: "subdistrict", dependencies:["กรุงเทพมหานคร","วังทองหลาง"]) { resp in
-  result = resp
-  expectation.fulfill()
+  // ...
 }
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body

@@ -94,6 +94,10 @@ public class Main {
 // Not supported for Client-side
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json

@@ -81,6 +81,10 @@ client.product.list() { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่างผลลัพธ์จากคำสั่งด้านบน
 
 ```json

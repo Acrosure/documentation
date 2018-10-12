@@ -106,6 +106,10 @@ client.application.create(
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -174,6 +178,10 @@ public class Main {
 
 ```swift
 // Not supported for Client-side
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body

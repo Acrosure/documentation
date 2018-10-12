@@ -114,6 +114,10 @@ client.product.get(id: "prod_ta") { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -189,6 +193,10 @@ let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
 client.product.list() { response in
   // ...
 }
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body

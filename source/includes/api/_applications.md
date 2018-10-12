@@ -210,6 +210,10 @@ client.application.get(id: "appl_SAMPLE01") { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -308,6 +312,10 @@ client.application.list() { response in
     }
   ]
 }
+```
+
+```php
+// PHP Code
 ```
 
 เรียกดูรายการใบคำขอสั่งซื้อ โดยสามารถระบุเงื่อนไขเพิ่มเติมหรือไม่ก็ได้
@@ -413,6 +421,10 @@ client.application.create(
 ) { response in
   // ...
 }
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body
@@ -541,6 +553,10 @@ client.application.update(
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -631,6 +647,10 @@ client.application.getPackages(id: "appl_SAMPLE01") { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -719,6 +739,10 @@ client.application.getPackage(id: "appl_SAMPLE01") { response in
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -801,6 +825,10 @@ client.application.selectPackage(id: "appl_SAMPLE01", packageCode: "PACKAGE_SAMP
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -878,6 +906,10 @@ let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
 client.application.submit(id: "appl_SAMPLE01") { response in
   // ...
 }
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body
@@ -958,6 +990,10 @@ public class Main {
 
 ```swift
 // Not supported for Client-side
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body

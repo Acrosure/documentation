@@ -98,6 +98,10 @@ client.application.create(productId: "prod_ta", basicData: [
 }
 ```
 
+```php
+// PHP Code
+```
+
 > ตัวอย่าง Response Body
 
 ```json
@@ -183,6 +187,10 @@ public class Main {
 
 ```swift
 // Not supported for Client-side
+```
+
+```php
+// PHP Code
 ```
 
 > ตัวอย่าง Response Body
