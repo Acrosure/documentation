@@ -55,7 +55,15 @@ const response = await client.product.list();
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Product;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>")
+    Product[] products = client.product().list();
+  }
+}
 ```
 
 ```python
