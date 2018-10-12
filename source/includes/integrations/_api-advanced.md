@@ -399,7 +399,7 @@ import com.acrosure.resource.Policy;
 
 public class Main {
   public static void main(String[] args) {
-    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+    Acrosure client = new Acrosure("<YOUR_SECRET_TOKEN>");
 
     try {
       Application application = client.application().get("appl_SAMPLE01");
