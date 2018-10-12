@@ -35,7 +35,7 @@ Policy คือกรมธรรม์ที่ได้ร้องขอไ�
     "source": "PARTNER",
     "team_name": "Sample Team",
     "signed_policy_url": "https://storage.googleapis.com/acrosure-policy/sandbox/SAMPLE_SIGNED_URL",
-    "application_display_id": "AP00010000001"
+    "application_no": "AP00010000001"
 }
 ```
 
