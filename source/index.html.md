@@ -16,6 +16,7 @@ toc_footers:
 
 includes:
   - getting-started
+  - sdk
   - integrations/form
   - integrations/hybrid
   - integrations/api
