@@ -144,7 +144,25 @@ const response = await client.application.confirm("appl_SAMPLE01");
 ```
 
 ```java
-// Java Code
+import com.acrosure.Acrosure;
+import com.acrosure.resource.Application;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class Main {
+  public static void main(String[] args) {
+    Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
+
+    try {
+      Application application = client.application().get("appl_SAMPLE01");
+      Policy[] policies = client.application().confirm(application);
+    } catch (IOException e) {
+      e.printStackTrace();
+    } catch (AcrosureException e) {
+      System.out.println(e.getMessage() + ", " + e.getStatusCode());
+      e.printStackTrace();
+    }
+  }
+}
 ```
 
 ```python
