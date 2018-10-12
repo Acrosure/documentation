@@ -66,7 +66,6 @@ client.application.create(
     "policy_date": "2018-12-08",
     "expiry_date": "2018-12-15",
     "policy_unit": "D",
-    pack
   ],
   additionalData, ...
 ) { response in

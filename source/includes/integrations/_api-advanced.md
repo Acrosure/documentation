@@ -239,14 +239,13 @@ const response = await client.application.update({
 
 ```swift
 let client = AcrosureClient(token: "<YOUR_PUBLIC_TOKEN>")
-client.application.create(
-  productId: "prod_ta",
+client.application.update(
+  id: "appl_SAMPLE01",
   basicData: [
     "countries": ["GERMANY", "JAPAN"],
     "policy_date": "2018-12-08",
     "expiry_date": "2018-12-15",
     "policy_unit": "D",
-    pack
   ],
   additionalData, ...
 ) { response in
