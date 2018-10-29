@@ -112,7 +112,7 @@ $products = $acrosureClient->getProductManager()->getList(query);
 
 1. ลงทะเบียนสร้าง Account Acrosure <a href="https://dashboard.acrosure.com/signup" target="_blank">ได้ที่นี่</a>
 
-2. Login เข้าสู่ Dashboard <a href="https://dashboard.acrosure.com/login" target="_blank">ได้ที่นี่</a>
+2. Login เข้าสู่ Dashboard <a href="https://dashboard.acrosure.com/" target="_blank">ได้ที่นี่</a>
 
 3. Copy API Token มาใช้
    ![Copy API Token](./images/getting-api-key.png)
