@@ -49,10 +49,10 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-const response = await client.product.list();
+const client = new AcrosureClient({ token: '<YOUR_PUBLIC_TOKEN>' })
+const response = await client.product.list()
 ```
 
 ```java
@@ -121,3 +121,21 @@ $products = $acrosureClient->getProductManager()->getList(query);
 <aside class="notice">
 Secret Token สามารถใช้งานได้ทุก API ที่ Public Token สามารถเรียกได้ แต่ Secret Token มีไว้ใช้ใน Server เท่านั้น
 </aside>
+
+## การเลือกใช้งาน Public/Secret Token {{id:tokens-explained}}
+
+Token ทั้งสองประเภทใช้ในการยืนยันตัวตนเมื่อเรียกใช้ API ของ Acrosure แต่จะมีสิทธิ์ในการเข้าถึงบาง API ไม่เหมือนกัน
+
+### Public Token
+
+สามารถเข้าถึง API ได้จำกัด โดยจะเป็น API ที่ไม่ส่งผลโดยตรงต่อการสร้างกรมธรรม์ (เช่น [/applications/confirm](#api-applications-confirm))
+
+### Secret Token
+
+สามารถเข้าถึง API ได้ทั้งหมด รวมถึงการเรียก API สำหรับสร้างกรมธรรม์ด้วย
+
+### เหตุผลที่ต้องมี Token สองประเภท
+
+จุดประสงค์ของ Public Token นั้น มีไว้เพื่อให้คุณสามารถนำไปใช้ในระบบของคุณที่เปิดให้ผู้ใช้ทั่วไปเข้าถึงได้ เช่น Website หรือ Mobile Application โดยถึงแม้มีผู้ใช้เจอ Public Token นี้ ก็ไม่สามารถนำไปเรียกใช้ API เพื่อสร้างกรมธรรม์เองได้
+
+ส่วน Secret Token นั้น มีไว้เพื่อให้คุณนำไปใช้ในระบบของคุณที่บุคคลภายนอกไม่สามารถเข้าถึงได้ เช่น Backend ที่ใช้งานภายใน เพื่อการสร้างกรมธรรม์
