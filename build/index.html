@@ -244,13 +244,19 @@
       <div class="main-title">
         <a href="https://docs.acrosure.com/" style="color: white;">API Documentation</a>
       </div>
-        <div class="search">
+        <div class="search" id="search-box">
           <input type="text" class="search" id="input-search" placeholder="Search">
+          <div class="clear" id="search-clear" hidden>&#10005;</div>
         </div>
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#getting-started" class="toc-h1 toc-link" data-title="เริ่มต้นใช้งาน ">เริ่มต้นใช้งาน </a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#tokens-explained" class="toc-h2 toc-link" data-title="การเลือกใช้งาน Public/Secret Token ">การเลือกใช้งาน Public/Secret Token </a>
+                  </li>
+              </ul>
           </li>
           <li>
             <a href="#integration-overall" class="toc-h1 toc-link" data-title="ภาพรวมการเชื่อมต่อ ">ภาพรวมการเชื่อมต่อ </a>
@@ -260,6 +266,9 @@
                   </li>
                   <li>
                     <a href="#integration-types" class="toc-h2 toc-link" data-title="รูปแบบการเชื่อมต่อ ">รูปแบบการเชื่อมต่อ </a>
+                  </li>
+                  <li>
+                    <a href="#how-to-see-form-structure" class="toc-h2 toc-link" data-title="วิธีการดูโครงสร้างข้อมูลฟอร์ม ">วิธีการดูโครงสร้างข้อมูลฟอร์ม </a>
                   </li>
               </ul>
           </li>
@@ -455,10 +464,10 @@
   --header <span class="s2">"Authorization: Bearer &lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="se">\</span>
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   https://api.acrosure.com/products/list;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="p">});</span>
-<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">list</span><span class="p">();</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">product</span><span class="p">.</span><span class="nx">list</span><span class="p">()</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Product</span><span class="o">;</span>
 
@@ -512,6 +521,16 @@ $products = $acrosureClient-&gt;getProductManager()-&gt;getList(query);
 <aside class="notice">
 Secret Token สามารถใช้งานได้ทุก API ที่ Public Token สามารถเรียกได้ แต่ Secret Token มีไว้ใช้ใน Server เท่านั้น
 </aside>
+<h2 id='tokens-explained'>การเลือกใช้งาน Public/Secret Token </h2>
+<p>Token ทั้งสองประเภทใช้ในการยืนยันตัวตนเมื่อเรียกใช้ API ของ Acrosure แต่จะมีสิทธิ์ในการเข้าถึงบาง API ไม่เหมือนกัน</p>
+<h3 id='public-token'>Public Token</h3>
+<p>สามารถเข้าถึง API ได้จำกัด โดยจะเป็น API ที่ไม่ส่งผลโดยตรงต่อการสร้างกรมธรรม์ (เช่น <a href="#api-applications-confirm">/applications/confirm</a>)</p>
+<h3 id='secret-token'>Secret Token</h3>
+<p>สามารถเข้าถึง API ได้ทั้งหมด รวมถึงการเรียก API สำหรับสร้างกรมธรรม์ด้วย</p>
+<h3 id='token'>เหตุผลที่ต้องมี Token สองประเภท</h3>
+<p>จุดประสงค์ของ Public Token นั้น มีไว้เพื่อให้คุณสามารถนำไปใช้ในระบบของคุณที่เปิดให้ผู้ใช้ทั่วไปเข้าถึงได้ เช่น Website หรือ Mobile Application โดยถึงแม้มีผู้ใช้เจอ Public Token นี้ ก็ไม่สามารถนำไปเรียกใช้ API เพื่อสร้างกรมธรรม์เองได้</p>
+
+<p>ส่วน Secret Token นั้น มีไว้เพื่อให้คุณนำไปใช้ในระบบของคุณที่บุคคลภายนอกไม่สามารถเข้าถึงได้ เช่น Backend ที่ใช้งานภายใน เพื่อการสร้างกรมธรรม์</p>
 <h1 id='integration-overall'>ภาพรวมการเชื่อมต่อ </h1><h2 id='integration-flow'>ขั้นตอนการทำงาน </h2>
 <p>ในกระบวนการสั่งซื้อประกันภัยผ่าน Acrosure จะประกอบไปด้วยขั้นตอนหลักๆ 3 ขั้นตอนดังนี้</p>
 
@@ -530,6 +549,13 @@ Secret Token สามารถใช้งานได้ทุก API ที�
 <p>การเชื่อมต่อแบบ Hybrid คือการเชื่อมต่อที่ผสมทั้งแบบ form และแบบ API โดยจะเหมาะสำหรับระบบที่มีข้อมูลลูกค้าอยู่แล้วบางส่วน และต้องการให้ลูกค้ากรอกเพิ่มเติมในส่วนที่ขาด</p>
 <h3 id='3-api'>3. <a href="#integration-api">เชื่อมต่อแบบ API</a></h3>
 <p>การเชื่อมต่อระบบแบบ API นั้นเป็นการเชื่อมต่อที่ซับซ้อนกว่า เพราะการซื้อกรมธรรม์ประกันภัยนั้นมีข้อมูลที่ต้องใช้หลากหลาย และบาง field ข้อมูลก็มีเงื่อนไขแตกต่างกันไป ข้อดีของการเชื่อมต่อแบบนี้คือลูกค้าจะได้รับประสบการณ์ที่ดีกว่าในการซื้อสินค้าหรือบริการ</p>
+<h2 id='how-to-see-form-structure'>วิธีการดูโครงสร้างข้อมูลฟอร์ม </h2>
+<ol>
+<li>เข้าไปยัง <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a></li>
+<li>กดเมนู Products ที่อยู่ Panel ทางซ้าย</li>
+<li>เลือก Product ที่ต้องการดูข้อมูล</li>
+<li>กดที่ Form Parameter Items เพื่อดูโครงสร้างเบื้องต้น หรือดูที่ Raw Form Schema เพื่อดูโครงสร้างอย่างละเอียด</li>
+</ol>
 <h1 id='sdk'>Software Development Kit </h1>
 <p>SDK คือชุดเครื่องมือสําหรับนักพัฒนา ที่จัดเตรียมไว้เพื่อให้นักพัฒนาได้ทําการเช่ือมต่อกับ ระบบ Acrosure Insurance Gateway ได้อย่างสะดวกมากขึ้น โดย SDK นั้นจะแบ่งเป็น แต่ละภาษา ขึ้นกับภาษาท่ีนักพัฒนาใช้ในระบบของบริษัท Partner โดยมีภาษาท่ีรองรับ ดังนี้</p>
 
@@ -662,7 +688,7 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
 <p>ขั้นตอนในการสร้างและกรอกฟอร์มล่วงหน้ามีดังนี้</p>
 
 <ol>
-<li>ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</li>
+<li><a href="#how-to-see-form-structure">ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</a></li>
 <li>เรียก API <code>POST /applications/create</code> เพื่อสร้างฟอร์ม</li>
 <li>สร้าง URL ของฟอร์มและ redirect ผู้ใช้ไปที่ฟอร์มตามปกติ</li>
 <li>เรียก API <code>POST /applications/confirm</code> ยืนยันการสั่งซื้อจากเซิร์ฟเวอร์</li>
@@ -675,18 +701,18 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"product_id":"prod_ta","basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"}}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/create;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span> <span class="p">})</span>
 <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_ta"</span><span class="p">,</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s1">'prod_ta'</span><span class="p">,</span>
   <span class="na">basic_data</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">countries</span><span class="p">:</span> <span class="p">[</span><span class="s2">"GERMANY"</span><span class="p">,</span> <span class="s2">"JAPAN"</span><span class="p">],</span>
-    <span class="na">policy_date</span><span class="p">:</span> <span class="s2">"2018-12-08"</span><span class="p">,</span>
-    <span class="na">expiry_date</span><span class="p">:</span> <span class="s2">"2018-12-15"</span><span class="p">,</span>
-    <span class="na">policy_unit</span><span class="p">:</span> <span class="s2">"D"</span>
+    <span class="na">countries</span><span class="p">:</span> <span class="p">[</span><span class="s1">'GERMANY'</span><span class="p">,</span> <span class="s1">'JAPAN'</span><span class="p">],</span>
+    <span class="na">policy_date</span><span class="p">:</span> <span class="s1">'2018-12-08'</span><span class="p">,</span>
+    <span class="na">expiry_date</span><span class="p">:</span> <span class="s1">'2018-12-15'</span><span class="p">,</span>
+    <span class="na">policy_unit</span><span class="p">:</span> <span class="s1">'D'</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.form.ApplicationCreateForm</span><span class="o">;</span>
@@ -794,10 +820,10 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/confirm;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_SECRET_TOKEN&gt;"</span> <span class="p">});</span>
-<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_SECRET_TOKEN&gt;'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Policy</span><span class="o">;</span>
@@ -864,7 +890,7 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
 <p>ในกรณีดังกล่าว นักพัฒนาสามารถเรียก API เพื่อดำเนินการทั้งหมดได้ ดังนี้</p>
 
 <ol>
-<li>ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</li>
+<li><a href="#how-to-see-form-structure">ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</a></li>
 <li>เรียกใช้ API <code>POST /applications/create</code> เพื่อกรอกข้อมูลภายในฟอร์ม</li>
 <li>เรียกใช้ API <code>POST /applications/confirm</code> เพื่อยืนยันการสั่งซื้อ</li>
 </ol>
@@ -989,10 +1015,10 @@ status ที่ได้อาจจะยังไม่เป็น <code>REA
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/confirm;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_SECRET_TOKEN&gt;"</span> <span class="p">});</span>
-<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_SECRET_TOKEN&gt;'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Policy</span><span class="o">;</span>
@@ -1056,7 +1082,7 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
 <p>ในกรณีดังกล่าว มีตัวอย่างในการทำงานดังนี้ ดังนี้</p>
 
 <ol>
-<li>ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</li>
+<li><a href="#how-to-see-form-structure">ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด</a></li>
 <li>เรียกใช้ API <code>POST /applications/create</code> เพื่อสร้างใบคำสั่งซื้อและใส่ข้อมูลเบื้องต้น</li>
 <li>เรียกใช้ API <code>POST /applications/get-packages</code> เพื่อดูแพคเกจที่สามารถเลือกได้</li>
 <li>เรียกใช้ API <code>POST /applications/select-package</code> เพื่อเลือกแพคเกจที่ต้องการ</li>
@@ -1071,18 +1097,18 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"product_id":"prod_ta","basic_data":{"countries":["GERMANY","JAPAN"],"policy_date":"2018-12-08","expiry_date":"2018-12-15","policy_unit":"D"}}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/create;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span> <span class="p">})</span>
 <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
-  <span class="na">product_id</span><span class="p">:</span> <span class="s2">"prod_ta"</span><span class="p">,</span>
+  <span class="na">product_id</span><span class="p">:</span> <span class="s1">'prod_ta'</span><span class="p">,</span>
   <span class="na">basic_data</span><span class="p">:</span> <span class="p">{</span>
-    <span class="na">countries</span><span class="p">:</span> <span class="p">[</span><span class="s2">"GERMANY"</span><span class="p">,</span> <span class="s2">"JAPAN"</span><span class="p">],</span>
-    <span class="na">policy_date</span><span class="p">:</span> <span class="s2">"2018-12-08"</span><span class="p">,</span>
-    <span class="na">expiry_date</span><span class="p">:</span> <span class="s2">"2018-12-15"</span><span class="p">,</span>
-    <span class="na">policy_unit</span><span class="p">:</span> <span class="s2">"D"</span>
+    <span class="na">countries</span><span class="p">:</span> <span class="p">[</span><span class="s1">'GERMANY'</span><span class="p">,</span> <span class="s1">'JAPAN'</span><span class="p">],</span>
+    <span class="na">policy_date</span><span class="p">:</span> <span class="s1">'2018-12-08'</span><span class="p">,</span>
+    <span class="na">expiry_date</span><span class="p">:</span> <span class="s1">'2018-12-15'</span><span class="p">,</span>
+    <span class="na">policy_unit</span><span class="p">:</span> <span class="s1">'D'</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">})</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.form.ApplicationCreateForm</span><span class="o">;</span>
@@ -1175,10 +1201,10 @@ $createdApplication = $acrosureClient-&gt;getApplicationManager()-&gt;create([
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/get-packages;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="p">});</span>
-<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">getPackages</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">getPackages</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Package</span><span class="o">;</span>
@@ -1236,13 +1262,13 @@ $packages = $acrosureClient-&gt;getApplicationManager()-&gt;getPackages("appl_SA
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"application_id":"appl_SAMPLE01","package_code":"PACKAGE_SAMPLE_01"}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/select-package;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_PUBLIC_TOKEN&gt;"</span> <span class="p">});</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_PUBLIC_TOKEN&gt;'</span> <span class="p">})</span>
 <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">selectPackage</span><span class="p">({</span>
-  <span class="na">application_id</span><span class="p">:</span> <span class="s2">"appl_SAMPLE01"</span><span class="p">,</span>
-  <span class="na">package_code</span><span class="p">:</span> <span class="s2">"PACKAGE_SAMPLE_01"</span>
-<span class="p">});</span>
+  <span class="na">application_id</span><span class="p">:</span> <span class="s1">'appl_SAMPLE01'</span><span class="p">,</span>
+  <span class="na">package_code</span><span class="p">:</span> <span class="s1">'PACKAGE_SAMPLE_01'</span>
+<span class="p">})</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Package</span><span class="o">;</span>
@@ -1414,10 +1440,10 @@ $updatedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;update([
   --header <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   -d <span class="s1">'{"application_id":"appl_SAMPLE01"}'</span> <span class="se">\</span>
   https://api.acrosure.com/applications/confirm;
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s2">"@acrosure/js-sdk"</span><span class="p">;</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">import</span> <span class="nx">AcrosureClient</span> <span class="nx">from</span> <span class="s1">'@acrosure/js-sdk'</span>
 
-<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s2">"&lt;YOUR_SECRET_TOKEN&gt;"</span> <span class="p">});</span>
-<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"appl_SAMPLE01"</span><span class="p">);</span>
+<span class="kr">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">AcrosureClient</span><span class="p">({</span> <span class="na">token</span><span class="p">:</span> <span class="s1">'&lt;YOUR_SECRET_TOKEN&gt;'</span> <span class="p">})</span>
+<span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">application</span><span class="p">.</span><span class="nx">confirm</span><span class="p">(</span><span class="s1">'appl_SAMPLE01'</span><span class="p">)</span>
 </code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.acrosure.Acrosure</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.acrosure.resource.Policy</span><span class="o">;</span>
@@ -1474,7 +1500,7 @@ $confirmedApplication = $acrosureClient-&gt;getApplicationManager()-&gt;confirm(
 <h1 id='api-applications'>Applications API reference </h1>
 <p>Application คือใบคำสั่งซื้อกรมธรรม์ ซึ่งทางผู้ใช้งาน Acrosure สามารถจัดการกับข้อมูลภายในแบบฟอร์มการซื้อประกันได้อย่างอิสระ ก่อนที่จะขอออกกรมธรรม์กับทางบริษัทประกันภัย</p>
 
-<p>ใบคำสั่งซื้อของประกันแต่ละประเภทจะมีโครงสร้างข้อมูลในแบบฟอร์มที่แตกต่างกัน คือฟิลด์ <code>basic_data</code>, <code>package_options</code> และ <code>additional_data</code> ซึ่งสามารถดูโครงสร้างข้อมูลแบบฟอร์มเหล่านี้ได้บน <a href="https://dashboard.acrosure.com">Acrosure Dashboard</a></p>
+<p>ใบคำสั่งซื้อของประกันแต่ละประเภทจะมีโครงสร้างข้อมูลในแบบฟอร์มที่แตกต่างกัน คือฟิลด์ <code>basic_data</code>, <code>package_options</code> และ <code>additional_data</code> ซึ่งสามารถดูโครงสร้างข้อมูลแบบฟอร์มเหล่านี้ได้โดย<a href="#how-to-see-form-structure">ขั้นตอนดังนี้</a></p>
 <h2 id='api-applications-structure'>โครงสร้างข้อมูล Application </h2>
 <blockquote>
 <p>ตัวอย่างข้อมูล</p>
@@ -1914,8 +1940,14 @@ $applications = $acrosureClient-&gt;getApplicationManager()-&gt;getList(query);
 <tr>
 <td><code>query</code></td>
 <td>No</td>
-<td>คำสั่ง Query</td>
+<td>Keywords ต่างๆที่ต้องการค้นหา (โดยเป็น string อะไรก็ได้)</td>
 <td></td>
+</tr>
+<tr>
+<td><code>partial_match</code></td>
+<td>No</td>
+<td>ค่าที่ระบุว่าจะค้นหา <code>query</code> โดย exact หรือไม่</td>
+<td><code>true</code>, <code>false</code></td>
 </tr>
 </tbody></table>
 <h2 id='api-applications-create'>/applications/create </h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>

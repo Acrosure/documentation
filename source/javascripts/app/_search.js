@@ -43,10 +43,9 @@
       }, searchDelay)
     })
     searchClear.on('click', function(e) {
-      search({
-        ...e,
-        keyCode: 27
-      })
+      const event = e
+      event.keyCode = 27
+      search(event)
     })
   }
 
