@@ -6,7 +6,7 @@
 
 ขั้นตอนในการสร้างและกรอกฟอร์มล่วงหน้ามีดังนี้
 
-1. ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด
+1. [ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด](#how-to-see-form-structure)
 2. เรียก API `POST /applications/create` เพื่อสร้างฟอร์ม
 3. สร้าง URL ของฟอร์มและ redirect ผู้ใช้ไปที่ฟอร์มตามปกติ
 4. เรียก API `POST /applications/confirm` ยืนยันการสั่งซื้อจากเซิร์ฟเวอร์
@@ -27,18 +27,18 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: '<YOUR_PUBLIC_TOKEN>' })
 const response = await client.application.create({
-  product_id: "prod_ta",
+  product_id: 'prod_ta',
   basic_data: {
-    countries: ["GERMANY", "JAPAN"],
-    policy_date: "2018-12-08",
-    expiry_date: "2018-12-15",
-    policy_unit: "D"
+    countries: ['GERMANY', 'JAPAN'],
+    policy_date: '2018-12-08',
+    expiry_date: '2018-12-15',
+    policy_unit: 'D'
   }
-});
+})
 ```
 
 ```java
@@ -173,10 +173,10 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-const response = await client.application.confirm("appl_SAMPLE01");
+const client = new AcrosureClient({ token: '<YOUR_SECRET_TOKEN>' })
+const response = await client.application.confirm('appl_SAMPLE01')
 ```
 
 ```java

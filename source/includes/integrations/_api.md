@@ -7,7 +7,7 @@
 
 ในกรณีดังกล่าว นักพัฒนาสามารถเรียก API เพื่อดำเนินการทั้งหมดได้ ดังนี้
 
-1. ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด
+1. [ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด](#how-to-see-form-structure)
 2. เรียกใช้ API `POST /applications/create` เพื่อกรอกข้อมูลภายในฟอร์ม
 3. เรียกใช้ API `POST /applications/confirm` เพื่อยืนยันการสั่งซื้อ
 
@@ -164,10 +164,10 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-const response = await client.application.confirm("appl_SAMPLE01");
+const client = new AcrosureClient({ token: '<YOUR_SECRET_TOKEN>' })
+const response = await client.application.confirm('appl_SAMPLE01')
 ```
 
 ```java

@@ -6,7 +6,7 @@
 
 ในกรณีดังกล่าว มีตัวอย่างในการทำงานดังนี้ ดังนี้
 
-1. ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด
+1. [ดูรายละเอียดของฟอร์มที่ต้องกรอกจากแดชบอร์ด](#how-to-see-form-structure)
 2. เรียกใช้ API `POST /applications/create` เพื่อสร้างใบคำสั่งซื้อและใส่ข้อมูลเบื้องต้น
 3. เรียกใช้ API `POST /applications/get-packages` เพื่อดูแพคเกจที่สามารถเลือกได้
 4. เรียกใช้ API `POST /applications/select-package` เพื่อเลือกแพคเกจที่ต้องการ
@@ -29,18 +29,18 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: '<YOUR_PUBLIC_TOKEN>' })
 const response = await client.application.create({
-  product_id: "prod_ta",
+  product_id: 'prod_ta',
   basic_data: {
-    countries: ["GERMANY", "JAPAN"],
-    policy_date: "2018-12-08",
-    expiry_date: "2018-12-15",
-    policy_unit: "D"
+    countries: ['GERMANY', 'JAPAN'],
+    policy_date: '2018-12-08',
+    expiry_date: '2018-12-15',
+    policy_unit: 'D'
   }
-});
+})
 ```
 
 ```java
@@ -157,10 +157,10 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
-const response = await client.application.getPackages("appl_SAMPLE01");
+const client = new AcrosureClient({ token: '<YOUR_PUBLIC_TOKEN>' })
+const response = await client.application.getPackages('appl_SAMPLE01')
 ```
 
 ```java
@@ -242,13 +242,13 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_PUBLIC_TOKEN>" });
+const client = new AcrosureClient({ token: '<YOUR_PUBLIC_TOKEN>' })
 const response = await client.application.selectPackage({
-  application_id: "appl_SAMPLE01",
-  package_code: "PACKAGE_SAMPLE_01"
-});
+  application_id: 'appl_SAMPLE01',
+  package_code: 'PACKAGE_SAMPLE_01'
+})
 ```
 
 ```java
@@ -468,10 +468,10 @@ curl -X POST \
 ```
 
 ```javascript
-import AcrosureClient from "@acrosure/js-sdk";
+import AcrosureClient from '@acrosure/js-sdk'
 
-const client = new AcrosureClient({ token: "<YOUR_SECRET_TOKEN>" });
-const response = await client.application.confirm("appl_SAMPLE01");
+const client = new AcrosureClient({ token: '<YOUR_SECRET_TOKEN>' })
+const response = await client.application.confirm('appl_SAMPLE01')
 ```
 
 ```java
