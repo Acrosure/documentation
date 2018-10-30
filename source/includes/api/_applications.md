@@ -332,14 +332,16 @@ $applications = $acrosureClient->getApplicationManager()->getList(query);
 
 ### Request Body
 
-| Name         | Required | Description                                    | Possible Values                                               |
-| ------------ | -------- | ---------------------------------------------- | ------------------------------------------------------------- |
-| `product_id` | No       | ชนิดของ Product                                |                                                               |
-| `offset`     | No       | ตำแหน่งในลำดับของใบคำสั่งซื้อที่ต้องการเริ่มดู |
-| `limit`      | No       | จำนวนสูงสุดของข้อมูลในรายการ                   |
-| `order_by`   | No       | วิธีการจัดเรียงรายการ                          | `created_at`, `updated_at`                                    |
-| `status`     | No       | สถานะของใบคำสั่งซื้อ                           | ดูเพิ่มเติมที่ [Application Status](#api-applications-status) |
-| `query`      | No       | คำสั่ง Query                                   |
+| Name            | Required | Description                                              | Possible Values                                               |
+| --------------- | -------- | -------------------------------------------------------- | ------------------------------------------------------------- |
+| `product_id`    | No       | ชนิดของ Product                                          |                                                               |
+| `offset`        | No       | ตำแหน่งในลำดับของใบคำสั่งซื้อที่ต้องการเริ่มดู           |
+| `limit`         | No       | จำนวนสูงสุดของข้อมูลในรายการ                             |
+| `order_by`      | No       | วิธีการจัดเรียงรายการ                                    | `created_at`, `updated_at`                                    |
+| `status`        | No       | สถานะของใบคำสั่งซื้อ                                     | ดูเพิ่มเติมที่ [Application Status](#api-applications-status) |
+| `query`         | No       | Keywords ต่างๆที่ต้องการค้นหา (โดยเป็น string อะไรก็ได้) |
+| `partial_match` | No       | ค่าที่ระบุว่าจะค้นหา `query` โดย exact หรือไม่           | `true`, `false`                                               |
+
 
 ## /applications/create {{id:api-applications-create}}
 
