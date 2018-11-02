@@ -197,8 +197,8 @@ public class Main {
     Acrosure client = new Acrosure("<YOUR_PUBLIC_TOKEN>");
 
     try {
-      PolicyQuery query = new PolicyQuery();
-      PolicyList policyList = client.policy().list(query);
+      PolicyQuery searchParams = new PolicyQuery();
+      PolicyList policyList = client.policy().list(searchParams);
     } catch (IOException e) {
       e.printStackTrace();
     } catch (AcrosureException e) {
@@ -211,7 +211,7 @@ public class Main {
 
 ```python
 acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
-policies = acrosure_client.policy.list(query)
+policies = acrosure_client.policy.list(searchParams)
 ```
 
 ```csharp
@@ -228,7 +228,7 @@ client.policy.list(query: ["product_id": "prod_ta"]) { response in
 
 ```php
 $acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
-$policies = $acrosureClient->getPolicyManager()->getList(query);
+$policies = $acrosureClient->getPolicyManager()->getList(searchParams);
 ```
 
 > ตัวอย่าง Response Body

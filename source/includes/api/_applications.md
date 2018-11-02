@@ -269,10 +269,10 @@ import com.acrosure.resource.ApplicationList;
 
 public class Main {
   public static void main(String[] args) {
-    ApplicationQuery query = new ApplicationQuery();
+    ApplicationQuery searchParams = new ApplicationQuery();
 
     try {
-      ApplicationList applicationList = client.application().list(query);
+      ApplicationList applicationList = client.application().list(searchParams);
     } catch (IOException e) {
       e.printStackTrace();
     } catch (AcrosureException e) {
@@ -285,7 +285,7 @@ public class Main {
 
 ```python
 acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
-applications = acrosure_client.application.list(query)
+applications = acrosure_client.application.list(searchParams)
 ```
 
 ```csharp
@@ -302,7 +302,7 @@ client.application.list() { response in
 
 ```php
 $acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
-$applications = $acrosureClient->getApplicationManager()->getList(query);
+$applications = $acrosureClient->getApplicationManager()->getList(searchParams);
 ```
 
 > ตัวอย่าง Response Body

@@ -69,7 +69,7 @@ public class Main {
 
 ```python
 acrosure_client = AcrosureClient(token = '<YOUR_PUBLIC_TOKEN>')
-products = acrosure_client.product.list(query)
+products = acrosure_client.product.list()
 ```
 
 ```csharp
@@ -86,7 +86,7 @@ client.product.list() { response in
 
 ```php
 $acrosureClient = new AcrosureClient([ "token" => "<YOUR_PUBLIC_TOKEN>" ]);
-$products = $acrosureClient->getProductManager()->getList(query);
+$products = $acrosureClient->getProductManager()->getList();
 ```
 
 > ตัวอย่างผลลัพธ์จากคำสั่งด้านบน
