@@ -57,9 +57,12 @@
     if (event.keyCode === 27) searchInput.value = ''
     if (searchInput.value && searchInput.value.length > 0) {
       searchClear.show()
+      if (searchInput.value.length < 3) return
       var results = dicts.filter(function(dict) {
-        const val = searchInput.value
-        return dict.title.includes(val) || dict.body.includes(val)
+        const val = searchInput.value.toLowerCase()
+        const title = dict.title.toLowerCase()
+        const body = dict.body.toLowerCase()
+        return title.includes(val) || body.includes(val)
       })
       if (results.length) {
         searchResults.empty()
